@@ -1,0 +1,212 @@
+# Pipeline: Cointegration Grid Trading with GridStrike
+# 
+# EXECUTION FLOW:
+# 1. candles_downloader - downloads candle data (15m, 1h) for top crypto pairs
+# 2. funding_rates_downloader - downloads funding rates from Binance Perpetual
+# 3. cointegration_task_v2 - analyzes pairs for cointegration (Engle-Granger, cross-correlation)
+# 4. grid_strike_config_generator_task - generates trading configs for GridStrike controller
+# 5. grid_strike_deployment_task - deploys Hummingbot bots with GridStrike configs
+#
+# RESULT: Automated grid trading bots running on highly correlated crypto pairs
+#
+# WHY GRIDSTRIKE vs STAT_ARB:
+# - GridStrike: simpler, more reliable in sideways markets, creates order grids for individual pairs
+# - StatArb: trades spread between cointegrated pairs, more complex but better for mean reversion
+# - GridStrike chosen for: stability, easier risk management, better for volatile crypto markets
+
+tasks:
+  # ========== STEP 1: Download candles data ==========
+  candles_downloader:
+    enabled: true
+    task_class: app.tasks.data_collection.candles_downloader_task.CandlesDownloaderTask
+    
+    schedule:
+      type: frequency
+      frequency_hours: 6.0
+      timezone: UTC
+      
+    max_retries: 3
+    retry_delay_seconds: 180
+    timeout_seconds: 3600
+    
+    dependencies: []
+    
+    config:
+      connector_name: "binance_perpetual"
+      quote_asset: "USDT"
+      intervals: ["15m", "1h"]
+      days_data_retention: 30
+      min_notional_size: 10
+      symbols:
+        - BTCUSDT
+        - ETHUSDT
+        - BNBUSDT
+        - SOLUSDT
+        - XRPUSDT
+        - ADAUSDT
+        - DOGEUSDT
+        - AVAXUSDT
+        - TRXUSDT
+        - DOTUSDT
+        - MATICUSDT
+        - LINKUSDT
+        - SHIBUSDT
+        - LTCUSDT
+        - BCHUSDT
+        - ATOMUSDT
+        - ETCUSDT
+        - NEARUSDT
+        - UNIUSDT
+        - FILUSDT
+        - APTUSDT
+        - ARBUSDT
+        - OPUSDT
+    
+    tags:
+      - data_collection
+      - candles
+      - binance
+
+  # ========== STEP 2: Download funding rates ==========
+  funding_rates_downloader:
+    enabled: true
+    task_class: app.tasks.data_collection.funding_rates_downloader_task.FundingRatesDownloaderTask
+    
+    schedule:
+      type: frequency
+      frequency_hours: 4.0
+      timezone: UTC
+      
+    max_retries: 3
+    retry_delay_seconds: 60
+    timeout_seconds: 600
+    
+    dependencies: []
+    
+    config:
+      connector_name: "binance_perpetual"
+      days_data_retention: 7
+    
+    tags:
+      - data_collection
+      - funding_rates
+      - binance
+
+  # ========== STEP 3: Cointegration analysis ==========
+  cointegration_analysis:
+    enabled: true
+    task_class: app.tasks.quantitative_methods.cointegration.cointegration_task_v2.CointegrationTaskV2
+    
+    schedule:
+      type: frequency
+      frequency_hours: 12.0
+      timezone: UTC
+      
+    max_retries: 2
+    retry_delay_seconds: 300
+    timeout_seconds: 7200
+    
+    dependencies:
+      - task_name: "candles_downloader"
+        on_completion: true
+        delay_seconds: 300
+    
+    config:
+      exchange: "binance_perpetual"
+      min_volume_usd: 10000000
+      top_n_by_volume: 25
+      lookback_days: 30
+      timeframe: "1h"
+      test_params:
+        engle_granger:
+          enabled: true
+          p_value_threshold: 0.05
+        cross_correlation:
+          enabled: true
+          min_correlation: 0.7
+          max_lag: 10
+        granger_causality:
+          enabled: true
+          p_value_threshold: 0.05
+          max_lag: 5
+        transfer_entropy:
+          enabled: false
+      output_collection: "cointegration_results"
+      save_all_pairs: false
+    
+    tags:
+      - quantitative
+      - cointegration
+      - stat_arb
+
+  # ========== STEP 4: Generate GridStrike configs ==========
+  generate_grid_configs:
+    enabled: true
+    task_class: app.tasks.quantitative_methods.cointegration.grid_strike_config_generator_task.GridStrikeConfigGeneratorTask
+    
+    schedule:
+      type: frequency
+      frequency_hours: 12.0
+      timezone: UTC
+      
+    max_retries: 2
+    retry_delay_seconds: 180
+    timeout_seconds: 1800
+    
+    dependencies:
+      - task_name: "cointegration_analysis"
+        on_completion: true
+        delay_seconds: 300
+    
+    config:
+      mongo_uri: "${MONGO_URI}"
+    
+    tags:
+      - config_generation
+      - grid_strike
+      - stat_arb
+
+  # ========== STEP 5: Deploy GridStrike bots ==========
+  deploy_grid_bots:
+    enabled: true
+    task_class: app.tasks.deployment.implementation.grid_strike_deployment_task.GridStrikeDeploymentTask
+    
+    schedule:
+      type: frequency
+      frequency_hours: 0.5  # Every 30 minutes
+      timezone: UTC
+      
+    max_retries: 3
+    retry_delay_seconds: 120
+    timeout_seconds: 1800
+    
+    dependencies:
+      - task_name: "generate_grid_configs"
+        on_completion: true
+        delay_seconds: 300
+    
+    config:
+      min_config_timestamp: 3600
+      hummingbot_instance: "local"
+      auto_start: true
+      monitor_interval_sec: 300
+      max_concurrent_bots: 5
+      filter_candidate_params:
+        max_step: 0.01
+        min_grid_range_ratio: 0.3
+        max_grid_range_ratio: 3.0
+        max_entry_price_distance: 0.5
+        max_notional_size: 100.0
+    
+    tags:
+      - deployment
+      - grid_strike
+      - hummingbot
+
+# Global settings
+settings:
+  mongodb_uri: "${MONGO_URI}"
+  database_name: "quantslab"
+  log_level: "INFO"
+  stop_on_error: false
+  parallel_execution: false
