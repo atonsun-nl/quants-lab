@@ -1,0 +1,2 @@
+[console_scripts]
+quants-lab = cli:main
