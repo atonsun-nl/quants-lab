@@ -593,26 +593,6 @@ class CLOBDataSource:
         # Final flush for remaining rows
         _flush_batch()
 
-        # single_file + parquet: merge all parts into one final file, delete parts
-        if single_file and output_format == "parquet" and parts_dir.exists():
-            part_files = sorted(parts_dir.glob("part_*.parquet"))
-            if part_files:
-                logger.info(
-                    f"[OB Collector] Merging {len(part_files)} parts → {final_filename.name}"
-                )
-                merged = pd.concat(
-                    [pd.read_parquet(p) for p in part_files], ignore_index=True
-                )
-                merged.to_parquet(final_filename, engine="pyarrow", compression="snappy")
-                # Clean up parts
-                for p in part_files:
-                    p.unlink()
-                parts_dir.rmdir()
-                saved_files.append(str(final_filename))
-                logger.info(
-                    f"[OB Collector] Merged {len(merged)} rows → {final_filename.name}"
-                )
-
         logger.info(
             f"[OB Collector] Done. rows={snapshot_index} "
             f"files={len(saved_files)} errors={len(errors)}"
