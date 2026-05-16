@@ -1,0 +1,1179 @@
+nohup: ignoring input
+
+========================================================================
+    #  Коннектор               Пара          Длит.      Интервал   Глубина
+  --------------------------------------------------------------------
+    1. binance_perpetual       BNB-USDT      720ч           1.0s      100  (~2,592,000 строк)
+========================================================================
+  Формат: parquet  |  Режим: один файл, дозапись каждые 10800s
+  Прогресс в лог: каждые 7200 с
+========================================================================
+
+2026-04-12 12:29:37 - INFO - Initializing ClobDataSource
+
+========================================================================
+  СБОР СТАКАНА + ТРЕЙДОВ (wide-format, ML-ready)
+  Формат: parquet  |  Режим: один файл, дозапись каждые 10800s
+  Прогресс: каждые 7200 с → лог + stdout (строки, буфер, ETA, mid)
+========================================================================
+2026-04-12 12:29:39 - INFO - [OB Collector] Starting wide-format collection | pair=BNB-USDT depth=100 interval=1.00s duration=2592000s (~2592000 rows, single-file, append every 10800s) fmt=parquet dir=/home/aton/quants-lab/app/data/cache/orderbooks/binance_perpetual/BNBUSDT
+2026-04-12 14:29:40 - INFO - [OB Collector] progress 0.3% | rows=7187 buffer=7187 flush_files=0 parquet_parts_written=0 err=0 | elapsed=2.00h left=718.00h mid=592.6150
+[OB Collector] progress 0.3% | rows=7187 buffer=7187 flush_files=0 parquet_parts_written=0 err=0 | elapsed=2.00h left=718.00h mid=592.6150
+2026-04-12 15:29:42 - INFO - [OB Collector] Saved part 1 (10780 rows) → part_00000.parquet
+2026-04-12 16:29:40 - INFO - [OB Collector] progress 0.6% | rows=14372 buffer=3592 flush_files=0 parquet_parts_written=1 err=0 | elapsed=4.00h left=716.00h mid=592.0250
+[OB Collector] progress 0.6% | rows=14372 buffer=3592 flush_files=0 parquet_parts_written=1 err=0 | elapsed=4.00h left=716.00h mid=592.0250
+2026-04-12 18:29:41 - INFO - [OB Collector] progress 0.8% | rows=21552 buffer=10772 flush_files=0 parquet_parts_written=1 err=0 | elapsed=6.00h left=714.00h mid=592.1350
+[OB Collector] progress 0.8% | rows=21552 buffer=10772 flush_files=0 parquet_parts_written=1 err=0 | elapsed=6.00h left=714.00h mid=592.1350
+2026-04-12 18:29:45 - INFO - [OB Collector] Saved part 2 (10773 rows) → part_00001.parquet
+2026-04-12 20:29:42 - INFO - [OB Collector] progress 1.1% | rows=28735 buffer=7182 flush_files=0 parquet_parts_written=2 err=0 | elapsed=8.00h left=712.00h mid=592.4550
+[OB Collector] progress 1.1% | rows=28735 buffer=7182 flush_files=0 parquet_parts_written=2 err=0 | elapsed=8.00h left=712.00h mid=592.4550
+2026-04-12 21:29:47 - INFO - [OB Collector] Saved part 3 (10778 rows) → part_00002.parquet
+2026-04-12 22:29:42 - INFO - [OB Collector] progress 1.4% | rows=35918 buffer=3587 flush_files=0 parquet_parts_written=3 err=0 | elapsed=10.00h left=710.00h mid=591.9350
+[OB Collector] progress 1.4% | rows=35918 buffer=3587 flush_files=0 parquet_parts_written=3 err=0 | elapsed=10.00h left=710.00h mid=591.9350
+2026-04-13 00:29:43 - INFO - [OB Collector] progress 1.7% | rows=43106 buffer=10775 flush_files=0 parquet_parts_written=3 err=0 | elapsed=12.00h left=708.00h mid=594.6850
+[OB Collector] progress 1.7% | rows=43106 buffer=10775 flush_files=0 parquet_parts_written=3 err=0 | elapsed=12.00h left=708.00h mid=594.6850
+2026-04-13 00:29:50 - INFO - [OB Collector] Saved part 4 (10780 rows) → part_00003.parquet
+2026-04-13 02:29:44 - INFO - [OB Collector] progress 1.9% | rows=50292 buffer=7181 flush_files=0 parquet_parts_written=4 err=0 | elapsed=14.00h left=706.00h mid=597.8450
+[OB Collector] progress 1.9% | rows=50292 buffer=7181 flush_files=0 parquet_parts_written=4 err=0 | elapsed=14.00h left=706.00h mid=597.8450
+2026-04-13 03:29:53 - INFO - [OB Collector] Saved part 5 (10780 rows) → part_00004.parquet
+2026-04-13 04:29:44 - INFO - [OB Collector] progress 2.2% | rows=57475 buffer=3584 flush_files=0 parquet_parts_written=5 err=0 | elapsed=16.00h left=704.00h mid=596.0750
+[OB Collector] progress 2.2% | rows=57475 buffer=3584 flush_files=0 parquet_parts_written=5 err=0 | elapsed=16.00h left=704.00h mid=596.0750
+2026-04-13 06:29:45 - INFO - [OB Collector] progress 2.5% | rows=64658 buffer=10767 flush_files=0 parquet_parts_written=5 err=0 | elapsed=18.00h left=702.00h mid=599.6950
+[OB Collector] progress 2.5% | rows=64658 buffer=10767 flush_files=0 parquet_parts_written=5 err=0 | elapsed=18.00h left=702.00h mid=599.6950
+2026-04-13 06:29:56 - INFO - [OB Collector] Saved part 6 (10776 rows) → part_00005.parquet
+2026-04-13 08:29:45 - INFO - [OB Collector] progress 2.8% | rows=71841 buffer=7174 flush_files=0 parquet_parts_written=6 err=0 | elapsed=20.00h left=700.00h mid=596.3050
+[OB Collector] progress 2.8% | rows=71841 buffer=7174 flush_files=0 parquet_parts_written=6 err=0 | elapsed=20.00h left=700.00h mid=596.3050
+2026-04-13 09:29:59 - INFO - [OB Collector] Saved part 7 (10779 rows) → part_00006.parquet
+2026-04-13 10:29:46 - INFO - [OB Collector] progress 3.1% | rows=79027 buffer=3581 flush_files=0 parquet_parts_written=7 err=0 | elapsed=22.00h left=698.00h mid=597.9750
+[OB Collector] progress 3.1% | rows=79027 buffer=3581 flush_files=0 parquet_parts_written=7 err=0 | elapsed=22.00h left=698.00h mid=597.9750
+2026-04-13 12:29:46 - INFO - [OB Collector] progress 3.3% | rows=86211 buffer=10765 flush_files=0 parquet_parts_written=7 err=0 | elapsed=24.00h left=696.00h mid=597.0350
+[OB Collector] progress 3.3% | rows=86211 buffer=10765 flush_files=0 parquet_parts_written=7 err=0 | elapsed=24.00h left=696.00h mid=597.0350
+2026-04-13 12:30:02 - INFO - [OB Collector] Saved part 8 (10778 rows) → part_00007.parquet
+2026-04-13 14:29:47 - INFO - [OB Collector] progress 3.6% | rows=93395 buffer=7171 flush_files=0 parquet_parts_written=8 err=0 | elapsed=26.00h left=694.00h mid=599.9350
+[OB Collector] progress 3.6% | rows=93395 buffer=7171 flush_files=0 parquet_parts_written=8 err=0 | elapsed=26.00h left=694.00h mid=599.9350
+2026-04-13 15:30:05 - INFO - [OB Collector] Saved part 9 (10778 rows) → part_00008.parquet
+2026-04-13 16:29:48 - INFO - [OB Collector] progress 3.9% | rows=100575 buffer=3573 flush_files=0 parquet_parts_written=9 err=0 | elapsed=28.00h left=692.00h mid=607.5850
+[OB Collector] progress 3.9% | rows=100575 buffer=3573 flush_files=0 parquet_parts_written=9 err=0 | elapsed=28.00h left=692.00h mid=607.5850
+2026-04-13 18:29:48 - INFO - [OB Collector] progress 4.2% | rows=107759 buffer=10757 flush_files=0 parquet_parts_written=9 err=0 | elapsed=30.00h left=690.00h mid=604.1050
+[OB Collector] progress 4.2% | rows=107759 buffer=10757 flush_files=0 parquet_parts_written=9 err=0 | elapsed=30.00h left=690.00h mid=604.1050
+2026-04-13 18:30:07 - INFO - [OB Collector] Saved part 10 (10774 rows) → part_00009.parquet
+2026-04-13 20:29:48 - INFO - [OB Collector] progress 4.4% | rows=114945 buffer=7169 flush_files=0 parquet_parts_written=10 err=0 | elapsed=32.00h left=688.00h mid=607.7650
+[OB Collector] progress 4.4% | rows=114945 buffer=7169 flush_files=0 parquet_parts_written=10 err=0 | elapsed=32.00h left=688.00h mid=607.7650
+2026-04-13 21:30:10 - INFO - [OB Collector] Saved part 11 (10782 rows) → part_00010.parquet
+2026-04-13 22:29:49 - INFO - [OB Collector] progress 4.7% | rows=122131 buffer=3573 flush_files=0 parquet_parts_written=11 err=0 | elapsed=34.00h left=686.00h mid=614.6250
+[OB Collector] progress 4.7% | rows=122131 buffer=3573 flush_files=0 parquet_parts_written=11 err=0 | elapsed=34.00h left=686.00h mid=614.6250
+2026-04-13 22:46:37 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-13 22:46:48 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-14 00:29:49 - INFO - [OB Collector] progress 5.0% | rows=129296 buffer=10738 flush_files=0 parquet_parts_written=11 err=0 | elapsed=36.00h left=684.00h mid=613.3850
+[OB Collector] progress 5.0% | rows=129296 buffer=10738 flush_files=0 parquet_parts_written=11 err=0 | elapsed=36.00h left=684.00h mid=613.3850
+2026-04-14 00:30:12 - INFO - [OB Collector] Saved part 12 (10759 rows) → part_00011.parquet
+2026-04-14 02:29:50 - INFO - [OB Collector] progress 5.3% | rows=136481 buffer=7164 flush_files=0 parquet_parts_written=12 err=0 | elapsed=38.00h left=682.00h mid=614.1050
+[OB Collector] progress 5.3% | rows=136481 buffer=7164 flush_files=0 parquet_parts_written=12 err=0 | elapsed=38.00h left=682.00h mid=614.1050
+2026-04-14 03:30:16 - INFO - [OB Collector] Saved part 13 (10780 rows) → part_00012.parquet
+2026-04-14 04:29:50 - INFO - [OB Collector] progress 5.6% | rows=143663 buffer=3566 flush_files=0 parquet_parts_written=13 err=0 | elapsed=40.00h left=680.00h mid=616.1650
+[OB Collector] progress 5.6% | rows=143663 buffer=3566 flush_files=0 parquet_parts_written=13 err=0 | elapsed=40.00h left=680.00h mid=616.1650
+2026-04-14 06:29:51 - INFO - [OB Collector] progress 5.8% | rows=150850 buffer=10753 flush_files=0 parquet_parts_written=13 err=0 | elapsed=42.00h left=678.00h mid=614.4650
+[OB Collector] progress 5.8% | rows=150850 buffer=10753 flush_files=0 parquet_parts_written=13 err=0 | elapsed=42.00h left=678.00h mid=614.4650
+2026-04-14 06:30:19 - INFO - [OB Collector] Saved part 14 (10779 rows) → part_00013.parquet
+2026-04-14 08:29:51 - INFO - [OB Collector] progress 6.1% | rows=158033 buffer=7157 flush_files=0 parquet_parts_written=14 err=0 | elapsed=44.00h left=676.00h mid=618.0450
+[OB Collector] progress 6.1% | rows=158033 buffer=7157 flush_files=0 parquet_parts_written=14 err=0 | elapsed=44.00h left=676.00h mid=618.0450
+2026-04-14 09:30:22 - INFO - [OB Collector] Saved part 15 (10777 rows) → part_00014.parquet
+2026-04-14 10:29:52 - INFO - [OB Collector] progress 6.4% | rows=165213 buffer=3560 flush_files=0 parquet_parts_written=15 err=0 | elapsed=46.00h left=674.00h mid=619.1550
+[OB Collector] progress 6.4% | rows=165213 buffer=3560 flush_files=0 parquet_parts_written=15 err=0 | elapsed=46.00h left=674.00h mid=619.1550
+2026-04-14 12:29:53 - INFO - [OB Collector] progress 6.7% | rows=172399 buffer=10746 flush_files=0 parquet_parts_written=15 err=0 | elapsed=48.00h left=672.00h mid=616.2350
+[OB Collector] progress 6.7% | rows=172399 buffer=10746 flush_files=0 parquet_parts_written=15 err=0 | elapsed=48.00h left=672.00h mid=616.2350
+2026-04-14 12:30:25 - INFO - [OB Collector] Saved part 16 (10776 rows) → part_00015.parquet
+2026-04-14 14:29:53 - INFO - [OB Collector] progress 6.9% | rows=179581 buffer=7152 flush_files=0 parquet_parts_written=16 err=0 | elapsed=50.00h left=670.00h mid=620.9450
+[OB Collector] progress 6.9% | rows=179581 buffer=7152 flush_files=0 parquet_parts_written=16 err=0 | elapsed=50.00h left=670.00h mid=620.9450
+2026-04-14 15:30:29 - INFO - [OB Collector] Saved part 17 (10778 rows) → part_00016.parquet
+2026-04-14 16:29:53 - INFO - [OB Collector] progress 7.2% | rows=186764 buffer=3557 flush_files=0 parquet_parts_written=17 err=0 | elapsed=52.00h left=668.00h mid=623.0150
+[OB Collector] progress 7.2% | rows=186764 buffer=3557 flush_files=0 parquet_parts_written=17 err=0 | elapsed=52.00h left=668.00h mid=623.0150
+2026-04-14 18:29:54 - INFO - [OB Collector] progress 7.5% | rows=193949 buffer=10742 flush_files=0 parquet_parts_written=17 err=0 | elapsed=54.00h left=666.00h mid=617.7650
+[OB Collector] progress 7.5% | rows=193949 buffer=10742 flush_files=0 parquet_parts_written=17 err=0 | elapsed=54.00h left=666.00h mid=617.7650
+2026-04-14 18:30:32 - INFO - [OB Collector] Saved part 18 (10778 rows) → part_00017.parquet
+2026-04-14 20:29:54 - INFO - [OB Collector] progress 7.8% | rows=201135 buffer=7150 flush_files=0 parquet_parts_written=18 err=0 | elapsed=56.00h left=664.00h mid=614.0350
+[OB Collector] progress 7.8% | rows=201135 buffer=7150 flush_files=0 parquet_parts_written=18 err=0 | elapsed=56.00h left=664.00h mid=614.0350
+2026-04-14 21:30:35 - INFO - [OB Collector] Saved part 19 (10781 rows) → part_00018.parquet
+2026-04-14 22:29:55 - INFO - [OB Collector] progress 8.1% | rows=208320 buffer=3554 flush_files=0 parquet_parts_written=19 err=0 | elapsed=58.00h left=662.00h mid=614.9850
+[OB Collector] progress 8.1% | rows=208320 buffer=3554 flush_files=0 parquet_parts_written=19 err=0 | elapsed=58.00h left=662.00h mid=614.9850
+2026-04-15 00:29:55 - INFO - [OB Collector] progress 8.3% | rows=215508 buffer=10742 flush_files=0 parquet_parts_written=19 err=0 | elapsed=60.00h left=660.00h mid=616.9550
+[OB Collector] progress 8.3% | rows=215508 buffer=10742 flush_files=0 parquet_parts_written=19 err=0 | elapsed=60.00h left=660.00h mid=616.9550
+2026-04-15 00:30:37 - INFO - [OB Collector] Saved part 20 (10782 rows) → part_00019.parquet
+2026-04-15 02:29:56 - INFO - [OB Collector] progress 8.6% | rows=222694 buffer=7146 flush_files=0 parquet_parts_written=20 err=0 | elapsed=62.00h left=658.00h mid=617.7550
+[OB Collector] progress 8.6% | rows=222694 buffer=7146 flush_files=0 parquet_parts_written=20 err=0 | elapsed=62.00h left=658.00h mid=617.7550
+2026-04-15 03:30:40 - INFO - [OB Collector] Saved part 21 (10782 rows) → part_00020.parquet
+2026-04-15 04:29:56 - INFO - [OB Collector] progress 8.9% | rows=229880 buffer=3550 flush_files=0 parquet_parts_written=21 err=0 | elapsed=64.00h left=656.00h mid=615.1350
+[OB Collector] progress 8.9% | rows=229880 buffer=3550 flush_files=0 parquet_parts_written=21 err=0 | elapsed=64.00h left=656.00h mid=615.1350
+2026-04-15 06:29:57 - INFO - [OB Collector] progress 9.2% | rows=237065 buffer=10735 flush_files=0 parquet_parts_written=21 err=0 | elapsed=66.00h left=654.00h mid=614.1650
+[OB Collector] progress 9.2% | rows=237065 buffer=10735 flush_files=0 parquet_parts_written=21 err=0 | elapsed=66.00h left=654.00h mid=614.1650
+2026-04-15 06:30:43 - INFO - [OB Collector] Saved part 22 (10779 rows) → part_00021.parquet
+2026-04-15 08:29:57 - INFO - [OB Collector] progress 9.4% | rows=244251 buffer=7142 flush_files=0 parquet_parts_written=22 err=0 | elapsed=68.01h left=651.99h mid=613.4050
+[OB Collector] progress 9.4% | rows=244251 buffer=7142 flush_files=0 parquet_parts_written=22 err=0 | elapsed=68.01h left=651.99h mid=613.4050
+2026-04-15 09:30:47 - INFO - [OB Collector] Saved part 23 (10782 rows) → part_00022.parquet
+2026-04-15 10:29:58 - INFO - [OB Collector] progress 9.7% | rows=251435 buffer=3544 flush_files=0 parquet_parts_written=23 err=0 | elapsed=70.01h left=649.99h mid=617.0850
+[OB Collector] progress 9.7% | rows=251435 buffer=3544 flush_files=0 parquet_parts_written=23 err=0 | elapsed=70.01h left=649.99h mid=617.0850
+2026-04-15 12:29:59 - INFO - [OB Collector] progress 10.0% | rows=258615 buffer=10724 flush_files=0 parquet_parts_written=23 err=0 | elapsed=72.01h left=647.99h mid=618.7850
+[OB Collector] progress 10.0% | rows=258615 buffer=10724 flush_files=0 parquet_parts_written=23 err=0 | elapsed=72.01h left=647.99h mid=618.7850
+2026-04-15 12:30:50 - INFO - [OB Collector] Saved part 24 (10773 rows) → part_00023.parquet
+2026-04-15 14:29:59 - INFO - [OB Collector] progress 10.3% | rows=265801 buffer=7137 flush_files=0 parquet_parts_written=24 err=0 | elapsed=74.01h left=645.99h mid=620.2250
+[OB Collector] progress 10.3% | rows=265801 buffer=7137 flush_files=0 parquet_parts_written=24 err=0 | elapsed=74.01h left=645.99h mid=620.2250
+2026-04-15 15:30:53 - INFO - [OB Collector] Saved part 25 (10781 rows) → part_00024.parquet
+2026-04-15 16:30:00 - INFO - [OB Collector] progress 10.6% | rows=272986 buffer=3541 flush_files=0 parquet_parts_written=25 err=0 | elapsed=76.01h left=643.99h mid=621.3050
+[OB Collector] progress 10.6% | rows=272986 buffer=3541 flush_files=0 parquet_parts_written=25 err=0 | elapsed=76.01h left=643.99h mid=621.3050
+2026-04-15 18:30:00 - INFO - [OB Collector] progress 10.8% | rows=280173 buffer=10728 flush_files=0 parquet_parts_written=25 err=0 | elapsed=78.01h left=641.99h mid=622.2950
+[OB Collector] progress 10.8% | rows=280173 buffer=10728 flush_files=0 parquet_parts_written=25 err=0 | elapsed=78.01h left=641.99h mid=622.2950
+2026-04-15 18:30:56 - INFO - [OB Collector] Saved part 26 (10782 rows) → part_00025.parquet
+2026-04-15 20:30:01 - INFO - [OB Collector] progress 11.1% | rows=287357 buffer=7130 flush_files=0 parquet_parts_written=26 err=0 | elapsed=80.01h left=639.99h mid=623.3350
+[OB Collector] progress 11.1% | rows=287357 buffer=7130 flush_files=0 parquet_parts_written=26 err=0 | elapsed=80.01h left=639.99h mid=623.3350
+2026-04-15 21:30:59 - INFO - [OB Collector] Saved part 27 (10778 rows) → part_00026.parquet
+2026-04-15 22:30:01 - INFO - [OB Collector] progress 11.4% | rows=294541 buffer=3536 flush_files=0 parquet_parts_written=27 err=0 | elapsed=82.01h left=637.99h mid=624.8050
+[OB Collector] progress 11.4% | rows=294541 buffer=3536 flush_files=0 parquet_parts_written=27 err=0 | elapsed=82.01h left=637.99h mid=624.8050
+2026-04-16 00:30:02 - INFO - [OB Collector] progress 11.7% | rows=301728 buffer=10723 flush_files=0 parquet_parts_written=27 err=0 | elapsed=84.01h left=635.99h mid=621.6450
+[OB Collector] progress 11.7% | rows=301728 buffer=10723 flush_files=0 parquet_parts_written=27 err=0 | elapsed=84.01h left=635.99h mid=621.6450
+2026-04-16 00:31:02 - INFO - [OB Collector] Saved part 28 (10781 rows) → part_00027.parquet
+2026-04-16 02:30:02 - INFO - [OB Collector] progress 11.9% | rows=308914 buffer=7128 flush_files=0 parquet_parts_written=28 err=0 | elapsed=86.01h left=633.99h mid=624.4650
+[OB Collector] progress 11.9% | rows=308914 buffer=7128 flush_files=0 parquet_parts_written=28 err=0 | elapsed=86.01h left=633.99h mid=624.4650
+2026-04-16 03:31:05 - INFO - [OB Collector] Saved part 29 (10782 rows) → part_00028.parquet
+2026-04-16 04:30:03 - INFO - [OB Collector] progress 12.2% | rows=316100 buffer=3532 flush_files=0 parquet_parts_written=29 err=0 | elapsed=88.01h left=631.99h mid=624.4350
+[OB Collector] progress 12.2% | rows=316100 buffer=3532 flush_files=0 parquet_parts_written=29 err=0 | elapsed=88.01h left=631.99h mid=624.4350
+2026-04-16 06:30:03 - INFO - [OB Collector] progress 12.5% | rows=323287 buffer=10719 flush_files=0 parquet_parts_written=29 err=0 | elapsed=90.01h left=629.99h mid=625.4050
+[OB Collector] progress 12.5% | rows=323287 buffer=10719 flush_files=0 parquet_parts_written=29 err=0 | elapsed=90.01h left=629.99h mid=625.4050
+2026-04-16 06:31:08 - INFO - [OB Collector] Saved part 30 (10781 rows) → part_00029.parquet
+2026-04-16 08:30:04 - INFO - [OB Collector] progress 12.8% | rows=330472 buffer=7123 flush_files=0 parquet_parts_written=30 err=0 | elapsed=92.01h left=627.99h mid=622.5050
+[OB Collector] progress 12.8% | rows=330472 buffer=7123 flush_files=0 parquet_parts_written=30 err=0 | elapsed=92.01h left=627.99h mid=622.5050
+2026-04-16 09:31:11 - INFO - [OB Collector] Saved part 31 (10770 rows) → part_00030.parquet
+2026-04-16 10:30:05 - INFO - [OB Collector] progress 13.1% | rows=337647 buffer=3528 flush_files=0 parquet_parts_written=31 err=0 | elapsed=94.01h left=625.99h mid=620.7850
+[OB Collector] progress 13.1% | rows=337647 buffer=3528 flush_files=0 parquet_parts_written=31 err=0 | elapsed=94.01h left=625.99h mid=620.7850
+2026-04-16 12:30:05 - INFO - [OB Collector] progress 13.3% | rows=344833 buffer=10714 flush_files=0 parquet_parts_written=31 err=0 | elapsed=96.01h left=623.99h mid=621.4650
+[OB Collector] progress 13.3% | rows=344833 buffer=10714 flush_files=0 parquet_parts_written=31 err=0 | elapsed=96.01h left=623.99h mid=621.4650
+2026-04-16 12:31:14 - INFO - [OB Collector] Saved part 32 (10780 rows) → part_00031.parquet
+2026-04-16 14:30:06 - INFO - [OB Collector] progress 13.6% | rows=352018 buffer=7119 flush_files=0 parquet_parts_written=32 err=0 | elapsed=98.01h left=621.99h mid=617.4250
+[OB Collector] progress 13.6% | rows=352018 buffer=7119 flush_files=0 parquet_parts_written=32 err=0 | elapsed=98.01h left=621.99h mid=617.4250
+2026-04-16 15:31:17 - INFO - [OB Collector] Saved part 33 (10781 rows) → part_00032.parquet
+2026-04-16 16:30:06 - INFO - [OB Collector] progress 13.9% | rows=359202 buffer=3522 flush_files=0 parquet_parts_written=33 err=0 | elapsed=100.01h left=619.99h mid=627.5750
+[OB Collector] progress 13.9% | rows=359202 buffer=3522 flush_files=0 parquet_parts_written=33 err=0 | elapsed=100.01h left=619.99h mid=627.5750
+2026-04-16 18:30:06 - INFO - [OB Collector] progress 14.2% | rows=366384 buffer=10704 flush_files=0 parquet_parts_written=33 err=0 | elapsed=102.01h left=617.99h mid=630.5950
+[OB Collector] progress 14.2% | rows=366384 buffer=10704 flush_files=0 parquet_parts_written=33 err=0 | elapsed=102.01h left=617.99h mid=630.5950
+2026-04-16 18:31:21 - INFO - [OB Collector] Saved part 34 (10776 rows) → part_00033.parquet
+2026-04-16 20:30:07 - INFO - [OB Collector] progress 14.4% | rows=373566 buffer=7110 flush_files=0 parquet_parts_written=34 err=0 | elapsed=104.01h left=615.99h mid=635.2550
+[OB Collector] progress 14.4% | rows=373566 buffer=7110 flush_files=0 parquet_parts_written=34 err=0 | elapsed=104.01h left=615.99h mid=635.2550
+2026-04-16 21:31:25 - INFO - [OB Collector] Saved part 35 (10776 rows) → part_00034.parquet
+2026-04-16 22:30:08 - INFO - [OB Collector] progress 14.7% | rows=380747 buffer=3515 flush_files=0 parquet_parts_written=35 err=0 | elapsed=106.01h left=613.99h mid=632.9650
+[OB Collector] progress 14.7% | rows=380747 buffer=3515 flush_files=0 parquet_parts_written=35 err=0 | elapsed=106.01h left=613.99h mid=632.9650
+2026-04-16 23:44:32 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-16 23:44:43 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-17 00:30:08 - INFO - [OB Collector] progress 15.0% | rows=387904 buffer=10672 flush_files=0 parquet_parts_written=35 err=0 | elapsed=108.01h left=611.99h mid=635.5350
+[OB Collector] progress 15.0% | rows=387904 buffer=10672 flush_files=0 parquet_parts_written=35 err=0 | elapsed=108.01h left=611.99h mid=635.5350
+2026-04-17 00:31:28 - INFO - [OB Collector] Saved part 36 (10749 rows) → part_00035.parquet
+2026-04-17 02:30:09 - INFO - [OB Collector] progress 15.3% | rows=395090 buffer=7109 flush_files=0 parquet_parts_written=36 err=0 | elapsed=110.01h left=609.99h mid=628.7950
+[OB Collector] progress 15.3% | rows=395090 buffer=7109 flush_files=0 parquet_parts_written=36 err=0 | elapsed=110.01h left=609.99h mid=628.7950
+2026-04-17 03:31:30 - INFO - [OB Collector] Saved part 37 (10781 rows) → part_00036.parquet
+2026-04-17 04:30:09 - INFO - [OB Collector] progress 15.6% | rows=402275 buffer=3513 flush_files=0 parquet_parts_written=37 err=0 | elapsed=112.01h left=607.99h mid=629.9550
+[OB Collector] progress 15.6% | rows=402275 buffer=3513 flush_files=0 parquet_parts_written=37 err=0 | elapsed=112.01h left=607.99h mid=629.9550
+2026-04-17 06:30:10 - INFO - [OB Collector] progress 15.8% | rows=409461 buffer=10699 flush_files=0 parquet_parts_written=37 err=0 | elapsed=114.01h left=605.99h mid=628.1550
+[OB Collector] progress 15.8% | rows=409461 buffer=10699 flush_files=0 parquet_parts_written=37 err=0 | elapsed=114.01h left=605.99h mid=628.1550
+2026-04-17 06:31:34 - INFO - [OB Collector] Saved part 38 (10780 rows) → part_00037.parquet
+2026-04-17 07:47:12 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-17 08:30:10 - INFO - [OB Collector] progress 16.1% | rows=416621 buffer=7079 flush_files=0 parquet_parts_written=38 err=0 | elapsed=116.01h left=603.99h mid=628.8550
+[OB Collector] progress 16.1% | rows=416621 buffer=7079 flush_files=0 parquet_parts_written=38 err=0 | elapsed=116.01h left=603.99h mid=628.8550
+2026-04-17 09:31:37 - INFO - [OB Collector] Saved part 39 (10756 rows) → part_00038.parquet
+2026-04-17 10:30:11 - INFO - [OB Collector] progress 16.4% | rows=423806 buffer=3508 flush_files=0 parquet_parts_written=39 err=0 | elapsed=118.01h left=601.99h mid=630.0850
+[OB Collector] progress 16.4% | rows=423806 buffer=3508 flush_files=0 parquet_parts_written=39 err=0 | elapsed=118.01h left=601.99h mid=630.0850
+2026-04-17 12:30:12 - INFO - [OB Collector] progress 16.7% | rows=430991 buffer=10693 flush_files=0 parquet_parts_written=39 err=0 | elapsed=120.01h left=599.99h mid=633.5550
+[OB Collector] progress 16.7% | rows=430991 buffer=10693 flush_files=0 parquet_parts_written=39 err=0 | elapsed=120.01h left=599.99h mid=633.5550
+2026-04-17 12:31:41 - INFO - [OB Collector] Saved part 40 (10779 rows) → part_00039.parquet
+2026-04-17 14:30:13 - INFO - [OB Collector] progress 16.9% | rows=438176 buffer=7099 flush_files=0 parquet_parts_written=40 err=0 | elapsed=122.01h left=597.99h mid=643.8550
+[OB Collector] progress 16.9% | rows=438176 buffer=7099 flush_files=0 parquet_parts_written=40 err=0 | elapsed=122.01h left=597.99h mid=643.8550
+2026-04-17 15:31:44 - INFO - [OB Collector] Saved part 41 (10780 rows) → part_00040.parquet
+2026-04-17 16:30:13 - INFO - [OB Collector] progress 17.2% | rows=445360 buffer=3503 flush_files=0 parquet_parts_written=41 err=0 | elapsed=124.01h left=595.99h mid=644.8750
+[OB Collector] progress 17.2% | rows=445360 buffer=3503 flush_files=0 parquet_parts_written=41 err=0 | elapsed=124.01h left=595.99h mid=644.8750
+2026-04-17 18:30:13 - INFO - [OB Collector] progress 17.5% | rows=452545 buffer=10688 flush_files=0 parquet_parts_written=41 err=0 | elapsed=126.01h left=593.99h mid=640.1650
+[OB Collector] progress 17.5% | rows=452545 buffer=10688 flush_files=0 parquet_parts_written=41 err=0 | elapsed=126.01h left=593.99h mid=640.1650
+2026-04-17 18:31:47 - INFO - [OB Collector] Saved part 42 (10779 rows) → part_00041.parquet
+2026-04-17 20:30:13 - INFO - [OB Collector] progress 17.8% | rows=459730 buffer=7094 flush_files=0 parquet_parts_written=42 err=0 | elapsed=128.01h left=591.99h mid=641.2350
+[OB Collector] progress 17.8% | rows=459730 buffer=7094 flush_files=0 parquet_parts_written=42 err=0 | elapsed=128.01h left=591.99h mid=641.2350
+2026-04-17 21:31:50 - INFO - [OB Collector] Saved part 43 (10781 rows) → part_00042.parquet
+2026-04-17 22:30:13 - INFO - [OB Collector] progress 18.1% | rows=466915 buffer=3498 flush_files=0 parquet_parts_written=43 err=0 | elapsed=130.01h left=589.99h mid=643.0350
+[OB Collector] progress 18.1% | rows=466915 buffer=3498 flush_files=0 parquet_parts_written=43 err=0 | elapsed=130.01h left=589.99h mid=643.0350
+2026-04-18 00:30:14 - INFO - [OB Collector] progress 18.3% | rows=474102 buffer=10685 flush_files=0 parquet_parts_written=43 err=0 | elapsed=132.01h left=587.99h mid=644.7950
+[OB Collector] progress 18.3% | rows=474102 buffer=10685 flush_files=0 parquet_parts_written=43 err=0 | elapsed=132.01h left=587.99h mid=644.7950
+2026-04-18 00:31:52 - INFO - [OB Collector] Saved part 44 (10781 rows) → part_00043.parquet
+2026-04-18 02:30:14 - INFO - [OB Collector] progress 18.6% | rows=481288 buffer=7090 flush_files=0 parquet_parts_written=44 err=0 | elapsed=134.01h left=585.99h mid=645.9350
+[OB Collector] progress 18.6% | rows=481288 buffer=7090 flush_files=0 parquet_parts_written=44 err=0 | elapsed=134.01h left=585.99h mid=645.9350
+2026-04-18 03:31:55 - INFO - [OB Collector] Saved part 45 (10782 rows) → part_00044.parquet
+2026-04-18 04:30:14 - INFO - [OB Collector] progress 18.9% | rows=488474 buffer=3494 flush_files=0 parquet_parts_written=45 err=0 | elapsed=136.01h left=583.99h mid=641.9650
+[OB Collector] progress 18.9% | rows=488474 buffer=3494 flush_files=0 parquet_parts_written=45 err=0 | elapsed=136.01h left=583.99h mid=641.9650
+2026-04-18 06:30:14 - INFO - [OB Collector] progress 19.2% | rows=495661 buffer=10681 flush_files=0 parquet_parts_written=45 err=0 | elapsed=138.01h left=581.99h mid=644.5050
+[OB Collector] progress 19.2% | rows=495661 buffer=10681 flush_files=0 parquet_parts_written=45 err=0 | elapsed=138.01h left=581.99h mid=644.5050
+2026-04-18 06:31:58 - INFO - [OB Collector] Saved part 46 (10782 rows) → part_00045.parquet
+2026-04-18 08:30:15 - INFO - [OB Collector] progress 19.4% | rows=502846 buffer=7084 flush_files=0 parquet_parts_written=46 err=0 | elapsed=140.01h left=579.99h mid=638.3150
+[OB Collector] progress 19.4% | rows=502846 buffer=7084 flush_files=0 parquet_parts_written=46 err=0 | elapsed=140.01h left=579.99h mid=638.3150
+2026-04-18 09:32:01 - INFO - [OB Collector] Saved part 47 (10781 rows) → part_00046.parquet
+2026-04-18 10:30:15 - INFO - [OB Collector] progress 19.7% | rows=510031 buffer=3488 flush_files=0 parquet_parts_written=47 err=0 | elapsed=142.01h left=577.99h mid=633.3350
+[OB Collector] progress 19.7% | rows=510031 buffer=3488 flush_files=0 parquet_parts_written=47 err=0 | elapsed=142.01h left=577.99h mid=633.3350
+2026-04-18 12:30:16 - INFO - [OB Collector] progress 20.0% | rows=517215 buffer=10672 flush_files=0 parquet_parts_written=47 err=0 | elapsed=144.01h left=575.99h mid=633.5750
+[OB Collector] progress 20.0% | rows=517215 buffer=10672 flush_files=0 parquet_parts_written=47 err=0 | elapsed=144.01h left=575.99h mid=633.5750
+2026-04-18 12:32:04 - INFO - [OB Collector] Saved part 48 (10777 rows) → part_00047.parquet
+2026-04-18 14:30:17 - INFO - [OB Collector] progress 20.3% | rows=524401 buffer=7081 flush_files=0 parquet_parts_written=48 err=0 | elapsed=146.01h left=573.99h mid=633.4250
+[OB Collector] progress 20.3% | rows=524401 buffer=7081 flush_files=0 parquet_parts_written=48 err=0 | elapsed=146.01h left=573.99h mid=633.4250
+2026-04-18 15:32:07 - INFO - [OB Collector] Saved part 49 (10780 rows) → part_00048.parquet
+2026-04-18 16:30:18 - INFO - [OB Collector] progress 20.6% | rows=531585 buffer=3485 flush_files=0 parquet_parts_written=49 err=0 | elapsed=148.01h left=571.99h mid=634.2350
+[OB Collector] progress 20.6% | rows=531585 buffer=3485 flush_files=0 parquet_parts_written=49 err=0 | elapsed=148.01h left=571.99h mid=634.2350
+2026-04-18 18:30:18 - INFO - [OB Collector] progress 20.8% | rows=538772 buffer=10672 flush_files=0 parquet_parts_written=49 err=0 | elapsed=150.01h left=569.99h mid=632.3650
+[OB Collector] progress 20.8% | rows=538772 buffer=10672 flush_files=0 parquet_parts_written=49 err=0 | elapsed=150.01h left=569.99h mid=632.3650
+2026-04-18 18:32:09 - INFO - [OB Collector] Saved part 50 (10781 rows) → part_00049.parquet
+2026-04-18 20:30:19 - INFO - [OB Collector] progress 21.1% | rows=545958 buffer=7077 flush_files=0 parquet_parts_written=50 err=0 | elapsed=152.01h left=567.99h mid=630.7450
+[OB Collector] progress 21.1% | rows=545958 buffer=7077 flush_files=0 parquet_parts_written=50 err=0 | elapsed=152.01h left=567.99h mid=630.7450
+2026-04-18 21:32:11 - INFO - [OB Collector] Saved part 51 (10781 rows) → part_00050.parquet
+2026-04-18 22:30:19 - INFO - [OB Collector] progress 21.4% | rows=553144 buffer=3482 flush_files=0 parquet_parts_written=51 err=0 | elapsed=154.01h left=565.99h mid=630.7850
+[OB Collector] progress 21.4% | rows=553144 buffer=3482 flush_files=0 parquet_parts_written=51 err=0 | elapsed=154.01h left=565.99h mid=630.7850
+2026-04-19 00:30:20 - INFO - [OB Collector] progress 21.7% | rows=560332 buffer=10670 flush_files=0 parquet_parts_written=51 err=0 | elapsed=156.01h left=563.99h mid=629.3950
+[OB Collector] progress 21.7% | rows=560332 buffer=10670 flush_files=0 parquet_parts_written=51 err=0 | elapsed=156.01h left=563.99h mid=629.3950
+2026-04-19 00:32:14 - INFO - [OB Collector] Saved part 52 (10782 rows) → part_00051.parquet
+2026-04-19 02:30:20 - INFO - [OB Collector] progress 21.9% | rows=567517 buffer=7073 flush_files=0 parquet_parts_written=52 err=0 | elapsed=158.01h left=561.99h mid=624.2950
+[OB Collector] progress 21.9% | rows=567517 buffer=7073 flush_files=0 parquet_parts_written=52 err=0 | elapsed=158.01h left=561.99h mid=624.2950
+2026-04-19 03:32:18 - INFO - [OB Collector] Saved part 53 (10781 rows) → part_00052.parquet
+2026-04-19 04:30:20 - INFO - [OB Collector] progress 22.2% | rows=574700 buffer=3475 flush_files=0 parquet_parts_written=53 err=0 | elapsed=160.01h left=559.99h mid=624.3550
+[OB Collector] progress 22.2% | rows=574700 buffer=3475 flush_files=0 parquet_parts_written=53 err=0 | elapsed=160.01h left=559.99h mid=624.3550
+2026-04-19 06:30:20 - INFO - [OB Collector] progress 22.5% | rows=581887 buffer=10662 flush_files=0 parquet_parts_written=53 err=0 | elapsed=162.01h left=557.99h mid=622.3950
+[OB Collector] progress 22.5% | rows=581887 buffer=10662 flush_files=0 parquet_parts_written=53 err=0 | elapsed=162.01h left=557.99h mid=622.3950
+2026-04-19 06:32:21 - INFO - [OB Collector] Saved part 54 (10780 rows) → part_00053.parquet
+2026-04-19 08:30:21 - INFO - [OB Collector] progress 22.8% | rows=589072 buffer=7067 flush_files=0 parquet_parts_written=54 err=0 | elapsed=164.01h left=555.99h mid=620.7850
+[OB Collector] progress 22.8% | rows=589072 buffer=7067 flush_files=0 parquet_parts_written=54 err=0 | elapsed=164.01h left=555.99h mid=620.7850
+2026-04-19 09:32:23 - INFO - [OB Collector] Saved part 55 (10779 rows) → part_00054.parquet
+2026-04-19 10:30:21 - INFO - [OB Collector] progress 23.1% | rows=596255 buffer=3471 flush_files=0 parquet_parts_written=55 err=0 | elapsed=166.01h left=553.99h mid=620.1750
+[OB Collector] progress 23.1% | rows=596255 buffer=3471 flush_files=0 parquet_parts_written=55 err=0 | elapsed=166.01h left=553.99h mid=620.1750
+2026-04-19 12:30:22 - INFO - [OB Collector] progress 23.3% | rows=603440 buffer=10656 flush_files=0 parquet_parts_written=55 err=0 | elapsed=168.01h left=551.99h mid=622.9350
+[OB Collector] progress 23.3% | rows=603440 buffer=10656 flush_files=0 parquet_parts_written=55 err=0 | elapsed=168.01h left=551.99h mid=622.9350
+2026-04-19 12:32:27 - INFO - [OB Collector] Saved part 56 (10778 rows) → part_00055.parquet
+2026-04-19 14:30:23 - INFO - [OB Collector] progress 23.6% | rows=610626 buffer=7064 flush_files=0 parquet_parts_written=56 err=0 | elapsed=170.01h left=549.99h mid=627.0050
+[OB Collector] progress 23.6% | rows=610626 buffer=7064 flush_files=0 parquet_parts_written=56 err=0 | elapsed=170.01h left=549.99h mid=627.0050
+2026-04-19 15:32:30 - INFO - [OB Collector] Saved part 57 (10780 rows) → part_00056.parquet
+2026-04-19 16:30:24 - INFO - [OB Collector] progress 23.9% | rows=617810 buffer=3468 flush_files=0 parquet_parts_written=57 err=0 | elapsed=172.01h left=547.99h mid=625.4250
+[OB Collector] progress 23.9% | rows=617810 buffer=3468 flush_files=0 parquet_parts_written=57 err=0 | elapsed=172.01h left=547.99h mid=625.4250
+2026-04-19 18:05:18 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:05:29 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:06:25 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:06:36 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:07:11 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:07:22 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:08:07 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:08:18 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:08:51 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:09:02 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:09:13 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:09:36 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:09:47 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:09:58 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:10:21 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:10:32 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:10:43 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:10:54 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:11:08 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:11:19 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:12:59 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:13:10 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:15:43 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:15:54 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:16:20 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:16:31 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:17:30 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:17:41 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:18:14 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:18:25 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:19:32 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:19:43 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:19:54 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:20:05 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:20:16 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:20:27 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:20:28 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-04-19 18:20:58 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:21:09 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:21:49 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:22:00 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:22:11 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:22:18 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-04-19 18:22:47 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:22:58 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:23:50 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:24:01 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:24:33 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:24:44 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-19 18:30:24 - INFO - [OB Collector] progress 24.2% | rows=624374 buffer=10032 flush_files=0 parquet_parts_written=57 err=0 | elapsed=174.01h left=545.99h mid=621.7850
+[OB Collector] progress 24.2% | rows=624374 buffer=10032 flush_files=0 parquet_parts_written=57 err=0 | elapsed=174.01h left=545.99h mid=621.7850
+2026-04-19 18:32:33 - INFO - [OB Collector] Saved part 58 (10158 rows) → part_00057.parquet
+2026-04-19 20:30:25 - INFO - [OB Collector] progress 24.4% | rows=631560 buffer=7060 flush_files=0 parquet_parts_written=58 err=0 | elapsed=176.01h left=543.99h mid=621.7350
+[OB Collector] progress 24.4% | rows=631560 buffer=7060 flush_files=0 parquet_parts_written=58 err=0 | elapsed=176.01h left=543.99h mid=621.7350
+2026-04-19 21:32:35 - INFO - [OB Collector] Saved part 59 (10782 rows) → part_00058.parquet
+2026-04-19 22:30:26 - INFO - [OB Collector] progress 24.7% | rows=638745 buffer=3463 flush_files=0 parquet_parts_written=59 err=0 | elapsed=178.01h left=541.99h mid=616.2050
+[OB Collector] progress 24.7% | rows=638745 buffer=3463 flush_files=0 parquet_parts_written=59 err=0 | elapsed=178.01h left=541.99h mid=616.2050
+2026-04-20 00:30:26 - INFO - [OB Collector] progress 25.0% | rows=645930 buffer=10648 flush_files=0 parquet_parts_written=59 err=0 | elapsed=180.01h left=539.99h mid=620.7350
+[OB Collector] progress 25.0% | rows=645930 buffer=10648 flush_files=0 parquet_parts_written=59 err=0 | elapsed=180.01h left=539.99h mid=620.7350
+2026-04-20 00:32:39 - INFO - [OB Collector] Saved part 60 (10778 rows) → part_00059.parquet
+2026-04-20 02:30:27 - INFO - [OB Collector] progress 25.3% | rows=653114 buffer=7054 flush_files=0 parquet_parts_written=60 err=0 | elapsed=182.01h left=537.99h mid=621.4050
+[OB Collector] progress 25.3% | rows=653114 buffer=7054 flush_files=0 parquet_parts_written=60 err=0 | elapsed=182.01h left=537.99h mid=621.4050
+2026-04-20 03:32:42 - INFO - [OB Collector] Saved part 61 (10779 rows) → part_00060.parquet
+2026-04-20 04:30:28 - INFO - [OB Collector] progress 25.6% | rows=660299 buffer=3460 flush_files=0 parquet_parts_written=61 err=0 | elapsed=184.01h left=535.99h mid=621.1850
+[OB Collector] progress 25.6% | rows=660299 buffer=3460 flush_files=0 parquet_parts_written=61 err=0 | elapsed=184.01h left=535.99h mid=621.1850
+2026-04-20 06:30:29 - INFO - [OB Collector] progress 25.8% | rows=667484 buffer=10645 flush_files=0 parquet_parts_written=61 err=0 | elapsed=186.01h left=533.99h mid=621.3850
+[OB Collector] progress 25.8% | rows=667484 buffer=10645 flush_files=0 parquet_parts_written=61 err=0 | elapsed=186.01h left=533.99h mid=621.3850
+2026-04-20 06:32:45 - INFO - [OB Collector] Saved part 62 (10779 rows) → part_00061.parquet
+2026-04-20 08:30:29 - INFO - [OB Collector] progress 26.1% | rows=674670 buffer=7052 flush_files=0 parquet_parts_written=62 err=0 | elapsed=188.01h left=531.99h mid=624.6350
+[OB Collector] progress 26.1% | rows=674670 buffer=7052 flush_files=0 parquet_parts_written=62 err=0 | elapsed=188.01h left=531.99h mid=624.6350
+2026-04-20 09:32:49 - INFO - [OB Collector] Saved part 63 (10780 rows) → part_00062.parquet
+2026-04-20 10:30:30 - INFO - [OB Collector] progress 26.4% | rows=681853 buffer=3455 flush_files=0 parquet_parts_written=63 err=0 | elapsed=190.01h left=529.99h mid=627.6350
+[OB Collector] progress 26.4% | rows=681853 buffer=3455 flush_files=0 parquet_parts_written=63 err=0 | elapsed=190.01h left=529.99h mid=627.6350
+2026-04-20 12:30:30 - INFO - [OB Collector] progress 26.7% | rows=689040 buffer=10642 flush_files=0 parquet_parts_written=63 err=0 | elapsed=192.01h left=527.99h mid=626.4850
+[OB Collector] progress 26.7% | rows=689040 buffer=10642 flush_files=0 parquet_parts_written=63 err=0 | elapsed=192.01h left=527.99h mid=626.4850
+2026-04-20 12:32:53 - INFO - [OB Collector] Saved part 64 (10781 rows) → part_00063.parquet
+2026-04-20 14:30:31 - INFO - [OB Collector] progress 26.9% | rows=696225 buffer=7046 flush_files=0 parquet_parts_written=64 err=0 | elapsed=194.01h left=525.99h mid=627.2550
+[OB Collector] progress 26.9% | rows=696225 buffer=7046 flush_files=0 parquet_parts_written=64 err=0 | elapsed=194.01h left=525.99h mid=627.2550
+2026-04-20 15:32:55 - INFO - [OB Collector] Saved part 65 (10780 rows) → part_00064.parquet
+2026-04-20 16:30:31 - INFO - [OB Collector] progress 27.2% | rows=703409 buffer=3450 flush_files=0 parquet_parts_written=65 err=0 | elapsed=196.01h left=523.99h mid=628.2350
+[OB Collector] progress 27.2% | rows=703409 buffer=3450 flush_files=0 parquet_parts_written=65 err=0 | elapsed=196.01h left=523.99h mid=628.2350
+2026-04-20 18:30:32 - INFO - [OB Collector] progress 27.5% | rows=710595 buffer=10636 flush_files=0 parquet_parts_written=65 err=0 | elapsed=198.01h left=521.99h mid=630.4850
+[OB Collector] progress 27.5% | rows=710595 buffer=10636 flush_files=0 parquet_parts_written=65 err=0 | elapsed=198.01h left=521.99h mid=630.4850
+2026-04-20 18:32:59 - INFO - [OB Collector] Saved part 66 (10780 rows) → part_00065.parquet
+2026-04-20 20:30:33 - INFO - [OB Collector] progress 27.8% | rows=717781 buffer=7042 flush_files=0 parquet_parts_written=66 err=0 | elapsed=200.01h left=519.99h mid=630.9550
+[OB Collector] progress 27.8% | rows=717781 buffer=7042 flush_files=0 parquet_parts_written=66 err=0 | elapsed=200.01h left=519.99h mid=630.9550
+2026-04-20 21:33:02 - INFO - [OB Collector] Saved part 67 (10782 rows) → part_00066.parquet
+2026-04-20 22:30:33 - INFO - [OB Collector] progress 28.1% | rows=724967 buffer=3446 flush_files=0 parquet_parts_written=67 err=0 | elapsed=202.02h left=517.98h mid=629.9450
+[OB Collector] progress 28.1% | rows=724967 buffer=3446 flush_files=0 parquet_parts_written=67 err=0 | elapsed=202.02h left=517.98h mid=629.9450
+2026-04-21 00:30:34 - INFO - [OB Collector] progress 28.3% | rows=732155 buffer=10634 flush_files=0 parquet_parts_written=67 err=0 | elapsed=204.02h left=515.98h mid=631.1950
+[OB Collector] progress 28.3% | rows=732155 buffer=10634 flush_files=0 parquet_parts_written=67 err=0 | elapsed=204.02h left=515.98h mid=631.1950
+2026-04-21 00:33:04 - INFO - [OB Collector] Saved part 68 (10782 rows) → part_00067.parquet
+2026-04-21 02:30:34 - INFO - [OB Collector] progress 28.6% | rows=739340 buffer=7037 flush_files=0 parquet_parts_written=68 err=0 | elapsed=206.02h left=513.98h mid=629.7750
+[OB Collector] progress 28.6% | rows=739340 buffer=7037 flush_files=0 parquet_parts_written=68 err=0 | elapsed=206.02h left=513.98h mid=629.7750
+2026-04-21 03:33:06 - INFO - [OB Collector] Saved part 69 (10780 rows) → part_00068.parquet
+2026-04-21 04:30:35 - INFO - [OB Collector] progress 28.9% | rows=746526 buffer=3443 flush_files=0 parquet_parts_written=69 err=0 | elapsed=208.02h left=511.98h mid=630.2050
+[OB Collector] progress 28.9% | rows=746526 buffer=3443 flush_files=0 parquet_parts_written=69 err=0 | elapsed=208.02h left=511.98h mid=630.2050
+2026-04-21 06:30:35 - INFO - [OB Collector] progress 29.2% | rows=753713 buffer=10630 flush_files=0 parquet_parts_written=69 err=0 | elapsed=210.02h left=509.98h mid=631.2950
+[OB Collector] progress 29.2% | rows=753713 buffer=10630 flush_files=0 parquet_parts_written=69 err=0 | elapsed=210.02h left=509.98h mid=631.2950
+2026-04-21 06:33:09 - INFO - [OB Collector] Saved part 70 (10782 rows) → part_00069.parquet
+2026-04-21 08:30:36 - INFO - [OB Collector] progress 29.4% | rows=760899 buffer=7034 flush_files=0 parquet_parts_written=70 err=0 | elapsed=212.02h left=507.98h mid=635.0750
+[OB Collector] progress 29.4% | rows=760899 buffer=7034 flush_files=0 parquet_parts_written=70 err=0 | elapsed=212.02h left=507.98h mid=635.0750
+2026-04-21 09:33:12 - INFO - [OB Collector] Saved part 71 (10779 rows) → part_00070.parquet
+2026-04-21 10:30:36 - INFO - [OB Collector] progress 29.7% | rows=768083 buffer=3439 flush_files=0 parquet_parts_written=71 err=0 | elapsed=214.02h left=505.98h mid=638.0050
+[OB Collector] progress 29.7% | rows=768083 buffer=3439 flush_files=0 parquet_parts_written=71 err=0 | elapsed=214.02h left=505.98h mid=638.0050
+2026-04-21 12:30:37 - INFO - [OB Collector] progress 30.0% | rows=775270 buffer=10626 flush_files=0 parquet_parts_written=71 err=0 | elapsed=216.02h left=503.98h mid=633.1550
+[OB Collector] progress 30.0% | rows=775270 buffer=10626 flush_files=0 parquet_parts_written=71 err=0 | elapsed=216.02h left=503.98h mid=633.1550
+2026-04-21 12:33:14 - INFO - [OB Collector] Saved part 72 (10781 rows) → part_00071.parquet
+2026-04-21 14:30:37 - INFO - [OB Collector] progress 30.3% | rows=782455 buffer=7030 flush_files=0 parquet_parts_written=72 err=0 | elapsed=218.02h left=501.98h mid=633.5250
+[OB Collector] progress 30.3% | rows=782455 buffer=7030 flush_files=0 parquet_parts_written=72 err=0 | elapsed=218.02h left=501.98h mid=633.5250
+2026-04-21 15:33:18 - INFO - [OB Collector] Saved part 73 (10781 rows) → part_00072.parquet
+2026-04-21 16:30:37 - INFO - [OB Collector] progress 30.6% | rows=789640 buffer=3434 flush_files=0 parquet_parts_written=73 err=0 | elapsed=220.02h left=499.98h mid=632.2150
+[OB Collector] progress 30.6% | rows=789640 buffer=3434 flush_files=0 parquet_parts_written=73 err=0 | elapsed=220.02h left=499.98h mid=632.2150
+2026-04-21 18:30:38 - INFO - [OB Collector] progress 30.8% | rows=796826 buffer=10620 flush_files=0 parquet_parts_written=73 err=0 | elapsed=222.02h left=497.98h mid=629.7450
+[OB Collector] progress 30.8% | rows=796826 buffer=10620 flush_files=0 parquet_parts_written=73 err=0 | elapsed=222.02h left=497.98h mid=629.7450
+2026-04-21 18:33:21 - INFO - [OB Collector] Saved part 74 (10780 rows) → part_00073.parquet
+2026-04-21 20:30:39 - INFO - [OB Collector] progress 31.1% | rows=804012 buffer=7026 flush_files=0 parquet_parts_written=74 err=0 | elapsed=224.02h left=495.98h mid=630.0950
+[OB Collector] progress 31.1% | rows=804012 buffer=7026 flush_files=0 parquet_parts_written=74 err=0 | elapsed=224.02h left=495.98h mid=630.0950
+2026-04-21 21:33:23 - INFO - [OB Collector] Saved part 75 (10781 rows) → part_00074.parquet
+2026-04-21 22:30:39 - INFO - [OB Collector] progress 31.4% | rows=811195 buffer=3428 flush_files=0 parquet_parts_written=75 err=0 | elapsed=226.02h left=493.98h mid=628.5950
+[OB Collector] progress 31.4% | rows=811195 buffer=3428 flush_files=0 parquet_parts_written=75 err=0 | elapsed=226.02h left=493.98h mid=628.5950
+2026-04-22 00:30:40 - INFO - [OB Collector] progress 31.7% | rows=818380 buffer=10613 flush_files=0 parquet_parts_written=75 err=0 | elapsed=228.02h left=491.98h mid=633.0850
+[OB Collector] progress 31.7% | rows=818380 buffer=10613 flush_files=0 parquet_parts_written=75 err=0 | elapsed=228.02h left=491.98h mid=633.0850
+2026-04-22 00:33:26 - INFO - [OB Collector] Saved part 76 (10777 rows) → part_00075.parquet
+2026-04-22 02:30:40 - INFO - [OB Collector] progress 31.9% | rows=825566 buffer=7022 flush_files=0 parquet_parts_written=76 err=0 | elapsed=230.02h left=489.98h mid=638.0850
+[OB Collector] progress 31.9% | rows=825566 buffer=7022 flush_files=0 parquet_parts_written=76 err=0 | elapsed=230.02h left=489.98h mid=638.0850
+2026-04-22 03:33:28 - INFO - [OB Collector] Saved part 77 (10780 rows) → part_00076.parquet
+2026-04-22 04:30:41 - INFO - [OB Collector] progress 32.2% | rows=832751 buffer=3427 flush_files=0 parquet_parts_written=77 err=0 | elapsed=232.02h left=487.98h mid=639.4550
+[OB Collector] progress 32.2% | rows=832751 buffer=3427 flush_files=0 parquet_parts_written=77 err=0 | elapsed=232.02h left=487.98h mid=639.4550
+2026-04-22 06:30:41 - INFO - [OB Collector] progress 32.5% | rows=839938 buffer=10614 flush_files=0 parquet_parts_written=77 err=0 | elapsed=234.02h left=485.98h mid=643.0950
+[OB Collector] progress 32.5% | rows=839938 buffer=10614 flush_files=0 parquet_parts_written=77 err=0 | elapsed=234.02h left=485.98h mid=643.0950
+2026-04-22 06:33:32 - INFO - [OB Collector] Saved part 78 (10782 rows) → part_00077.parquet
+2026-04-22 08:30:41 - INFO - [OB Collector] progress 32.8% | rows=847120 buffer=7014 flush_files=0 parquet_parts_written=78 err=0 | elapsed=236.02h left=483.98h mid=641.9650
+[OB Collector] progress 32.8% | rows=847120 buffer=7014 flush_files=0 parquet_parts_written=78 err=0 | elapsed=236.02h left=483.98h mid=641.9650
+2026-04-22 09:33:35 - INFO - [OB Collector] Saved part 79 (10778 rows) → part_00078.parquet
+2026-04-22 10:30:42 - INFO - [OB Collector] progress 33.1% | rows=854306 buffer=3422 flush_files=0 parquet_parts_written=79 err=0 | elapsed=238.02h left=481.98h mid=642.9850
+[OB Collector] progress 33.1% | rows=854306 buffer=3422 flush_files=0 parquet_parts_written=79 err=0 | elapsed=238.02h left=481.98h mid=642.9850
+2026-04-22 12:30:42 - INFO - [OB Collector] progress 33.3% | rows=861493 buffer=10609 flush_files=0 parquet_parts_written=79 err=0 | elapsed=240.02h left=479.98h mid=642.9650
+[OB Collector] progress 33.3% | rows=861493 buffer=10609 flush_files=0 parquet_parts_written=79 err=0 | elapsed=240.02h left=479.98h mid=642.9650
+2026-04-22 12:33:37 - INFO - [OB Collector] Saved part 80 (10782 rows) → part_00079.parquet
+2026-04-22 14:30:43 - INFO - [OB Collector] progress 33.6% | rows=868678 buffer=7012 flush_files=0 parquet_parts_written=80 err=0 | elapsed=242.02h left=477.98h mid=650.2050
+[OB Collector] progress 33.6% | rows=868678 buffer=7012 flush_files=0 parquet_parts_written=80 err=0 | elapsed=242.02h left=477.98h mid=650.2050
+2026-04-22 15:33:40 - INFO - [OB Collector] Saved part 81 (10780 rows) → part_00080.parquet
+2026-04-22 16:30:43 - INFO - [OB Collector] progress 33.9% | rows=875862 buffer=3416 flush_files=0 parquet_parts_written=81 err=0 | elapsed=244.02h left=475.98h mid=647.5050
+[OB Collector] progress 33.9% | rows=875862 buffer=3416 flush_files=0 parquet_parts_written=81 err=0 | elapsed=244.02h left=475.98h mid=647.5050
+2026-04-22 18:30:44 - INFO - [OB Collector] progress 34.2% | rows=883047 buffer=10601 flush_files=0 parquet_parts_written=81 err=0 | elapsed=246.02h left=473.98h mid=645.6750
+[OB Collector] progress 34.2% | rows=883047 buffer=10601 flush_files=0 parquet_parts_written=81 err=0 | elapsed=246.02h left=473.98h mid=645.6750
+2026-04-22 18:33:43 - INFO - [OB Collector] Saved part 82 (10778 rows) → part_00081.parquet
+2026-04-22 20:30:44 - INFO - [OB Collector] progress 34.4% | rows=890228 buffer=7004 flush_files=0 parquet_parts_written=82 err=0 | elapsed=248.02h left=471.98h mid=642.1950
+[OB Collector] progress 34.4% | rows=890228 buffer=7004 flush_files=0 parquet_parts_written=82 err=0 | elapsed=248.02h left=471.98h mid=642.1950
+2026-04-22 21:33:46 - INFO - [OB Collector] Saved part 83 (10775 rows) → part_00082.parquet
+2026-04-22 22:30:45 - INFO - [OB Collector] progress 34.7% | rows=897413 buffer=3414 flush_files=0 parquet_parts_written=83 err=0 | elapsed=250.02h left=469.98h mid=640.7250
+[OB Collector] progress 34.7% | rows=897413 buffer=3414 flush_files=0 parquet_parts_written=83 err=0 | elapsed=250.02h left=469.98h mid=640.7250
+2026-04-23 00:30:46 - INFO - [OB Collector] progress 35.0% | rows=904600 buffer=10601 flush_files=0 parquet_parts_written=83 err=0 | elapsed=252.02h left=467.98h mid=638.6150
+[OB Collector] progress 35.0% | rows=904600 buffer=10601 flush_files=0 parquet_parts_written=83 err=0 | elapsed=252.02h left=467.98h mid=638.6150
+2026-04-23 00:33:48 - INFO - [OB Collector] Saved part 84 (10781 rows) → part_00083.parquet
+2026-04-23 02:30:46 - INFO - [OB Collector] progress 35.3% | rows=911787 buffer=7007 flush_files=0 parquet_parts_written=84 err=0 | elapsed=254.02h left=465.98h mid=636.1950
+[OB Collector] progress 35.3% | rows=911787 buffer=7007 flush_files=0 parquet_parts_written=84 err=0 | elapsed=254.02h left=465.98h mid=636.1950
+2026-04-23 03:33:50 - INFO - [OB Collector] Saved part 85 (10782 rows) → part_00084.parquet
+2026-04-23 04:30:47 - INFO - [OB Collector] progress 35.6% | rows=918974 buffer=3412 flush_files=0 parquet_parts_written=85 err=0 | elapsed=256.02h left=463.98h mid=636.1150
+[OB Collector] progress 35.6% | rows=918974 buffer=3412 flush_files=0 parquet_parts_written=85 err=0 | elapsed=256.02h left=463.98h mid=636.1150
+2026-04-23 06:30:48 - INFO - [OB Collector] progress 35.8% | rows=926158 buffer=10596 flush_files=0 parquet_parts_written=85 err=0 | elapsed=258.02h left=461.98h mid=637.8450
+[OB Collector] progress 35.8% | rows=926158 buffer=10596 flush_files=0 parquet_parts_written=85 err=0 | elapsed=258.02h left=461.98h mid=637.8450
+2026-04-23 06:33:54 - INFO - [OB Collector] Saved part 86 (10778 rows) → part_00085.parquet
+2026-04-23 08:30:49 - INFO - [OB Collector] progress 36.1% | rows=933340 buffer=7000 flush_files=0 parquet_parts_written=86 err=0 | elapsed=260.02h left=459.98h mid=635.6450
+[OB Collector] progress 36.1% | rows=933340 buffer=7000 flush_files=0 parquet_parts_written=86 err=0 | elapsed=260.02h left=459.98h mid=635.6450
+2026-04-23 09:33:57 - INFO - [OB Collector] Saved part 87 (10778 rows) → part_00086.parquet
+2026-04-23 10:30:50 - INFO - [OB Collector] progress 36.4% | rows=940525 buffer=3407 flush_files=0 parquet_parts_written=87 err=0 | elapsed=262.02h left=457.98h mid=631.7150
+[OB Collector] progress 36.4% | rows=940525 buffer=3407 flush_files=0 parquet_parts_written=87 err=0 | elapsed=262.02h left=457.98h mid=631.7150
+2026-04-23 12:30:51 - INFO - [OB Collector] progress 36.7% | rows=947711 buffer=10593 flush_files=0 parquet_parts_written=87 err=0 | elapsed=264.02h left=455.98h mid=634.2350
+[OB Collector] progress 36.7% | rows=947711 buffer=10593 flush_files=0 parquet_parts_written=87 err=0 | elapsed=264.02h left=455.98h mid=634.2350
+2026-04-23 12:34:00 - INFO - [OB Collector] Saved part 88 (10780 rows) → part_00087.parquet
+2026-04-23 14:30:51 - INFO - [OB Collector] progress 36.9% | rows=954895 buffer=6997 flush_files=0 parquet_parts_written=88 err=0 | elapsed=266.02h left=453.98h mid=636.0650
+[OB Collector] progress 36.9% | rows=954895 buffer=6997 flush_files=0 parquet_parts_written=88 err=0 | elapsed=266.02h left=453.98h mid=636.0650
+2026-04-23 15:34:03 - INFO - [OB Collector] Saved part 89 (10774 rows) → part_00088.parquet
+2026-04-23 16:30:52 - INFO - [OB Collector] progress 37.2% | rows=962076 buffer=3404 flush_files=0 parquet_parts_written=89 err=0 | elapsed=268.02h left=451.98h mid=639.5650
+[OB Collector] progress 37.2% | rows=962076 buffer=3404 flush_files=0 parquet_parts_written=89 err=0 | elapsed=268.02h left=451.98h mid=639.5650
+2026-04-23 18:30:52 - INFO - [OB Collector] progress 37.5% | rows=969262 buffer=10590 flush_files=0 parquet_parts_written=89 err=0 | elapsed=270.02h left=449.98h mid=635.4950
+[OB Collector] progress 37.5% | rows=969262 buffer=10590 flush_files=0 parquet_parts_written=89 err=0 | elapsed=270.02h left=449.98h mid=635.4950
+2026-04-23 18:34:06 - INFO - [OB Collector] Saved part 90 (10781 rows) → part_00089.parquet
+2026-04-23 20:30:53 - INFO - [OB Collector] progress 37.8% | rows=976448 buffer=6995 flush_files=0 parquet_parts_written=90 err=0 | elapsed=272.02h left=447.98h mid=636.2150
+[OB Collector] progress 37.8% | rows=976448 buffer=6995 flush_files=0 parquet_parts_written=90 err=0 | elapsed=272.02h left=447.98h mid=636.2150
+2026-04-23 21:34:08 - INFO - [OB Collector] Saved part 91 (10780 rows) → part_00090.parquet
+2026-04-23 22:30:53 - INFO - [OB Collector] progress 38.1% | rows=983632 buffer=3399 flush_files=0 parquet_parts_written=91 err=0 | elapsed=274.02h left=445.98h mid=639.4950
+[OB Collector] progress 38.1% | rows=983632 buffer=3399 flush_files=0 parquet_parts_written=91 err=0 | elapsed=274.02h left=445.98h mid=639.4950
+2026-04-24 00:30:54 - INFO - [OB Collector] progress 38.3% | rows=990817 buffer=10584 flush_files=0 parquet_parts_written=91 err=0 | elapsed=276.02h left=443.98h mid=640.1750
+[OB Collector] progress 38.3% | rows=990817 buffer=10584 flush_files=0 parquet_parts_written=91 err=0 | elapsed=276.02h left=443.98h mid=640.1750
+2026-04-24 00:34:11 - INFO - [OB Collector] Saved part 92 (10779 rows) → part_00091.parquet
+2026-04-24 02:30:54 - INFO - [OB Collector] progress 38.6% | rows=997999 buffer=6987 flush_files=0 parquet_parts_written=92 err=0 | elapsed=278.02h left=441.98h mid=637.8950
+[OB Collector] progress 38.6% | rows=997999 buffer=6987 flush_files=0 parquet_parts_written=92 err=0 | elapsed=278.02h left=441.98h mid=637.8950
+2026-04-24 03:34:14 - INFO - [OB Collector] Saved part 93 (10778 rows) → part_00092.parquet
+2026-04-24 04:30:54 - INFO - [OB Collector] progress 38.9% | rows=1005185 buffer=3395 flush_files=0 parquet_parts_written=93 err=0 | elapsed=280.02h left=439.98h mid=633.5450
+[OB Collector] progress 38.9% | rows=1005185 buffer=3395 flush_files=0 parquet_parts_written=93 err=0 | elapsed=280.02h left=439.98h mid=633.5450
+2026-04-24 06:30:55 - INFO - [OB Collector] progress 39.2% | rows=1012370 buffer=10580 flush_files=0 parquet_parts_written=93 err=0 | elapsed=282.02h left=437.98h mid=634.5150
+[OB Collector] progress 39.2% | rows=1012370 buffer=10580 flush_files=0 parquet_parts_written=93 err=0 | elapsed=282.02h left=437.98h mid=634.5150
+2026-04-24 06:34:17 - INFO - [OB Collector] Saved part 94 (10779 rows) → part_00093.parquet
+2026-04-24 08:30:56 - INFO - [OB Collector] progress 39.4% | rows=1019552 buffer=6983 flush_files=0 parquet_parts_written=94 err=0 | elapsed=284.02h left=435.98h mid=637.8750
+[OB Collector] progress 39.4% | rows=1019552 buffer=6983 flush_files=0 parquet_parts_written=94 err=0 | elapsed=284.02h left=435.98h mid=637.8750
+2026-04-24 09:34:19 - INFO - [OB Collector] Saved part 95 (10774 rows) → part_00094.parquet
+2026-04-24 10:30:57 - INFO - [OB Collector] progress 39.7% | rows=1026735 buffer=3392 flush_files=0 parquet_parts_written=95 err=0 | elapsed=286.02h left=433.98h mid=635.3050
+[OB Collector] progress 39.7% | rows=1026735 buffer=3392 flush_files=0 parquet_parts_written=95 err=0 | elapsed=286.02h left=433.98h mid=635.3050
+2026-04-24 12:30:57 - INFO - [OB Collector] progress 40.0% | rows=1033915 buffer=10572 flush_files=0 parquet_parts_written=95 err=0 | elapsed=288.02h left=431.98h mid=638.2050
+[OB Collector] progress 40.0% | rows=1033915 buffer=10572 flush_files=0 parquet_parts_written=95 err=0 | elapsed=288.02h left=431.98h mid=638.2050
+2026-04-24 12:34:22 - INFO - [OB Collector] Saved part 96 (10774 rows) → part_00095.parquet
+2026-04-24 14:30:58 - INFO - [OB Collector] progress 40.3% | rows=1041098 buffer=6981 flush_files=0 parquet_parts_written=96 err=0 | elapsed=290.02h left=429.98h mid=636.7650
+[OB Collector] progress 40.3% | rows=1041098 buffer=6981 flush_files=0 parquet_parts_written=96 err=0 | elapsed=290.02h left=429.98h mid=636.7650
+2026-04-24 15:34:26 - INFO - [OB Collector] Saved part 97 (10779 rows) → part_00096.parquet
+2026-04-24 16:30:58 - INFO - [OB Collector] progress 40.6% | rows=1048283 buffer=3387 flush_files=0 parquet_parts_written=97 err=0 | elapsed=292.02h left=427.98h mid=638.3950
+[OB Collector] progress 40.6% | rows=1048283 buffer=3387 flush_files=0 parquet_parts_written=97 err=0 | elapsed=292.02h left=427.98h mid=638.3950
+2026-04-24 18:30:59 - INFO - [OB Collector] progress 40.8% | rows=1055471 buffer=10575 flush_files=0 parquet_parts_written=97 err=0 | elapsed=294.02h left=425.98h mid=637.0850
+[OB Collector] progress 40.8% | rows=1055471 buffer=10575 flush_files=0 parquet_parts_written=97 err=0 | elapsed=294.02h left=425.98h mid=637.0850
+2026-04-24 18:34:29 - INFO - [OB Collector] Saved part 98 (10782 rows) → part_00097.parquet
+2026-04-24 20:30:59 - INFO - [OB Collector] progress 41.1% | rows=1062654 buffer=6976 flush_files=0 parquet_parts_written=98 err=0 | elapsed=296.02h left=423.98h mid=637.2250
+[OB Collector] progress 41.1% | rows=1062654 buffer=6976 flush_files=0 parquet_parts_written=98 err=0 | elapsed=296.02h left=423.98h mid=637.2250
+2026-04-24 21:34:32 - INFO - [OB Collector] Saved part 99 (10779 rows) → part_00098.parquet
+2026-04-24 22:00:21 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-24 22:31:00 - INFO - [OB Collector] progress 41.4% | rows=1069829 buffer=3372 flush_files=0 parquet_parts_written=99 err=0 | elapsed=298.02h left=421.98h mid=637.3050
+[OB Collector] progress 41.4% | rows=1069829 buffer=3372 flush_files=0 parquet_parts_written=99 err=0 | elapsed=298.02h left=421.98h mid=637.3050
+2026-04-25 00:31:01 - INFO - [OB Collector] progress 41.7% | rows=1077013 buffer=10556 flush_files=0 parquet_parts_written=99 err=0 | elapsed=300.02h left=419.98h mid=635.9950
+[OB Collector] progress 41.7% | rows=1077013 buffer=10556 flush_files=0 parquet_parts_written=99 err=0 | elapsed=300.02h left=419.98h mid=635.9950
+2026-04-25 00:34:34 - INFO - [OB Collector] Saved part 100 (10767 rows) → part_00099.parquet
+2026-04-25 02:31:02 - INFO - [OB Collector] progress 41.9% | rows=1084198 buffer=6974 flush_files=0 parquet_parts_written=100 err=0 | elapsed=302.02h left=417.98h mid=637.7750
+[OB Collector] progress 41.9% | rows=1084198 buffer=6974 flush_files=0 parquet_parts_written=100 err=0 | elapsed=302.02h left=417.98h mid=637.7750
+2026-04-25 03:34:37 - INFO - [OB Collector] Saved part 101 (10779 rows) → part_00100.parquet
+2026-04-25 04:31:02 - INFO - [OB Collector] progress 42.2% | rows=1091382 buffer=3379 flush_files=0 parquet_parts_written=101 err=0 | elapsed=304.02h left=415.98h mid=637.5050
+[OB Collector] progress 42.2% | rows=1091382 buffer=3379 flush_files=0 parquet_parts_written=101 err=0 | elapsed=304.02h left=415.98h mid=637.5050
+2026-04-25 06:31:03 - INFO - [OB Collector] progress 42.5% | rows=1098566 buffer=10563 flush_files=0 parquet_parts_written=101 err=0 | elapsed=306.02h left=413.98h mid=637.1950
+[OB Collector] progress 42.5% | rows=1098566 buffer=10563 flush_files=0 parquet_parts_written=101 err=0 | elapsed=306.02h left=413.98h mid=637.1950
+2026-04-25 06:34:40 - INFO - [OB Collector] Saved part 102 (10778 rows) → part_00101.parquet
+2026-04-25 08:31:03 - INFO - [OB Collector] progress 42.8% | rows=1105752 buffer=6971 flush_files=0 parquet_parts_written=102 err=0 | elapsed=308.02h left=411.98h mid=638.4650
+[OB Collector] progress 42.8% | rows=1105752 buffer=6971 flush_files=0 parquet_parts_written=102 err=0 | elapsed=308.02h left=411.98h mid=638.4650
+2026-04-25 09:34:43 - INFO - [OB Collector] Saved part 103 (10780 rows) → part_00102.parquet
+2026-04-25 10:31:04 - INFO - [OB Collector] progress 43.1% | rows=1112936 buffer=3375 flush_files=0 parquet_parts_written=103 err=0 | elapsed=310.02h left=409.98h mid=638.2850
+[OB Collector] progress 43.1% | rows=1112936 buffer=3375 flush_files=0 parquet_parts_written=103 err=0 | elapsed=310.02h left=409.98h mid=638.2850
+2026-04-25 12:31:04 - INFO - [OB Collector] progress 43.3% | rows=1120119 buffer=10558 flush_files=0 parquet_parts_written=103 err=0 | elapsed=312.02h left=407.98h mid=634.6650
+[OB Collector] progress 43.3% | rows=1120119 buffer=10558 flush_files=0 parquet_parts_written=103 err=0 | elapsed=312.02h left=407.98h mid=634.6650
+2026-04-25 12:34:45 - INFO - [OB Collector] Saved part 104 (10777 rows) → part_00103.parquet
+2026-04-25 14:31:04 - INFO - [OB Collector] progress 43.6% | rows=1127303 buffer=6965 flush_files=0 parquet_parts_written=104 err=0 | elapsed=314.02h left=405.98h mid=632.7150
+[OB Collector] progress 43.6% | rows=1127303 buffer=6965 flush_files=0 parquet_parts_written=104 err=0 | elapsed=314.02h left=405.98h mid=632.7150
+2026-04-25 15:34:49 - INFO - [OB Collector] Saved part 105 (10777 rows) → part_00104.parquet
+2026-04-25 16:31:05 - INFO - [OB Collector] progress 43.9% | rows=1134486 buffer=3371 flush_files=0 parquet_parts_written=105 err=0 | elapsed=316.02h left=403.98h mid=630.1750
+[OB Collector] progress 43.9% | rows=1134486 buffer=3371 flush_files=0 parquet_parts_written=105 err=0 | elapsed=316.02h left=403.98h mid=630.1750
+2026-04-25 18:31:05 - INFO - [OB Collector] progress 44.2% | rows=1141673 buffer=10558 flush_files=0 parquet_parts_written=105 err=0 | elapsed=318.02h left=401.98h mid=628.9550
+[OB Collector] progress 44.2% | rows=1141673 buffer=10558 flush_files=0 parquet_parts_written=105 err=0 | elapsed=318.02h left=401.98h mid=628.9550
+2026-04-25 18:34:51 - INFO - [OB Collector] Saved part 106 (10782 rows) → part_00105.parquet
+2026-04-25 20:31:05 - INFO - [OB Collector] progress 44.4% | rows=1148858 buffer=6961 flush_files=0 parquet_parts_written=106 err=0 | elapsed=320.02h left=399.98h mid=629.4350
+[OB Collector] progress 44.4% | rows=1148858 buffer=6961 flush_files=0 parquet_parts_written=106 err=0 | elapsed=320.02h left=399.98h mid=629.4350
+2026-04-25 21:34:54 - INFO - [OB Collector] Saved part 107 (10780 rows) → part_00106.parquet
+2026-04-25 22:31:06 - INFO - [OB Collector] progress 44.7% | rows=1156043 buffer=3366 flush_files=0 parquet_parts_written=107 err=0 | elapsed=322.02h left=397.98h mid=630.3950
+[OB Collector] progress 44.7% | rows=1156043 buffer=3366 flush_files=0 parquet_parts_written=107 err=0 | elapsed=322.02h left=397.98h mid=630.3950
+2026-04-26 00:31:06 - INFO - [OB Collector] progress 45.0% | rows=1163222 buffer=10545 flush_files=0 parquet_parts_written=107 err=0 | elapsed=324.02h left=395.98h mid=627.9950
+[OB Collector] progress 45.0% | rows=1163222 buffer=10545 flush_files=0 parquet_parts_written=107 err=0 | elapsed=324.02h left=395.98h mid=627.9950
+2026-04-26 00:34:57 - INFO - [OB Collector] Saved part 108 (10773 rows) → part_00107.parquet
+2026-04-26 02:31:07 - INFO - [OB Collector] progress 45.3% | rows=1170407 buffer=6957 flush_files=0 parquet_parts_written=108 err=0 | elapsed=326.02h left=393.98h mid=629.8550
+[OB Collector] progress 45.3% | rows=1170407 buffer=6957 flush_files=0 parquet_parts_written=108 err=0 | elapsed=326.02h left=393.98h mid=629.8550
+2026-04-26 03:35:00 - INFO - [OB Collector] Saved part 109 (10781 rows) → part_00108.parquet
+2026-04-26 04:31:08 - INFO - [OB Collector] progress 45.6% | rows=1177593 buffer=3362 flush_files=0 parquet_parts_written=109 err=0 | elapsed=328.02h left=391.98h mid=628.6550
+[OB Collector] progress 45.6% | rows=1177593 buffer=3362 flush_files=0 parquet_parts_written=109 err=0 | elapsed=328.02h left=391.98h mid=628.6550
+2026-04-26 06:31:08 - INFO - [OB Collector] progress 45.8% | rows=1184781 buffer=10550 flush_files=0 parquet_parts_written=109 err=0 | elapsed=330.02h left=389.98h mid=632.1750
+[OB Collector] progress 45.8% | rows=1184781 buffer=10550 flush_files=0 parquet_parts_written=109 err=0 | elapsed=330.02h left=389.98h mid=632.1750
+2026-04-26 06:35:03 - INFO - [OB Collector] Saved part 110 (10782 rows) → part_00109.parquet
+2026-04-26 08:31:09 - INFO - [OB Collector] progress 46.1% | rows=1191967 buffer=6954 flush_files=0 parquet_parts_written=110 err=0 | elapsed=332.03h left=387.97h mid=631.2250
+[OB Collector] progress 46.1% | rows=1191967 buffer=6954 flush_files=0 parquet_parts_written=110 err=0 | elapsed=332.03h left=387.97h mid=631.2250
+2026-04-26 09:35:05 - INFO - [OB Collector] Saved part 111 (10781 rows) → part_00110.parquet
+2026-04-26 10:31:09 - INFO - [OB Collector] progress 46.4% | rows=1199153 buffer=3359 flush_files=0 parquet_parts_written=111 err=0 | elapsed=334.03h left=385.97h mid=631.9450
+[OB Collector] progress 46.4% | rows=1199153 buffer=3359 flush_files=0 parquet_parts_written=111 err=0 | elapsed=334.03h left=385.97h mid=631.9450
+2026-04-26 12:31:10 - INFO - [OB Collector] progress 46.7% | rows=1206336 buffer=10542 flush_files=0 parquet_parts_written=111 err=0 | elapsed=336.03h left=383.97h mid=631.4250
+[OB Collector] progress 46.7% | rows=1206336 buffer=10542 flush_files=0 parquet_parts_written=111 err=0 | elapsed=336.03h left=383.97h mid=631.4250
+2026-04-26 12:35:09 - INFO - [OB Collector] Saved part 112 (10778 rows) → part_00111.parquet
+2026-04-26 14:31:10 - INFO - [OB Collector] progress 46.9% | rows=1213520 buffer=6948 flush_files=0 parquet_parts_written=112 err=0 | elapsed=338.03h left=381.97h mid=632.3250
+[OB Collector] progress 46.9% | rows=1213520 buffer=6948 flush_files=0 parquet_parts_written=112 err=0 | elapsed=338.03h left=381.97h mid=632.3250
+2026-04-26 15:35:11 - INFO - [OB Collector] Saved part 113 (10779 rows) → part_00112.parquet
+2026-04-26 16:31:11 - INFO - [OB Collector] progress 47.2% | rows=1220705 buffer=3354 flush_files=0 parquet_parts_written=113 err=0 | elapsed=340.03h left=379.97h mid=632.0550
+[OB Collector] progress 47.2% | rows=1220705 buffer=3354 flush_files=0 parquet_parts_written=113 err=0 | elapsed=340.03h left=379.97h mid=632.0550
+2026-04-26 18:31:11 - INFO - [OB Collector] progress 47.5% | rows=1227882 buffer=10531 flush_files=0 parquet_parts_written=113 err=0 | elapsed=342.03h left=377.97h mid=633.6150
+[OB Collector] progress 47.5% | rows=1227882 buffer=10531 flush_files=0 parquet_parts_written=113 err=0 | elapsed=342.03h left=377.97h mid=633.6150
+2026-04-26 18:35:14 - INFO - [OB Collector] Saved part 114 (10771 rows) → part_00113.parquet
+2026-04-26 20:31:12 - INFO - [OB Collector] progress 47.8% | rows=1235068 buffer=6946 flush_files=0 parquet_parts_written=114 err=0 | elapsed=344.03h left=375.97h mid=636.0850
+[OB Collector] progress 47.8% | rows=1235068 buffer=6946 flush_files=0 parquet_parts_written=114 err=0 | elapsed=344.03h left=375.97h mid=636.0850
+2026-04-26 21:35:17 - INFO - [OB Collector] Saved part 115 (10780 rows) → part_00114.parquet
+2026-04-26 22:31:12 - INFO - [OB Collector] progress 48.1% | rows=1242250 buffer=3348 flush_files=0 parquet_parts_written=115 err=0 | elapsed=346.03h left=373.97h mid=635.4450
+[OB Collector] progress 48.1% | rows=1242250 buffer=3348 flush_files=0 parquet_parts_written=115 err=0 | elapsed=346.03h left=373.97h mid=635.4450
+2026-04-27 00:31:13 - INFO - [OB Collector] progress 48.3% | rows=1249435 buffer=10533 flush_files=0 parquet_parts_written=115 err=0 | elapsed=348.03h left=371.97h mid=634.5350
+[OB Collector] progress 48.3% | rows=1249435 buffer=10533 flush_files=0 parquet_parts_written=115 err=0 | elapsed=348.03h left=371.97h mid=634.5350
+2026-04-27 00:35:20 - INFO - [OB Collector] Saved part 116 (10778 rows) → part_00115.parquet
+2026-04-27 02:13:57 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-27 02:31:13 - INFO - [OB Collector] progress 48.6% | rows=1256594 buffer=6914 flush_files=0 parquet_parts_written=116 err=0 | elapsed=350.03h left=369.97h mid=639.3250
+[OB Collector] progress 48.6% | rows=1256594 buffer=6914 flush_files=0 parquet_parts_written=116 err=0 | elapsed=350.03h left=369.97h mid=639.3250
+2026-04-27 03:35:23 - INFO - [OB Collector] Saved part 117 (10755 rows) → part_00116.parquet
+2026-04-27 04:31:14 - INFO - [OB Collector] progress 48.9% | rows=1263780 buffer=3345 flush_files=0 parquet_parts_written=117 err=0 | elapsed=352.03h left=367.97h mid=638.3450
+[OB Collector] progress 48.9% | rows=1263780 buffer=3345 flush_files=0 parquet_parts_written=117 err=0 | elapsed=352.03h left=367.97h mid=638.3450
+2026-04-27 06:31:14 - INFO - [OB Collector] progress 49.2% | rows=1270965 buffer=10530 flush_files=0 parquet_parts_written=117 err=0 | elapsed=354.03h left=365.97h mid=627.8850
+[OB Collector] progress 49.2% | rows=1270965 buffer=10530 flush_files=0 parquet_parts_written=117 err=0 | elapsed=354.03h left=365.97h mid=627.8850
+2026-04-27 06:35:27 - INFO - [OB Collector] Saved part 118 (10780 rows) → part_00117.parquet
+2026-04-27 08:31:14 - INFO - [OB Collector] progress 49.4% | rows=1278148 buffer=6933 flush_files=0 parquet_parts_written=118 err=0 | elapsed=356.03h left=363.97h mid=626.4550
+[OB Collector] progress 49.4% | rows=1278148 buffer=6933 flush_files=0 parquet_parts_written=118 err=0 | elapsed=356.03h left=363.97h mid=626.4550
+2026-04-27 09:35:30 - INFO - [OB Collector] Saved part 119 (10778 rows) → part_00118.parquet
+2026-04-27 10:31:15 - INFO - [OB Collector] progress 49.7% | rows=1285333 buffer=3340 flush_files=0 parquet_parts_written=119 err=0 | elapsed=358.03h left=361.97h mid=628.2650
+[OB Collector] progress 49.7% | rows=1285333 buffer=3340 flush_files=0 parquet_parts_written=119 err=0 | elapsed=358.03h left=361.97h mid=628.2650
+2026-04-27 12:31:16 - INFO - [OB Collector] progress 50.0% | rows=1292520 buffer=10527 flush_files=0 parquet_parts_written=119 err=0 | elapsed=360.03h left=359.97h mid=626.4250
+[OB Collector] progress 50.0% | rows=1292520 buffer=10527 flush_files=0 parquet_parts_written=119 err=0 | elapsed=360.03h left=359.97h mid=626.4250
+2026-04-27 12:35:32 - INFO - [OB Collector] Saved part 120 (10781 rows) → part_00119.parquet
+2026-04-27 14:31:16 - INFO - [OB Collector] progress 50.3% | rows=1299699 buffer=6925 flush_files=0 parquet_parts_written=120 err=0 | elapsed=362.03h left=357.97h mid=626.2450
+[OB Collector] progress 50.3% | rows=1299699 buffer=6925 flush_files=0 parquet_parts_written=120 err=0 | elapsed=362.03h left=357.97h mid=626.2450
+2026-04-27 15:35:36 - INFO - [OB Collector] Saved part 121 (10774 rows) → part_00120.parquet
+2026-04-27 16:31:16 - INFO - [OB Collector] progress 50.6% | rows=1306883 buffer=3335 flush_files=0 parquet_parts_written=121 err=0 | elapsed=364.03h left=355.97h mid=621.8450
+[OB Collector] progress 50.6% | rows=1306883 buffer=3335 flush_files=0 parquet_parts_written=121 err=0 | elapsed=364.03h left=355.97h mid=621.8450
+2026-04-27 18:31:17 - INFO - [OB Collector] progress 50.8% | rows=1314070 buffer=10522 flush_files=0 parquet_parts_written=121 err=0 | elapsed=366.03h left=353.97h mid=623.0250
+[OB Collector] progress 50.8% | rows=1314070 buffer=10522 flush_files=0 parquet_parts_written=121 err=0 | elapsed=366.03h left=353.97h mid=623.0250
+2026-04-27 18:35:39 - INFO - [OB Collector] Saved part 122 (10781 rows) → part_00121.parquet
+2026-04-27 20:31:17 - INFO - [OB Collector] progress 51.1% | rows=1321237 buffer=6908 flush_files=0 parquet_parts_written=122 err=0 | elapsed=368.03h left=351.97h mid=624.2750
+[OB Collector] progress 51.1% | rows=1321237 buffer=6908 flush_files=0 parquet_parts_written=122 err=0 | elapsed=368.03h left=351.97h mid=624.2750
+2026-04-27 21:35:42 - INFO - [OB Collector] Saved part 123 (10764 rows) → part_00122.parquet
+2026-04-27 22:31:18 - INFO - [OB Collector] progress 51.4% | rows=1328423 buffer=3330 flush_files=0 parquet_parts_written=123 err=0 | elapsed=370.03h left=349.97h mid=625.1750
+[OB Collector] progress 51.4% | rows=1328423 buffer=3330 flush_files=0 parquet_parts_written=123 err=0 | elapsed=370.03h left=349.97h mid=625.1750
+2026-04-28 00:31:18 - INFO - [OB Collector] progress 51.7% | rows=1335611 buffer=10518 flush_files=0 parquet_parts_written=123 err=0 | elapsed=372.03h left=347.97h mid=626.5550
+[OB Collector] progress 51.7% | rows=1335611 buffer=10518 flush_files=0 parquet_parts_written=123 err=0 | elapsed=372.03h left=347.97h mid=626.5550
+2026-04-28 00:35:45 - INFO - [OB Collector] Saved part 124 (10782 rows) → part_00123.parquet
+2026-04-28 02:31:19 - INFO - [OB Collector] progress 51.9% | rows=1342789 buffer=6914 flush_files=0 parquet_parts_written=124 err=0 | elapsed=374.03h left=345.97h mid=625.3450
+[OB Collector] progress 51.9% | rows=1342789 buffer=6914 flush_files=0 parquet_parts_written=124 err=0 | elapsed=374.03h left=345.97h mid=625.3450
+2026-04-28 03:35:48 - INFO - [OB Collector] Saved part 125 (10772 rows) → part_00124.parquet
+2026-04-28 04:31:19 - INFO - [OB Collector] progress 52.2% | rows=1349970 buffer=3323 flush_files=0 parquet_parts_written=125 err=0 | elapsed=376.03h left=343.97h mid=624.6250
+[OB Collector] progress 52.2% | rows=1349970 buffer=3323 flush_files=0 parquet_parts_written=125 err=0 | elapsed=376.03h left=343.97h mid=624.6250
+2026-04-28 06:31:19 - INFO - [OB Collector] progress 52.5% | rows=1357154 buffer=10507 flush_files=0 parquet_parts_written=125 err=0 | elapsed=378.03h left=341.97h mid=626.1450
+[OB Collector] progress 52.5% | rows=1357154 buffer=10507 flush_files=0 parquet_parts_written=125 err=0 | elapsed=378.03h left=341.97h mid=626.1450
+2026-04-28 06:35:51 - INFO - [OB Collector] Saved part 126 (10776 rows) → part_00125.parquet
+2026-04-28 08:31:20 - INFO - [OB Collector] progress 52.8% | rows=1364336 buffer=6913 flush_files=0 parquet_parts_written=126 err=0 | elapsed=380.03h left=339.97h mid=625.7050
+[OB Collector] progress 52.8% | rows=1364336 buffer=6913 flush_files=0 parquet_parts_written=126 err=0 | elapsed=380.03h left=339.97h mid=625.7050
+2026-04-28 09:35:55 - INFO - [OB Collector] Saved part 127 (10775 rows) → part_00126.parquet
+2026-04-28 10:31:21 - INFO - [OB Collector] progress 53.1% | rows=1371519 buffer=3321 flush_files=0 parquet_parts_written=127 err=0 | elapsed=382.03h left=337.97h mid=623.4150
+[OB Collector] progress 53.1% | rows=1371519 buffer=3321 flush_files=0 parquet_parts_written=127 err=0 | elapsed=382.03h left=337.97h mid=623.4150
+2026-04-28 12:31:21 - INFO - [OB Collector] progress 53.3% | rows=1378704 buffer=10506 flush_files=0 parquet_parts_written=127 err=0 | elapsed=384.03h left=335.97h mid=621.4850
+[OB Collector] progress 53.3% | rows=1378704 buffer=10506 flush_files=0 parquet_parts_written=127 err=0 | elapsed=384.03h left=335.97h mid=621.4850
+2026-04-28 12:35:59 - INFO - [OB Collector] Saved part 128 (10780 rows) → part_00127.parquet
+2026-04-28 14:31:22 - INFO - [OB Collector] progress 53.6% | rows=1385888 buffer=6910 flush_files=0 parquet_parts_written=128 err=0 | elapsed=386.03h left=333.97h mid=620.8150
+[OB Collector] progress 53.6% | rows=1385888 buffer=6910 flush_files=0 parquet_parts_written=128 err=0 | elapsed=386.03h left=333.97h mid=620.8150
+2026-04-28 15:36:02 - INFO - [OB Collector] Saved part 129 (10779 rows) → part_00128.parquet
+2026-04-28 16:31:23 - INFO - [OB Collector] progress 53.9% | rows=1393072 buffer=3315 flush_files=0 parquet_parts_written=129 err=0 | elapsed=388.03h left=331.97h mid=622.7050
+[OB Collector] progress 53.9% | rows=1393072 buffer=3315 flush_files=0 parquet_parts_written=129 err=0 | elapsed=388.03h left=331.97h mid=622.7050
+2026-04-28 18:31:23 - INFO - [OB Collector] progress 54.2% | rows=1400258 buffer=10501 flush_files=0 parquet_parts_written=129 err=0 | elapsed=390.03h left=329.97h mid=624.3150
+[OB Collector] progress 54.2% | rows=1400258 buffer=10501 flush_files=0 parquet_parts_written=129 err=0 | elapsed=390.03h left=329.97h mid=624.3150
+2026-04-28 18:36:05 - INFO - [OB Collector] Saved part 130 (10780 rows) → part_00129.parquet
+2026-04-28 20:31:23 - INFO - [OB Collector] progress 54.4% | rows=1407443 buffer=6906 flush_files=0 parquet_parts_written=130 err=0 | elapsed=392.03h left=327.97h mid=624.2750
+[OB Collector] progress 54.4% | rows=1407443 buffer=6906 flush_files=0 parquet_parts_written=130 err=0 | elapsed=392.03h left=327.97h mid=624.2750
+2026-04-28 21:36:07 - INFO - [OB Collector] Saved part 131 (10781 rows) → part_00130.parquet
+2026-04-28 22:31:23 - INFO - [OB Collector] progress 54.7% | rows=1414628 buffer=3310 flush_files=0 parquet_parts_written=131 err=0 | elapsed=394.03h left=325.97h mid=624.0150
+[OB Collector] progress 54.7% | rows=1414628 buffer=3310 flush_files=0 parquet_parts_written=131 err=0 | elapsed=394.03h left=325.97h mid=624.0150
+2026-04-29 00:31:24 - INFO - [OB Collector] progress 55.0% | rows=1421815 buffer=10497 flush_files=0 parquet_parts_written=131 err=0 | elapsed=396.03h left=323.97h mid=624.3250
+[OB Collector] progress 55.0% | rows=1421815 buffer=10497 flush_files=0 parquet_parts_written=131 err=0 | elapsed=396.03h left=323.97h mid=624.3250
+2026-04-29 00:36:10 - INFO - [OB Collector] Saved part 132 (10780 rows) → part_00131.parquet
+2026-04-29 02:31:25 - INFO - [OB Collector] progress 55.3% | rows=1428995 buffer=6897 flush_files=0 parquet_parts_written=132 err=0 | elapsed=398.03h left=321.97h mid=623.9750
+[OB Collector] progress 55.3% | rows=1428995 buffer=6897 flush_files=0 parquet_parts_written=132 err=0 | elapsed=398.03h left=321.97h mid=623.9750
+2026-04-29 03:36:13 - INFO - [OB Collector] Saved part 133 (10776 rows) → part_00132.parquet
+2026-04-29 04:31:25 - INFO - [OB Collector] progress 55.6% | rows=1436177 buffer=3303 flush_files=0 parquet_parts_written=133 err=0 | elapsed=400.03h left=319.97h mid=626.0050
+[OB Collector] progress 55.6% | rows=1436177 buffer=3303 flush_files=0 parquet_parts_written=133 err=0 | elapsed=400.03h left=319.97h mid=626.0050
+2026-04-29 06:31:26 - INFO - [OB Collector] progress 55.8% | rows=1443365 buffer=10491 flush_files=0 parquet_parts_written=133 err=0 | elapsed=402.03h left=317.97h mid=626.9050
+[OB Collector] progress 55.8% | rows=1443365 buffer=10491 flush_files=0 parquet_parts_written=133 err=0 | elapsed=402.03h left=317.97h mid=626.9050
+2026-04-29 06:36:16 - INFO - [OB Collector] Saved part 134 (10778 rows) → part_00133.parquet
+2026-04-29 08:31:26 - INFO - [OB Collector] progress 56.1% | rows=1450542 buffer=6890 flush_files=0 parquet_parts_written=134 err=0 | elapsed=404.03h left=315.97h mid=625.5050
+[OB Collector] progress 56.1% | rows=1450542 buffer=6890 flush_files=0 parquet_parts_written=134 err=0 | elapsed=404.03h left=315.97h mid=625.5050
+2026-04-29 09:36:20 - INFO - [OB Collector] Saved part 135 (10773 rows) → part_00134.parquet
+2026-04-29 10:31:26 - INFO - [OB Collector] progress 56.4% | rows=1457725 buffer=3300 flush_files=0 parquet_parts_written=135 err=0 | elapsed=406.03h left=313.97h mid=629.3950
+[OB Collector] progress 56.4% | rows=1457725 buffer=3300 flush_files=0 parquet_parts_written=135 err=0 | elapsed=406.03h left=313.97h mid=629.3950
+2026-04-29 12:31:26 - INFO - [OB Collector] progress 56.7% | rows=1464910 buffer=10485 flush_files=0 parquet_parts_written=135 err=0 | elapsed=408.03h left=311.97h mid=622.8950
+[OB Collector] progress 56.7% | rows=1464910 buffer=10485 flush_files=0 parquet_parts_written=135 err=0 | elapsed=408.03h left=311.97h mid=622.8950
+2026-04-29 12:36:23 - INFO - [OB Collector] Saved part 136 (10779 rows) → part_00135.parquet
+2026-04-29 14:31:27 - INFO - [OB Collector] progress 56.9% | rows=1472096 buffer=6892 flush_files=0 parquet_parts_written=136 err=0 | elapsed=410.03h left=309.97h mid=621.9450
+[OB Collector] progress 56.9% | rows=1472096 buffer=6892 flush_files=0 parquet_parts_written=136 err=0 | elapsed=410.03h left=309.97h mid=621.9450
+2026-04-29 15:32:25 - WARNING - [OB Collector] Trades fetch failed: 
+2026-04-29 15:36:27 - INFO - [OB Collector] Saved part 137 (10772 rows) → part_00136.parquet
+2026-04-29 16:31:28 - INFO - [OB Collector] progress 57.2% | rows=1479269 buffer=3293 flush_files=0 parquet_parts_written=137 err=0 | elapsed=412.03h left=307.97h mid=617.4850
+[OB Collector] progress 57.2% | rows=1479269 buffer=3293 flush_files=0 parquet_parts_written=137 err=0 | elapsed=412.03h left=307.97h mid=617.4850
+2026-04-29 18:31:28 - INFO - [OB Collector] progress 57.5% | rows=1486455 buffer=10479 flush_files=0 parquet_parts_written=137 err=0 | elapsed=414.03h left=305.97h mid=611.0650
+[OB Collector] progress 57.5% | rows=1486455 buffer=10479 flush_files=0 parquet_parts_written=137 err=0 | elapsed=414.03h left=305.97h mid=611.0650
+2026-04-29 18:36:29 - INFO - [OB Collector] Saved part 138 (10777 rows) → part_00137.parquet
+2026-04-29 20:31:29 - INFO - [OB Collector] progress 57.8% | rows=1493640 buffer=6887 flush_files=0 parquet_parts_written=138 err=0 | elapsed=416.03h left=303.97h mid=615.4350
+[OB Collector] progress 57.8% | rows=1493640 buffer=6887 flush_files=0 parquet_parts_written=138 err=0 | elapsed=416.03h left=303.97h mid=615.4350
+2026-04-29 21:36:32 - INFO - [OB Collector] Saved part 139 (10780 rows) → part_00138.parquet
+2026-04-29 22:31:30 - INFO - [OB Collector] progress 58.1% | rows=1500824 buffer=3291 flush_files=0 parquet_parts_written=139 err=0 | elapsed=418.03h left=301.97h mid=617.6550
+[OB Collector] progress 58.1% | rows=1500824 buffer=3291 flush_files=0 parquet_parts_written=139 err=0 | elapsed=418.03h left=301.97h mid=617.6550
+2026-04-30 00:31:31 - INFO - [OB Collector] progress 58.3% | rows=1508012 buffer=10479 flush_files=0 parquet_parts_written=139 err=0 | elapsed=420.03h left=299.97h mid=618.6250
+[OB Collector] progress 58.3% | rows=1508012 buffer=10479 flush_files=0 parquet_parts_written=139 err=0 | elapsed=420.03h left=299.97h mid=618.6250
+2026-04-30 00:36:35 - INFO - [OB Collector] Saved part 140 (10781 rows) → part_00139.parquet
+2026-04-30 02:31:31 - INFO - [OB Collector] progress 58.6% | rows=1515198 buffer=6884 flush_files=0 parquet_parts_written=140 err=0 | elapsed=422.03h left=297.97h mid=617.5750
+[OB Collector] progress 58.6% | rows=1515198 buffer=6884 flush_files=0 parquet_parts_written=140 err=0 | elapsed=422.03h left=297.97h mid=617.5750
+2026-04-30 03:36:38 - INFO - [OB Collector] Saved part 141 (10779 rows) → part_00140.parquet
+2026-04-30 04:31:32 - INFO - [OB Collector] progress 58.9% | rows=1522379 buffer=3286 flush_files=0 parquet_parts_written=141 err=0 | elapsed=424.03h left=295.97h mid=615.8750
+[OB Collector] progress 58.9% | rows=1522379 buffer=3286 flush_files=0 parquet_parts_written=141 err=0 | elapsed=424.03h left=295.97h mid=615.8750
+2026-04-30 06:31:32 - INFO - [OB Collector] progress 59.2% | rows=1529565 buffer=10472 flush_files=0 parquet_parts_written=141 err=0 | elapsed=426.03h left=293.97h mid=616.4150
+[OB Collector] progress 59.2% | rows=1529565 buffer=10472 flush_files=0 parquet_parts_written=141 err=0 | elapsed=426.03h left=293.97h mid=616.4150
+2026-04-30 06:36:40 - INFO - [OB Collector] Saved part 142 (10777 rows) → part_00141.parquet
+2026-04-30 08:31:33 - INFO - [OB Collector] progress 59.4% | rows=1536751 buffer=6881 flush_files=0 parquet_parts_written=142 err=0 | elapsed=428.03h left=291.97h mid=617.3450
+[OB Collector] progress 59.4% | rows=1536751 buffer=6881 flush_files=0 parquet_parts_written=142 err=0 | elapsed=428.03h left=291.97h mid=617.3450
+2026-04-30 09:36:42 - INFO - [OB Collector] Saved part 143 (10781 rows) → part_00142.parquet
+2026-04-30 10:31:34 - INFO - [OB Collector] progress 59.7% | rows=1543937 buffer=3286 flush_files=0 parquet_parts_written=143 err=0 | elapsed=430.03h left=289.97h mid=616.3750
+[OB Collector] progress 59.7% | rows=1543937 buffer=3286 flush_files=0 parquet_parts_written=143 err=0 | elapsed=430.03h left=289.97h mid=616.3750
+2026-04-30 12:31:34 - INFO - [OB Collector] progress 60.0% | rows=1551123 buffer=10472 flush_files=0 parquet_parts_written=143 err=0 | elapsed=432.03h left=287.97h mid=616.7250
+[OB Collector] progress 60.0% | rows=1551123 buffer=10472 flush_files=0 parquet_parts_written=143 err=0 | elapsed=432.03h left=287.97h mid=616.7250
+2026-04-30 12:36:46 - INFO - [OB Collector] Saved part 144 (10781 rows) → part_00143.parquet
+2026-04-30 14:31:34 - INFO - [OB Collector] progress 60.3% | rows=1558309 buffer=6877 flush_files=0 parquet_parts_written=144 err=0 | elapsed=434.03h left=285.97h mid=616.1150
+[OB Collector] progress 60.3% | rows=1558309 buffer=6877 flush_files=0 parquet_parts_written=144 err=0 | elapsed=434.03h left=285.97h mid=616.1150
+2026-04-30 15:36:49 - INFO - [OB Collector] Saved part 145 (10782 rows) → part_00144.parquet
+2026-04-30 16:31:35 - INFO - [OB Collector] progress 60.6% | rows=1565490 buffer=3276 flush_files=0 parquet_parts_written=145 err=0 | elapsed=436.03h left=283.97h mid=616.9650
+[OB Collector] progress 60.6% | rows=1565490 buffer=3276 flush_files=0 parquet_parts_written=145 err=0 | elapsed=436.03h left=283.97h mid=616.9650
+2026-04-30 18:31:35 - INFO - [OB Collector] progress 60.8% | rows=1572674 buffer=10460 flush_files=0 parquet_parts_written=145 err=0 | elapsed=438.03h left=281.97h mid=618.0050
+[OB Collector] progress 60.8% | rows=1572674 buffer=10460 flush_files=0 parquet_parts_written=145 err=0 | elapsed=438.03h left=281.97h mid=618.0050
+2026-04-30 18:36:53 - INFO - [OB Collector] Saved part 146 (10774 rows) → part_00145.parquet
+2026-04-30 20:31:36 - INFO - [OB Collector] progress 61.1% | rows=1579859 buffer=6871 flush_files=0 parquet_parts_written=146 err=0 | elapsed=440.03h left=279.97h mid=618.3950
+[OB Collector] progress 61.1% | rows=1579859 buffer=6871 flush_files=0 parquet_parts_written=146 err=0 | elapsed=440.03h left=279.97h mid=618.3950
+2026-04-30 21:36:57 - INFO - [OB Collector] Saved part 147 (10780 rows) → part_00146.parquet
+2026-04-30 22:31:37 - INFO - [OB Collector] progress 61.4% | rows=1587043 buffer=3275 flush_files=0 parquet_parts_written=147 err=0 | elapsed=442.03h left=277.97h mid=616.4550
+[OB Collector] progress 61.4% | rows=1587043 buffer=3275 flush_files=0 parquet_parts_written=147 err=0 | elapsed=442.03h left=277.97h mid=616.4550
+2026-05-01 00:31:37 - INFO - [OB Collector] progress 61.7% | rows=1594229 buffer=10461 flush_files=0 parquet_parts_written=147 err=0 | elapsed=444.03h left=275.97h mid=616.8050
+[OB Collector] progress 61.7% | rows=1594229 buffer=10461 flush_files=0 parquet_parts_written=147 err=0 | elapsed=444.03h left=275.97h mid=616.8050
+2026-05-01 00:36:59 - INFO - [OB Collector] Saved part 148 (10781 rows) → part_00147.parquet
+2026-05-01 02:31:37 - INFO - [OB Collector] progress 61.9% | rows=1601414 buffer=6865 flush_files=0 parquet_parts_written=148 err=0 | elapsed=446.03h left=273.97h mid=617.2350
+[OB Collector] progress 61.9% | rows=1601414 buffer=6865 flush_files=0 parquet_parts_written=148 err=0 | elapsed=446.03h left=273.97h mid=617.2350
+2026-05-01 03:37:02 - INFO - [OB Collector] Saved part 149 (10780 rows) → part_00148.parquet
+2026-05-01 04:31:38 - INFO - [OB Collector] progress 62.2% | rows=1608598 buffer=3269 flush_files=0 parquet_parts_written=149 err=0 | elapsed=448.03h left=271.97h mid=617.6350
+[OB Collector] progress 62.2% | rows=1608598 buffer=3269 flush_files=0 parquet_parts_written=149 err=0 | elapsed=448.03h left=271.97h mid=617.6350
+2026-05-01 06:31:38 - INFO - [OB Collector] progress 62.5% | rows=1615780 buffer=10451 flush_files=0 parquet_parts_written=149 err=0 | elapsed=450.03h left=269.97h mid=617.9850
+[OB Collector] progress 62.5% | rows=1615780 buffer=10451 flush_files=0 parquet_parts_written=149 err=0 | elapsed=450.03h left=269.97h mid=617.9850
+2026-05-01 06:37:05 - INFO - [OB Collector] Saved part 150 (10775 rows) → part_00149.parquet
+2026-05-01 08:31:39 - INFO - [OB Collector] progress 62.8% | rows=1622964 buffer=6860 flush_files=0 parquet_parts_written=150 err=0 | elapsed=452.03h left=267.97h mid=619.0450
+[OB Collector] progress 62.8% | rows=1622964 buffer=6860 flush_files=0 parquet_parts_written=150 err=0 | elapsed=452.03h left=267.97h mid=619.0450
+2026-05-01 09:37:09 - INFO - [OB Collector] Saved part 151 (10778 rows) → part_00150.parquet
+2026-05-01 10:31:39 - INFO - [OB Collector] progress 63.1% | rows=1630147 buffer=3265 flush_files=0 parquet_parts_written=151 err=0 | elapsed=454.03h left=265.97h mid=617.3850
+[OB Collector] progress 63.1% | rows=1630147 buffer=3265 flush_files=0 parquet_parts_written=151 err=0 | elapsed=454.03h left=265.97h mid=617.3850
+2026-05-01 12:31:39 - INFO - [OB Collector] progress 63.3% | rows=1637331 buffer=10449 flush_files=0 parquet_parts_written=151 err=0 | elapsed=456.03h left=263.97h mid=620.2750
+[OB Collector] progress 63.3% | rows=1637331 buffer=10449 flush_files=0 parquet_parts_written=151 err=0 | elapsed=456.03h left=263.97h mid=620.2750
+2026-05-01 12:37:12 - INFO - [OB Collector] Saved part 152 (10779 rows) → part_00151.parquet
+2026-05-01 14:31:40 - INFO - [OB Collector] progress 63.6% | rows=1644517 buffer=6856 flush_files=0 parquet_parts_written=152 err=0 | elapsed=458.03h left=261.97h mid=620.9150
+[OB Collector] progress 63.6% | rows=1644517 buffer=6856 flush_files=0 parquet_parts_written=152 err=0 | elapsed=458.03h left=261.97h mid=620.9150
+2026-05-01 15:37:15 - INFO - [OB Collector] Saved part 153 (10775 rows) → part_00152.parquet
+2026-05-01 16:31:41 - INFO - [OB Collector] progress 63.9% | rows=1651696 buffer=3260 flush_files=0 parquet_parts_written=153 err=0 | elapsed=460.03h left=259.97h mid=620.0950
+[OB Collector] progress 63.9% | rows=1651696 buffer=3260 flush_files=0 parquet_parts_written=153 err=0 | elapsed=460.03h left=259.97h mid=620.0950
+2026-05-01 18:31:42 - INFO - [OB Collector] progress 64.2% | rows=1658882 buffer=10446 flush_files=0 parquet_parts_written=153 err=0 | elapsed=462.03h left=257.97h mid=620.6650
+[OB Collector] progress 64.2% | rows=1658882 buffer=10446 flush_files=0 parquet_parts_written=153 err=0 | elapsed=462.03h left=257.97h mid=620.6650
+2026-05-01 18:37:19 - INFO - [OB Collector] Saved part 154 (10780 rows) → part_00153.parquet
+2026-05-01 20:31:42 - INFO - [OB Collector] progress 64.4% | rows=1666066 buffer=6850 flush_files=0 parquet_parts_written=154 err=0 | elapsed=464.03h left=255.97h mid=618.4750
+[OB Collector] progress 64.4% | rows=1666066 buffer=6850 flush_files=0 parquet_parts_written=154 err=0 | elapsed=464.03h left=255.97h mid=618.4750
+2026-05-01 21:37:21 - INFO - [OB Collector] Saved part 155 (10779 rows) → part_00154.parquet
+2026-05-01 22:31:43 - INFO - [OB Collector] progress 64.7% | rows=1673250 buffer=3255 flush_files=0 parquet_parts_written=155 err=0 | elapsed=466.03h left=253.97h mid=617.7150
+[OB Collector] progress 64.7% | rows=1673250 buffer=3255 flush_files=0 parquet_parts_written=155 err=0 | elapsed=466.03h left=253.97h mid=617.7150
+2026-05-02 00:31:44 - INFO - [OB Collector] progress 65.0% | rows=1680433 buffer=10438 flush_files=0 parquet_parts_written=155 err=0 | elapsed=468.03h left=251.97h mid=615.6650
+[OB Collector] progress 65.0% | rows=1680433 buffer=10438 flush_files=0 parquet_parts_written=155 err=0 | elapsed=468.03h left=251.97h mid=615.6650
+2026-05-02 00:37:24 - INFO - [OB Collector] Saved part 156 (10775 rows) → part_00155.parquet
+2026-05-02 02:31:44 - INFO - [OB Collector] progress 65.3% | rows=1687614 buffer=6844 flush_files=0 parquet_parts_written=156 err=0 | elapsed=470.03h left=249.97h mid=616.0050
+[OB Collector] progress 65.3% | rows=1687614 buffer=6844 flush_files=0 parquet_parts_written=156 err=0 | elapsed=470.03h left=249.97h mid=616.0050
+2026-05-02 03:37:27 - INFO - [OB Collector] Saved part 157 (10777 rows) → part_00156.parquet
+2026-05-02 04:31:45 - INFO - [OB Collector] progress 65.6% | rows=1694799 buffer=3252 flush_files=0 parquet_parts_written=157 err=0 | elapsed=472.03h left=247.97h mid=615.1950
+[OB Collector] progress 65.6% | rows=1694799 buffer=3252 flush_files=0 parquet_parts_written=157 err=0 | elapsed=472.03h left=247.97h mid=615.1950
+2026-05-02 06:31:45 - INFO - [OB Collector] progress 65.8% | rows=1701983 buffer=10436 flush_files=0 parquet_parts_written=157 err=0 | elapsed=474.03h left=245.97h mid=615.3750
+[OB Collector] progress 65.8% | rows=1701983 buffer=10436 flush_files=0 parquet_parts_written=157 err=0 | elapsed=474.03h left=245.97h mid=615.3750
+2026-05-02 06:37:30 - INFO - [OB Collector] Saved part 158 (10778 rows) → part_00157.parquet
+2026-05-02 08:31:45 - INFO - [OB Collector] progress 66.1% | rows=1709122 buffer=6797 flush_files=0 parquet_parts_written=158 err=0 | elapsed=476.04h left=243.96h mid=616.2750
+[OB Collector] progress 66.1% | rows=1709122 buffer=6797 flush_files=0 parquet_parts_written=158 err=0 | elapsed=476.04h left=243.96h mid=616.2750
+2026-05-02 09:37:33 - INFO - [OB Collector] Saved part 159 (10612 rows) → part_00158.parquet
+2026-05-02 10:31:46 - INFO - [OB Collector] progress 66.4% | rows=1716177 buffer=3240 flush_files=0 parquet_parts_written=159 err=0 | elapsed=478.04h left=241.96h mid=615.6150
+[OB Collector] progress 66.4% | rows=1716177 buffer=3240 flush_files=0 parquet_parts_written=159 err=0 | elapsed=478.04h left=241.96h mid=615.6150
+2026-05-02 12:31:46 - INFO - [OB Collector] progress 66.7% | rows=1723358 buffer=10421 flush_files=0 parquet_parts_written=159 err=0 | elapsed=480.04h left=239.96h mid=616.3650
+[OB Collector] progress 66.7% | rows=1723358 buffer=10421 flush_files=0 parquet_parts_written=159 err=0 | elapsed=480.04h left=239.96h mid=616.3650
+2026-05-02 12:37:36 - INFO - [OB Collector] Saved part 160 (10768 rows) → part_00159.parquet
+2026-05-02 14:31:46 - INFO - [OB Collector] progress 66.9% | rows=1730538 buffer=6833 flush_files=0 parquet_parts_written=160 err=0 | elapsed=482.04h left=237.96h mid=617.1850
+[OB Collector] progress 66.9% | rows=1730538 buffer=6833 flush_files=0 parquet_parts_written=160 err=0 | elapsed=482.04h left=237.96h mid=617.1850
+2026-05-02 15:37:39 - INFO - [OB Collector] Saved part 161 (10769 rows) → part_00160.parquet
+2026-05-02 16:31:47 - INFO - [OB Collector] progress 67.2% | rows=1737716 buffer=3242 flush_files=0 parquet_parts_written=161 err=0 | elapsed=484.04h left=235.96h mid=618.5050
+[OB Collector] progress 67.2% | rows=1737716 buffer=3242 flush_files=0 parquet_parts_written=161 err=0 | elapsed=484.04h left=235.96h mid=618.5050
+2026-05-02 18:31:47 - INFO - [OB Collector] progress 67.5% | rows=1744900 buffer=10426 flush_files=0 parquet_parts_written=161 err=0 | elapsed=486.04h left=233.96h mid=619.1050
+[OB Collector] progress 67.5% | rows=1744900 buffer=10426 flush_files=0 parquet_parts_written=161 err=0 | elapsed=486.04h left=233.96h mid=619.1050
+2026-05-02 18:37:42 - INFO - [OB Collector] Saved part 162 (10778 rows) → part_00161.parquet
+2026-05-02 20:31:48 - INFO - [OB Collector] progress 67.8% | rows=1752082 buffer=6830 flush_files=0 parquet_parts_written=162 err=0 | elapsed=488.04h left=231.96h mid=618.9550
+[OB Collector] progress 67.8% | rows=1752082 buffer=6830 flush_files=0 parquet_parts_written=162 err=0 | elapsed=488.04h left=231.96h mid=618.9550
+2026-05-02 21:37:45 - INFO - [OB Collector] Saved part 163 (10774 rows) → part_00162.parquet
+2026-05-02 22:31:48 - INFO - [OB Collector] progress 68.1% | rows=1759262 buffer=3236 flush_files=0 parquet_parts_written=163 err=0 | elapsed=490.04h left=229.96h mid=618.8550
+[OB Collector] progress 68.1% | rows=1759262 buffer=3236 flush_files=0 parquet_parts_written=163 err=0 | elapsed=490.04h left=229.96h mid=618.8550
+2026-05-03 00:31:49 - INFO - [OB Collector] progress 68.3% | rows=1766445 buffer=10419 flush_files=0 parquet_parts_written=163 err=0 | elapsed=492.04h left=227.96h mid=618.4750
+[OB Collector] progress 68.3% | rows=1766445 buffer=10419 flush_files=0 parquet_parts_written=163 err=0 | elapsed=492.04h left=227.96h mid=618.4750
+2026-05-03 00:37:48 - INFO - [OB Collector] Saved part 164 (10775 rows) → part_00163.parquet
+2026-05-03 02:31:50 - INFO - [OB Collector] progress 68.6% | rows=1773624 buffer=6823 flush_files=0 parquet_parts_written=164 err=0 | elapsed=494.04h left=225.96h mid=615.7450
+[OB Collector] progress 68.6% | rows=1773624 buffer=6823 flush_files=0 parquet_parts_written=164 err=0 | elapsed=494.04h left=225.96h mid=615.7450
+2026-05-03 03:37:52 - INFO - [OB Collector] Saved part 165 (10775 rows) → part_00164.parquet
+2026-05-03 04:31:51 - INFO - [OB Collector] progress 68.9% | rows=1780809 buffer=3233 flush_files=0 parquet_parts_written=165 err=0 | elapsed=496.04h left=223.96h mid=616.5950
+[OB Collector] progress 68.9% | rows=1780809 buffer=3233 flush_files=0 parquet_parts_written=165 err=0 | elapsed=496.04h left=223.96h mid=616.5950
+2026-05-03 06:31:51 - INFO - [OB Collector] progress 69.2% | rows=1787987 buffer=10411 flush_files=0 parquet_parts_written=165 err=0 | elapsed=498.04h left=221.96h mid=615.9250
+[OB Collector] progress 69.2% | rows=1787987 buffer=10411 flush_files=0 parquet_parts_written=165 err=0 | elapsed=498.04h left=221.96h mid=615.9250
+2026-05-03 06:37:55 - INFO - [OB Collector] Saved part 166 (10772 rows) → part_00165.parquet
+2026-05-03 08:31:51 - INFO - [OB Collector] progress 69.4% | rows=1795170 buffer=6822 flush_files=0 parquet_parts_written=166 err=0 | elapsed=500.04h left=219.96h mid=617.6050
+[OB Collector] progress 69.4% | rows=1795170 buffer=6822 flush_files=0 parquet_parts_written=166 err=0 | elapsed=500.04h left=219.96h mid=617.6050
+2026-05-03 09:37:58 - INFO - [OB Collector] Saved part 167 (10778 rows) → part_00166.parquet
+2026-05-03 10:31:52 - INFO - [OB Collector] progress 69.7% | rows=1802354 buffer=3228 flush_files=0 parquet_parts_written=167 err=0 | elapsed=502.04h left=217.96h mid=618.5150
+[OB Collector] progress 69.7% | rows=1802354 buffer=3228 flush_files=0 parquet_parts_written=167 err=0 | elapsed=502.04h left=217.96h mid=618.5150
+2026-05-03 12:31:52 - INFO - [OB Collector] progress 70.0% | rows=1809539 buffer=10413 flush_files=0 parquet_parts_written=167 err=0 | elapsed=504.04h left=215.96h mid=619.3750
+[OB Collector] progress 70.0% | rows=1809539 buffer=10413 flush_files=0 parquet_parts_written=167 err=0 | elapsed=504.04h left=215.96h mid=619.3750
+2026-05-03 12:38:01 - INFO - [OB Collector] Saved part 168 (10779 rows) → part_00167.parquet
+2026-05-03 14:31:53 - INFO - [OB Collector] progress 70.3% | rows=1816715 buffer=6810 flush_files=0 parquet_parts_written=168 err=0 | elapsed=506.04h left=213.96h mid=619.9550
+[OB Collector] progress 70.3% | rows=1816715 buffer=6810 flush_files=0 parquet_parts_written=168 err=0 | elapsed=506.04h left=213.96h mid=619.9550
+2026-05-03 15:38:05 - INFO - [OB Collector] Saved part 169 (10764 rows) → part_00168.parquet
+2026-05-03 16:31:53 - INFO - [OB Collector] progress 70.6% | rows=1823889 buffer=3220 flush_files=0 parquet_parts_written=169 err=0 | elapsed=508.04h left=211.96h mid=619.9850
+[OB Collector] progress 70.6% | rows=1823889 buffer=3220 flush_files=0 parquet_parts_written=169 err=0 | elapsed=508.04h left=211.96h mid=619.9850
+2026-05-03 18:31:54 - INFO - [OB Collector] progress 70.8% | rows=1831075 buffer=10406 flush_files=0 parquet_parts_written=169 err=0 | elapsed=510.04h left=209.96h mid=620.1350
+[OB Collector] progress 70.8% | rows=1831075 buffer=10406 flush_files=0 parquet_parts_written=169 err=0 | elapsed=510.04h left=209.96h mid=620.1350
+2026-05-03 18:38:07 - INFO - [OB Collector] Saved part 170 (10777 rows) → part_00169.parquet
+2026-05-03 20:31:54 - INFO - [OB Collector] progress 71.1% | rows=1838254 buffer=6808 flush_files=0 parquet_parts_written=170 err=0 | elapsed=512.04h left=207.96h mid=620.3450
+[OB Collector] progress 71.1% | rows=1838254 buffer=6808 flush_files=0 parquet_parts_written=170 err=0 | elapsed=512.04h left=207.96h mid=620.3450
+2026-05-03 21:38:10 - INFO - [OB Collector] Saved part 171 (10771 rows) → part_00170.parquet
+2026-05-03 22:31:55 - INFO - [OB Collector] progress 71.4% | rows=1845432 buffer=3215 flush_files=0 parquet_parts_written=171 err=0 | elapsed=514.04h left=205.96h mid=620.3650
+[OB Collector] progress 71.4% | rows=1845432 buffer=3215 flush_files=0 parquet_parts_written=171 err=0 | elapsed=514.04h left=205.96h mid=620.3650
+2026-05-04 00:31:55 - INFO - [OB Collector] progress 71.7% | rows=1852618 buffer=10401 flush_files=0 parquet_parts_written=171 err=0 | elapsed=516.04h left=203.96h mid=616.6850
+[OB Collector] progress 71.7% | rows=1852618 buffer=10401 flush_files=0 parquet_parts_written=171 err=0 | elapsed=516.04h left=203.96h mid=616.6850
+2026-05-04 00:38:13 - INFO - [OB Collector] Saved part 172 (10776 rows) → part_00171.parquet
+2026-05-04 02:31:56 - INFO - [OB Collector] progress 71.9% | rows=1859792 buffer=6799 flush_files=0 parquet_parts_written=172 err=0 | elapsed=518.04h left=201.96h mid=624.4750
+[OB Collector] progress 71.9% | rows=1859792 buffer=6799 flush_files=0 parquet_parts_written=172 err=0 | elapsed=518.04h left=201.96h mid=624.4750
+2026-05-04 03:38:16 - INFO - [OB Collector] Saved part 173 (10768 rows) → part_00172.parquet
+2026-05-04 04:31:56 - INFO - [OB Collector] progress 72.2% | rows=1866966 buffer=3205 flush_files=0 parquet_parts_written=173 err=0 | elapsed=520.04h left=199.96h mid=637.1750
+[OB Collector] progress 72.2% | rows=1866966 buffer=3205 flush_files=0 parquet_parts_written=173 err=0 | elapsed=520.04h left=199.96h mid=637.1750
+2026-05-04 06:31:57 - INFO - [OB Collector] progress 72.5% | rows=1874148 buffer=10387 flush_files=0 parquet_parts_written=173 err=0 | elapsed=522.04h left=197.96h mid=629.8550
+[OB Collector] progress 72.5% | rows=1874148 buffer=10387 flush_files=0 parquet_parts_written=173 err=0 | elapsed=522.04h left=197.96h mid=629.8550
+2026-05-04 06:38:18 - INFO - [OB Collector] Saved part 174 (10765 rows) → part_00173.parquet
+2026-05-04 08:31:58 - INFO - [OB Collector] progress 72.8% | rows=1881329 buffer=6803 flush_files=0 parquet_parts_written=174 err=0 | elapsed=524.04h left=195.96h mid=628.4750
+[OB Collector] progress 72.8% | rows=1881329 buffer=6803 flush_files=0 parquet_parts_written=174 err=0 | elapsed=524.04h left=195.96h mid=628.4750
+2026-05-04 09:38:21 - INFO - [OB Collector] Saved part 175 (10775 rows) → part_00174.parquet
+2026-05-04 10:31:59 - INFO - [OB Collector] progress 73.1% | rows=1888502 buffer=3201 flush_files=0 parquet_parts_written=175 err=0 | elapsed=526.04h left=193.96h mid=622.5350
+[OB Collector] progress 73.1% | rows=1888502 buffer=3201 flush_files=0 parquet_parts_written=175 err=0 | elapsed=526.04h left=193.96h mid=622.5350
+2026-05-04 12:31:59 - INFO - [OB Collector] progress 73.3% | rows=1895687 buffer=10386 flush_files=0 parquet_parts_written=175 err=0 | elapsed=528.04h left=191.96h mid=623.2850
+[OB Collector] progress 73.3% | rows=1895687 buffer=10386 flush_files=0 parquet_parts_written=175 err=0 | elapsed=528.04h left=191.96h mid=623.2850
+2026-05-04 12:38:23 - INFO - [OB Collector] Saved part 176 (10768 rows) → part_00175.parquet
+2026-05-04 14:32:00 - INFO - [OB Collector] progress 73.6% | rows=1902859 buffer=6790 flush_files=0 parquet_parts_written=176 err=0 | elapsed=530.04h left=189.96h mid=625.1350
+[OB Collector] progress 73.6% | rows=1902859 buffer=6790 flush_files=0 parquet_parts_written=176 err=0 | elapsed=530.04h left=189.96h mid=625.1350
+2026-05-04 15:38:27 - INFO - [OB Collector] Saved part 177 (10767 rows) → part_00176.parquet
+2026-05-04 16:32:00 - INFO - [OB Collector] progress 73.9% | rows=1910044 buffer=3208 flush_files=0 parquet_parts_written=177 err=0 | elapsed=532.04h left=187.96h mid=626.1850
+[OB Collector] progress 73.9% | rows=1910044 buffer=3208 flush_files=0 parquet_parts_written=177 err=0 | elapsed=532.04h left=187.96h mid=626.1850
+2026-05-04 18:32:01 - INFO - [OB Collector] progress 74.2% | rows=1917227 buffer=10391 flush_files=0 parquet_parts_written=177 err=0 | elapsed=534.04h left=185.96h mid=626.9850
+[OB Collector] progress 74.2% | rows=1917227 buffer=10391 flush_files=0 parquet_parts_written=177 err=0 | elapsed=534.04h left=185.96h mid=626.9850
+2026-05-04 18:38:30 - INFO - [OB Collector] Saved part 178 (10777 rows) → part_00177.parquet
+2026-05-04 20:32:01 - INFO - [OB Collector] progress 74.4% | rows=1924407 buffer=6794 flush_files=0 parquet_parts_written=178 err=0 | elapsed=536.04h left=183.96h mid=624.3150
+[OB Collector] progress 74.4% | rows=1924407 buffer=6794 flush_files=0 parquet_parts_written=178 err=0 | elapsed=536.04h left=183.96h mid=624.3150
+2026-05-04 21:38:33 - INFO - [OB Collector] Saved part 179 (10775 rows) → part_00178.parquet
+2026-05-04 22:32:01 - INFO - [OB Collector] progress 74.7% | rows=1931591 buffer=3203 flush_files=0 parquet_parts_written=179 err=0 | elapsed=538.04h left=181.96h mid=625.4850
+[OB Collector] progress 74.7% | rows=1931591 buffer=3203 flush_files=0 parquet_parts_written=179 err=0 | elapsed=538.04h left=181.96h mid=625.4850
+2026-05-05 00:32:02 - INFO - [OB Collector] progress 75.0% | rows=1938777 buffer=10389 flush_files=0 parquet_parts_written=179 err=0 | elapsed=540.04h left=179.96h mid=624.2650
+[OB Collector] progress 75.0% | rows=1938777 buffer=10389 flush_files=0 parquet_parts_written=179 err=0 | elapsed=540.04h left=179.96h mid=624.2650
+2026-05-05 00:38:36 - INFO - [OB Collector] Saved part 180 (10780 rows) → part_00179.parquet
+2026-05-05 02:32:02 - INFO - [OB Collector] progress 75.3% | rows=1945961 buffer=6793 flush_files=0 parquet_parts_written=180 err=0 | elapsed=542.04h left=177.96h mid=625.8050
+[OB Collector] progress 75.3% | rows=1945961 buffer=6793 flush_files=0 parquet_parts_written=180 err=0 | elapsed=542.04h left=177.96h mid=625.8050
+2026-05-05 03:38:38 - INFO - [OB Collector] Saved part 181 (10774 rows) → part_00180.parquet
+2026-05-05 04:32:03 - INFO - [OB Collector] progress 75.6% | rows=1953140 buffer=3198 flush_files=0 parquet_parts_written=181 err=0 | elapsed=544.04h left=175.96h mid=626.7450
+[OB Collector] progress 75.6% | rows=1953140 buffer=3198 flush_files=0 parquet_parts_written=181 err=0 | elapsed=544.04h left=175.96h mid=626.7450
+2026-05-05 06:32:04 - INFO - [OB Collector] progress 75.8% | rows=1960325 buffer=10383 flush_files=0 parquet_parts_written=181 err=0 | elapsed=546.04h left=173.96h mid=626.6550
+[OB Collector] progress 75.8% | rows=1960325 buffer=10383 flush_files=0 parquet_parts_written=181 err=0 | elapsed=546.04h left=173.96h mid=626.6550
+2026-05-05 06:38:41 - INFO - [OB Collector] Saved part 182 (10777 rows) → part_00181.parquet
+2026-05-05 08:32:05 - INFO - [OB Collector] progress 76.1% | rows=1967508 buffer=6789 flush_files=0 parquet_parts_written=182 err=0 | elapsed=548.04h left=171.96h mid=629.2450
+[OB Collector] progress 76.1% | rows=1967508 buffer=6789 flush_files=0 parquet_parts_written=182 err=0 | elapsed=548.04h left=171.96h mid=629.2450
+2026-05-05 09:38:45 - INFO - [OB Collector] Saved part 183 (10779 rows) → part_00182.parquet
+2026-05-05 10:32:05 - INFO - [OB Collector] progress 76.4% | rows=1974692 buffer=3194 flush_files=0 parquet_parts_written=183 err=0 | elapsed=550.04h left=169.96h mid=628.1950
+[OB Collector] progress 76.4% | rows=1974692 buffer=3194 flush_files=0 parquet_parts_written=183 err=0 | elapsed=550.04h left=169.96h mid=628.1950
+2026-05-05 12:32:06 - INFO - [OB Collector] progress 76.7% | rows=1981878 buffer=10380 flush_files=0 parquet_parts_written=183 err=0 | elapsed=552.04h left=167.96h mid=630.2450
+[OB Collector] progress 76.7% | rows=1981878 buffer=10380 flush_files=0 parquet_parts_written=183 err=0 | elapsed=552.04h left=167.96h mid=630.2450
+2026-05-05 12:38:48 - INFO - [OB Collector] Saved part 184 (10779 rows) → part_00183.parquet
+2026-05-05 14:32:07 - INFO - [OB Collector] progress 77.0% | rows=1989062 buffer=6785 flush_files=0 parquet_parts_written=184 err=0 | elapsed=554.04h left=165.96h mid=630.8050
+[OB Collector] progress 77.0% | rows=1989062 buffer=6785 flush_files=0 parquet_parts_written=184 err=0 | elapsed=554.04h left=165.96h mid=630.8050
+2026-05-05 15:38:51 - INFO - [OB Collector] Saved part 185 (10779 rows) → part_00184.parquet
+2026-05-05 16:32:07 - INFO - [OB Collector] progress 77.2% | rows=1996246 buffer=3190 flush_files=0 parquet_parts_written=185 err=0 | elapsed=556.04h left=163.96h mid=631.0150
+[OB Collector] progress 77.2% | rows=1996246 buffer=3190 flush_files=0 parquet_parts_written=185 err=0 | elapsed=556.04h left=163.96h mid=631.0150
+2026-05-05 18:32:08 - INFO - [OB Collector] progress 77.5% | rows=2003429 buffer=10373 flush_files=0 parquet_parts_written=185 err=0 | elapsed=558.04h left=161.96h mid=629.5550
+[OB Collector] progress 77.5% | rows=2003429 buffer=10373 flush_files=0 parquet_parts_written=185 err=0 | elapsed=558.04h left=161.96h mid=629.5550
+2026-05-05 18:38:55 - INFO - [OB Collector] Saved part 186 (10777 rows) → part_00185.parquet
+2026-05-05 20:32:09 - INFO - [OB Collector] progress 77.8% | rows=2010614 buffer=6781 flush_files=0 parquet_parts_written=186 err=0 | elapsed=560.04h left=159.96h mid=633.9750
+[OB Collector] progress 77.8% | rows=2010614 buffer=6781 flush_files=0 parquet_parts_written=186 err=0 | elapsed=560.04h left=159.96h mid=633.9750
+2026-05-05 21:38:58 - INFO - [OB Collector] Saved part 187 (10779 rows) → part_00186.parquet
+2026-05-05 22:32:09 - INFO - [OB Collector] progress 78.1% | rows=2017798 buffer=3186 flush_files=0 parquet_parts_written=187 err=0 | elapsed=562.04h left=157.96h mid=633.0150
+[OB Collector] progress 78.1% | rows=2017798 buffer=3186 flush_files=0 parquet_parts_written=187 err=0 | elapsed=562.04h left=157.96h mid=633.0150
+2026-05-06 00:32:10 - INFO - [OB Collector] progress 78.3% | rows=2024984 buffer=10372 flush_files=0 parquet_parts_written=187 err=0 | elapsed=564.04h left=155.96h mid=630.2750
+[OB Collector] progress 78.3% | rows=2024984 buffer=10372 flush_files=0 parquet_parts_written=187 err=0 | elapsed=564.04h left=155.96h mid=630.2750
+2026-05-06 00:39:01 - INFO - [OB Collector] Saved part 188 (10780 rows) → part_00187.parquet
+2026-05-06 02:32:10 - INFO - [OB Collector] progress 78.6% | rows=2032166 buffer=6774 flush_files=0 parquet_parts_written=188 err=0 | elapsed=566.04h left=153.96h mid=633.4550
+[OB Collector] progress 78.6% | rows=2032166 buffer=6774 flush_files=0 parquet_parts_written=188 err=0 | elapsed=566.04h left=153.96h mid=633.4550
+2026-05-06 03:39:03 - INFO - [OB Collector] Saved part 189 (10777 rows) → part_00188.parquet
+2026-05-06 04:32:11 - INFO - [OB Collector] progress 78.9% | rows=2039350 buffer=3181 flush_files=0 parquet_parts_written=189 err=0 | elapsed=568.04h left=151.96h mid=634.5150
+[OB Collector] progress 78.9% | rows=2039350 buffer=3181 flush_files=0 parquet_parts_written=189 err=0 | elapsed=568.04h left=151.96h mid=634.5150
+2026-05-06 06:32:11 - INFO - [OB Collector] progress 79.2% | rows=2046536 buffer=10367 flush_files=0 parquet_parts_written=189 err=0 | elapsed=570.04h left=149.96h mid=635.7950
+[OB Collector] progress 79.2% | rows=2046536 buffer=10367 flush_files=0 parquet_parts_written=189 err=0 | elapsed=570.04h left=149.96h mid=635.7950
+2026-05-06 06:39:05 - INFO - [OB Collector] Saved part 190 (10778 rows) → part_00189.parquet
+2026-05-06 08:32:12 - INFO - [OB Collector] progress 79.5% | rows=2053720 buffer=6773 flush_files=0 parquet_parts_written=190 err=0 | elapsed=572.04h left=147.96h mid=642.6050
+[OB Collector] progress 79.5% | rows=2053720 buffer=6773 flush_files=0 parquet_parts_written=190 err=0 | elapsed=572.04h left=147.96h mid=642.6050
+2026-05-06 09:39:08 - INFO - [OB Collector] Saved part 191 (10778 rows) → part_00190.parquet
+2026-05-06 10:32:12 - INFO - [OB Collector] progress 79.7% | rows=2060903 buffer=3178 flush_files=0 parquet_parts_written=191 err=0 | elapsed=574.04h left=145.96h mid=647.5050
+[OB Collector] progress 79.7% | rows=2060903 buffer=3178 flush_files=0 parquet_parts_written=191 err=0 | elapsed=574.04h left=145.96h mid=647.5050
+2026-05-06 12:32:13 - INFO - [OB Collector] progress 80.0% | rows=2068082 buffer=10357 flush_files=0 parquet_parts_written=191 err=0 | elapsed=576.04h left=143.96h mid=657.2150
+[OB Collector] progress 80.0% | rows=2068082 buffer=10357 flush_files=0 parquet_parts_written=191 err=0 | elapsed=576.04h left=143.96h mid=657.2150
+2026-05-06 12:39:12 - INFO - [OB Collector] Saved part 192 (10773 rows) → part_00191.parquet
+2026-05-06 14:32:13 - INFO - [OB Collector] progress 80.3% | rows=2075265 buffer=6767 flush_files=0 parquet_parts_written=192 err=0 | elapsed=578.04h left=141.96h mid=648.7850
+[OB Collector] progress 80.3% | rows=2075265 buffer=6767 flush_files=0 parquet_parts_written=192 err=0 | elapsed=578.04h left=141.96h mid=648.7850
+2026-05-06 15:39:15 - INFO - [OB Collector] Saved part 193 (10778 rows) → part_00192.parquet
+2026-05-06 16:32:13 - INFO - [OB Collector] progress 80.6% | rows=2082444 buffer=3168 flush_files=0 parquet_parts_written=193 err=0 | elapsed=580.04h left=139.96h mid=647.0950
+[OB Collector] progress 80.6% | rows=2082444 buffer=3168 flush_files=0 parquet_parts_written=193 err=0 | elapsed=580.04h left=139.96h mid=647.0950
+2026-05-06 18:32:14 - INFO - [OB Collector] progress 80.8% | rows=2089628 buffer=10352 flush_files=0 parquet_parts_written=193 err=0 | elapsed=582.04h left=137.96h mid=649.9650
+[OB Collector] progress 80.8% | rows=2089628 buffer=10352 flush_files=0 parquet_parts_written=193 err=0 | elapsed=582.04h left=137.96h mid=649.9650
+2026-05-06 18:39:18 - INFO - [OB Collector] Saved part 194 (10773 rows) → part_00193.parquet
+2026-05-06 20:32:14 - INFO - [OB Collector] progress 81.1% | rows=2096811 buffer=6762 flush_files=0 parquet_parts_written=194 err=0 | elapsed=584.04h left=135.96h mid=650.2950
+[OB Collector] progress 81.1% | rows=2096811 buffer=6762 flush_files=0 parquet_parts_written=194 err=0 | elapsed=584.04h left=135.96h mid=650.2950
+2026-05-06 21:39:21 - INFO - [OB Collector] Saved part 195 (10777 rows) → part_00194.parquet
+2026-05-06 22:32:14 - INFO - [OB Collector] progress 81.4% | rows=2103994 buffer=3168 flush_files=0 parquet_parts_written=195 err=0 | elapsed=586.04h left=133.96h mid=648.7450
+[OB Collector] progress 81.4% | rows=2103994 buffer=3168 flush_files=0 parquet_parts_written=195 err=0 | elapsed=586.04h left=133.96h mid=648.7450
+2026-05-07 00:32:15 - INFO - [OB Collector] progress 81.7% | rows=2111179 buffer=10353 flush_files=0 parquet_parts_written=195 err=0 | elapsed=588.04h left=131.96h mid=646.5650
+[OB Collector] progress 81.7% | rows=2111179 buffer=10353 flush_files=0 parquet_parts_written=195 err=0 | elapsed=588.04h left=131.96h mid=646.5650
+2026-05-07 00:39:23 - INFO - [OB Collector] Saved part 196 (10779 rows) → part_00195.parquet
+2026-05-07 02:19:31 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 02:19:42 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 02:20:17 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 02:20:28 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 02:23:15 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 02:23:26 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 02:24:14 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 02:24:25 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 02:25:26 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 02:25:37 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 02:26:58 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 02:27:09 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 02:27:20 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 02:32:15 - INFO - [OB Collector] progress 82.0% | rows=2118187 buffer=6582 flush_files=0 parquet_parts_written=196 err=0 | elapsed=590.04h left=129.96h mid=642.9850
+[OB Collector] progress 82.0% | rows=2118187 buffer=6582 flush_files=0 parquet_parts_written=196 err=0 | elapsed=590.04h left=129.96h mid=642.9850
+2026-05-07 03:39:26 - INFO - [OB Collector] Saved part 197 (10604 rows) → part_00196.parquet
+2026-05-07 04:32:15 - INFO - [OB Collector] progress 82.2% | rows=2125367 buffer=3158 flush_files=0 parquet_parts_written=197 err=0 | elapsed=592.04h left=127.96h mid=644.3150
+[OB Collector] progress 82.2% | rows=2125367 buffer=3158 flush_files=0 parquet_parts_written=197 err=0 | elapsed=592.04h left=127.96h mid=644.3150
+2026-05-07 06:32:16 - INFO - [OB Collector] progress 82.5% | rows=2132532 buffer=10323 flush_files=0 parquet_parts_written=197 err=0 | elapsed=594.04h left=125.96h mid=647.2150
+[OB Collector] progress 82.5% | rows=2132532 buffer=10323 flush_files=0 parquet_parts_written=197 err=0 | elapsed=594.04h left=125.96h mid=647.2150
+2026-05-07 06:39:29 - INFO - [OB Collector] Saved part 198 (10753 rows) → part_00197.parquet
+2026-05-07 08:32:16 - INFO - [OB Collector] progress 82.8% | rows=2139713 buffer=6751 flush_files=0 parquet_parts_written=198 err=0 | elapsed=596.04h left=123.96h mid=651.6150
+[OB Collector] progress 82.8% | rows=2139713 buffer=6751 flush_files=0 parquet_parts_written=198 err=0 | elapsed=596.04h left=123.96h mid=651.6150
+2026-05-07 09:39:31 - INFO - [OB Collector] Saved part 199 (10775 rows) → part_00198.parquet
+2026-05-07 10:32:17 - INFO - [OB Collector] progress 83.1% | rows=2146895 buffer=3158 flush_files=0 parquet_parts_written=199 err=0 | elapsed=598.04h left=121.96h mid=647.3250
+[OB Collector] progress 83.1% | rows=2146895 buffer=3158 flush_files=0 parquet_parts_written=199 err=0 | elapsed=598.04h left=121.96h mid=647.3250
+2026-05-07 11:31:23 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 11:31:34 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 12:32:17 - INFO - [OB Collector] progress 83.3% | rows=2154022 buffer=10285 flush_files=0 parquet_parts_written=199 err=0 | elapsed=600.04h left=119.96h mid=650.1750
+[OB Collector] progress 83.3% | rows=2154022 buffer=10285 flush_files=0 parquet_parts_written=199 err=0 | elapsed=600.04h left=119.96h mid=650.1750
+2026-05-07 12:39:34 - INFO - [OB Collector] Saved part 200 (10720 rows) → part_00199.parquet
+2026-05-07 14:32:17 - INFO - [OB Collector] progress 83.6% | rows=2161207 buffer=6750 flush_files=0 parquet_parts_written=200 err=0 | elapsed=602.04h left=117.96h mid=644.4250
+[OB Collector] progress 83.6% | rows=2161207 buffer=6750 flush_files=0 parquet_parts_written=200 err=0 | elapsed=602.04h left=117.96h mid=644.4250
+2026-05-07 15:31:07 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 15:31:18 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 15:31:29 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 15:31:40 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 15:31:45 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-05-07 15:31:56 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 15:32:07 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 15:32:15 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-05-07 15:32:26 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 15:32:37 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 15:32:48 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 15:32:59 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 15:32:59 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-05-07 15:36:06 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 15:36:17 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 15:36:28 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 15:36:39 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 15:36:50 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 15:37:01 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 15:37:12 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 15:37:23 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 15:37:34 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 15:37:45 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 15:37:56 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 15:39:36 - INFO - [OB Collector] Saved part 201 (10527 rows) → part_00200.parquet
+2026-05-07 16:26:34 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 16:32:18 - INFO - [OB Collector] progress 83.9% | rows=2168117 buffer=3133 flush_files=0 parquet_parts_written=201 err=0 | elapsed=604.04h left=115.96h mid=643.7050
+[OB Collector] progress 83.9% | rows=2168117 buffer=3133 flush_files=0 parquet_parts_written=201 err=0 | elapsed=604.04h left=115.96h mid=643.7050
+2026-05-07 16:33:30 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 16:33:41 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 16:33:52 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 16:34:03 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 16:34:08 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-05-07 16:34:19 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 16:34:30 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 16:34:41 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 16:34:52 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 16:34:52 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-05-07 16:35:04 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 16:35:15 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 16:43:16 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 16:43:27 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:02:14 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:02:25 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:02:35 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-05-07 17:02:46 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:02:57 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:03:07 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-05-07 17:03:18 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:03:29 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:03:40 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-05-07 17:03:50 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:04:01 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:04:12 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-05-07 17:04:22 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:04:33 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:04:44 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-05-07 17:04:54 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:05:05 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:05:16 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-05-07 17:05:26 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:05:37 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:05:48 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-05-07 17:05:58 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:06:09 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:06:20 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-05-07 17:06:30 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:06:41 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:06:52 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-05-07 17:07:02 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:07:13 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:07:24 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-05-07 17:07:34 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:07:45 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:07:56 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-05-07 17:08:06 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:08:17 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:08:28 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-05-07 17:08:38 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:08:49 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:09:00 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-05-07 17:09:10 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:09:21 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:09:32 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-05-07 17:09:42 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:09:53 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:10:04 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-05-07 17:10:14 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:10:25 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:10:36 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-05-07 17:10:46 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:10:57 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:11:08 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-05-07 17:11:18 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:11:29 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:11:40 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-05-07 17:11:50 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:12:01 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:12:07 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-05-07 17:12:17 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:12:28 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:12:39 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-05-07 17:12:49 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:13:00 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:13:11 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:13:11 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-05-07 17:13:23 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:13:34 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:13:38 - WARNING - [OB Collector] Trades fetch failed: Cannot connect to host fapi.binance.com:443 ssl:default [Temporary failure in name resolution]
+2026-05-07 17:13:48 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:13:59 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:14:10 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:14:21 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:14:32 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:14:43 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:14:54 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:15:05 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:15:16 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:15:27 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:15:38 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 17:15:49 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 18:32:19 - INFO - [OB Collector] progress 84.2% | rows=2174304 buffer=9320 flush_files=0 parquet_parts_written=201 err=0 | elapsed=606.04h left=113.96h mid=644.4750
+[OB Collector] progress 84.2% | rows=2174304 buffer=9320 flush_files=0 parquet_parts_written=201 err=0 | elapsed=606.04h left=113.96h mid=644.4750
+2026-05-07 18:39:36 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 18:39:39 - INFO - [OB Collector] Saved part 202 (9747 rows) → part_00201.parquet
+2026-05-07 19:40:33 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 20:32:19 - INFO - [OB Collector] progress 84.5% | rows=2181452 buffer=6721 flush_files=0 parquet_parts_written=202 err=0 | elapsed=608.04h left=111.96h mid=644.1850
+[OB Collector] progress 84.5% | rows=2181452 buffer=6721 flush_files=0 parquet_parts_written=202 err=0 | elapsed=608.04h left=111.96h mid=644.1850
+2026-05-07 21:24:25 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 21:24:36 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 21:24:47 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-07 21:39:42 - INFO - [OB Collector] Saved part 203 (10711 rows) → part_00202.parquet
+2026-05-07 22:32:20 - INFO - [OB Collector] progress 84.7% | rows=2188594 buffer=3152 flush_files=0 parquet_parts_written=203 err=0 | elapsed=610.04h left=109.96h mid=636.7750
+[OB Collector] progress 84.7% | rows=2188594 buffer=3152 flush_files=0 parquet_parts_written=203 err=0 | elapsed=610.04h left=109.96h mid=636.7750
+2026-05-08 00:32:20 - INFO - [OB Collector] progress 85.0% | rows=2195781 buffer=10339 flush_files=0 parquet_parts_written=203 err=0 | elapsed=612.04h left=107.96h mid=638.4850
+[OB Collector] progress 85.0% | rows=2195781 buffer=10339 flush_files=0 parquet_parts_written=203 err=0 | elapsed=612.04h left=107.96h mid=638.4850
+2026-05-08 00:39:44 - INFO - [OB Collector] Saved part 204 (10780 rows) → part_00203.parquet
+2026-05-08 02:32:21 - INFO - [OB Collector] progress 85.3% | rows=2202964 buffer=6742 flush_files=0 parquet_parts_written=204 err=0 | elapsed=614.04h left=105.96h mid=638.0850
+[OB Collector] progress 85.3% | rows=2202964 buffer=6742 flush_files=0 parquet_parts_written=204 err=0 | elapsed=614.04h left=105.96h mid=638.0850
+2026-05-08 03:39:46 - INFO - [OB Collector] Saved part 205 (10777 rows) → part_00204.parquet
+2026-05-08 04:32:21 - INFO - [OB Collector] progress 85.6% | rows=2210146 buffer=3147 flush_files=0 parquet_parts_written=205 err=0 | elapsed=616.04h left=103.96h mid=640.1850
+[OB Collector] progress 85.6% | rows=2210146 buffer=3147 flush_files=0 parquet_parts_written=205 err=0 | elapsed=616.04h left=103.96h mid=640.1850
+2026-05-08 06:32:21 - INFO - [OB Collector] progress 85.8% | rows=2217332 buffer=10333 flush_files=0 parquet_parts_written=205 err=0 | elapsed=618.05h left=101.95h mid=636.5050
+[OB Collector] progress 85.8% | rows=2217332 buffer=10333 flush_files=0 parquet_parts_written=205 err=0 | elapsed=618.05h left=101.95h mid=636.5050
+2026-05-08 06:39:49 - INFO - [OB Collector] Saved part 206 (10778 rows) → part_00205.parquet
+2026-05-08 08:32:21 - INFO - [OB Collector] progress 86.1% | rows=2224514 buffer=6737 flush_files=0 parquet_parts_written=206 err=0 | elapsed=620.05h left=99.95h mid=636.7350
+[OB Collector] progress 86.1% | rows=2224514 buffer=6737 flush_files=0 parquet_parts_written=206 err=0 | elapsed=620.05h left=99.95h mid=636.7350
+2026-05-08 09:39:52 - INFO - [OB Collector] Saved part 207 (10778 rows) → part_00206.parquet
+2026-05-08 10:09:17 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-08 10:09:38 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-08 10:32:21 - INFO - [OB Collector] progress 86.4% | rows=2231672 buffer=3117 flush_files=0 parquet_parts_written=207 err=0 | elapsed=622.05h left=97.95h mid=638.9350
+[OB Collector] progress 86.4% | rows=2231672 buffer=3117 flush_files=0 parquet_parts_written=207 err=0 | elapsed=622.05h left=97.95h mid=638.9350
+2026-05-08 12:32:22 - INFO - [OB Collector] progress 86.7% | rows=2238849 buffer=10294 flush_files=0 parquet_parts_written=207 err=0 | elapsed=624.05h left=95.95h mid=640.0750
+[OB Collector] progress 86.7% | rows=2238849 buffer=10294 flush_files=0 parquet_parts_written=207 err=0 | elapsed=624.05h left=95.95h mid=640.0750
+2026-05-08 12:39:55 - INFO - [OB Collector] Saved part 208 (10744 rows) → part_00207.parquet
+2026-05-08 14:32:22 - INFO - [OB Collector] progress 87.0% | rows=2246030 buffer=6731 flush_files=0 parquet_parts_written=208 err=0 | elapsed=626.05h left=93.95h mid=640.1650
+[OB Collector] progress 87.0% | rows=2246030 buffer=6731 flush_files=0 parquet_parts_written=208 err=0 | elapsed=626.05h left=93.95h mid=640.1650
+2026-05-08 15:39:58 - INFO - [OB Collector] Saved part 209 (10774 rows) → part_00208.parquet
+2026-05-08 16:32:23 - INFO - [OB Collector] progress 87.2% | rows=2253212 buffer=3139 flush_files=0 parquet_parts_written=209 err=0 | elapsed=628.05h left=91.95h mid=643.2150
+[OB Collector] progress 87.2% | rows=2253212 buffer=3139 flush_files=0 parquet_parts_written=209 err=0 | elapsed=628.05h left=91.95h mid=643.2150
+2026-05-08 18:32:24 - INFO - [OB Collector] progress 87.5% | rows=2260396 buffer=10323 flush_files=0 parquet_parts_written=209 err=0 | elapsed=630.05h left=89.95h mid=648.9150
+[OB Collector] progress 87.5% | rows=2260396 buffer=10323 flush_files=0 parquet_parts_written=209 err=0 | elapsed=630.05h left=89.95h mid=648.9150
+2026-05-08 18:40:02 - INFO - [OB Collector] Saved part 210 (10778 rows) → part_00209.parquet
+2026-05-08 20:32:24 - INFO - [OB Collector] progress 87.8% | rows=2267580 buffer=6729 flush_files=0 parquet_parts_written=210 err=0 | elapsed=632.05h left=87.95h mid=648.3250
+[OB Collector] progress 87.8% | rows=2267580 buffer=6729 flush_files=0 parquet_parts_written=210 err=0 | elapsed=632.05h left=87.95h mid=648.3250
+2026-05-08 21:40:05 - INFO - [OB Collector] Saved part 211 (10779 rows) → part_00210.parquet
+2026-05-08 22:32:24 - INFO - [OB Collector] progress 88.1% | rows=2274764 buffer=3134 flush_files=0 parquet_parts_written=211 err=0 | elapsed=634.05h left=85.95h mid=650.8750
+[OB Collector] progress 88.1% | rows=2274764 buffer=3134 flush_files=0 parquet_parts_written=211 err=0 | elapsed=634.05h left=85.95h mid=650.8750
+2026-05-09 00:32:24 - INFO - [OB Collector] progress 88.3% | rows=2281944 buffer=10314 flush_files=0 parquet_parts_written=211 err=0 | elapsed=636.05h left=83.95h mid=651.9950
+[OB Collector] progress 88.3% | rows=2281944 buffer=10314 flush_files=0 parquet_parts_written=211 err=0 | elapsed=636.05h left=83.95h mid=651.9950
+2026-05-09 00:40:07 - INFO - [OB Collector] Saved part 212 (10774 rows) → part_00211.parquet
+2026-05-09 02:32:25 - INFO - [OB Collector] progress 88.6% | rows=2289129 buffer=6725 flush_files=0 parquet_parts_written=212 err=0 | elapsed=638.05h left=81.95h mid=654.9950
+[OB Collector] progress 88.6% | rows=2289129 buffer=6725 flush_files=0 parquet_parts_written=212 err=0 | elapsed=638.05h left=81.95h mid=654.9950
+2026-05-09 03:40:09 - INFO - [OB Collector] Saved part 213 (10777 rows) → part_00212.parquet
+2026-05-09 04:32:26 - INFO - [OB Collector] progress 88.9% | rows=2296311 buffer=3130 flush_files=0 parquet_parts_written=213 err=0 | elapsed=640.05h left=79.95h mid=655.0450
+[OB Collector] progress 88.9% | rows=2296311 buffer=3130 flush_files=0 parquet_parts_written=213 err=0 | elapsed=640.05h left=79.95h mid=655.0450
+2026-05-09 06:32:26 - INFO - [OB Collector] progress 89.2% | rows=2303497 buffer=10316 flush_files=0 parquet_parts_written=213 err=0 | elapsed=642.05h left=77.95h mid=651.4850
+[OB Collector] progress 89.2% | rows=2303497 buffer=10316 flush_files=0 parquet_parts_written=213 err=0 | elapsed=642.05h left=77.95h mid=651.4850
+2026-05-09 06:40:13 - INFO - [OB Collector] Saved part 214 (10779 rows) → part_00213.parquet
+2026-05-09 08:32:26 - INFO - [OB Collector] progress 89.5% | rows=2310680 buffer=6720 flush_files=0 parquet_parts_written=214 err=0 | elapsed=644.05h left=75.95h mid=651.0350
+[OB Collector] progress 89.5% | rows=2310680 buffer=6720 flush_files=0 parquet_parts_written=214 err=0 | elapsed=644.05h left=75.95h mid=651.0350
+2026-05-09 09:40:16 - INFO - [OB Collector] Saved part 215 (10777 rows) → part_00214.parquet
+2026-05-09 10:32:27 - INFO - [OB Collector] progress 89.7% | rows=2317862 buffer=3125 flush_files=0 parquet_parts_written=215 err=0 | elapsed=646.05h left=73.95h mid=649.1750
+[OB Collector] progress 89.7% | rows=2317862 buffer=3125 flush_files=0 parquet_parts_written=215 err=0 | elapsed=646.05h left=73.95h mid=649.1750
+2026-05-09 12:32:27 - INFO - [OB Collector] progress 90.0% | rows=2325042 buffer=10305 flush_files=0 parquet_parts_written=215 err=0 | elapsed=648.05h left=71.95h mid=649.9050
+[OB Collector] progress 90.0% | rows=2325042 buffer=10305 flush_files=0 parquet_parts_written=215 err=0 | elapsed=648.05h left=71.95h mid=649.9050
+2026-05-09 12:40:19 - INFO - [OB Collector] Saved part 216 (10773 rows) → part_00215.parquet
+2026-05-09 14:32:28 - INFO - [OB Collector] progress 90.3% | rows=2332225 buffer=6715 flush_files=0 parquet_parts_written=216 err=0 | elapsed=650.05h left=69.95h mid=647.9050
+[OB Collector] progress 90.3% | rows=2332225 buffer=6715 flush_files=0 parquet_parts_written=216 err=0 | elapsed=650.05h left=69.95h mid=647.9050
+2026-05-09 15:40:22 - INFO - [OB Collector] Saved part 217 (10776 rows) → part_00216.parquet
+2026-05-09 16:32:29 - INFO - [OB Collector] progress 90.6% | rows=2339408 buffer=3122 flush_files=0 parquet_parts_written=217 err=0 | elapsed=652.05h left=67.95h mid=648.6950
+[OB Collector] progress 90.6% | rows=2339408 buffer=3122 flush_files=0 parquet_parts_written=217 err=0 | elapsed=652.05h left=67.95h mid=648.6950
+2026-05-09 18:32:30 - INFO - [OB Collector] progress 90.8% | rows=2346595 buffer=10309 flush_files=0 parquet_parts_written=217 err=0 | elapsed=654.05h left=65.95h mid=652.1750
+[OB Collector] progress 90.8% | rows=2346595 buffer=10309 flush_files=0 parquet_parts_written=217 err=0 | elapsed=654.05h left=65.95h mid=652.1750
+2026-05-09 18:40:25 - INFO - [OB Collector] Saved part 218 (10781 rows) → part_00217.parquet
+2026-05-09 20:32:30 - INFO - [OB Collector] progress 91.1% | rows=2353774 buffer=6707 flush_files=0 parquet_parts_written=218 err=0 | elapsed=656.05h left=63.95h mid=650.6350
+[OB Collector] progress 91.1% | rows=2353774 buffer=6707 flush_files=0 parquet_parts_written=218 err=0 | elapsed=656.05h left=63.95h mid=650.6350
+2026-05-09 21:40:28 - INFO - [OB Collector] Saved part 219 (10772 rows) → part_00218.parquet
+2026-05-09 22:32:31 - INFO - [OB Collector] progress 91.4% | rows=2360954 buffer=3115 flush_files=0 parquet_parts_written=219 err=0 | elapsed=658.05h left=61.95h mid=650.8550
+[OB Collector] progress 91.4% | rows=2360954 buffer=3115 flush_files=0 parquet_parts_written=219 err=0 | elapsed=658.05h left=61.95h mid=650.8550
+2026-05-10 00:32:31 - INFO - [OB Collector] progress 91.7% | rows=2368139 buffer=10300 flush_files=0 parquet_parts_written=219 err=0 | elapsed=660.05h left=59.95h mid=648.9650
+[OB Collector] progress 91.7% | rows=2368139 buffer=10300 flush_files=0 parquet_parts_written=219 err=0 | elapsed=660.05h left=59.95h mid=648.9650
+2026-05-10 00:40:31 - INFO - [OB Collector] Saved part 220 (10777 rows) → part_00219.parquet
+2026-05-10 02:32:32 - INFO - [OB Collector] progress 92.0% | rows=2375322 buffer=6706 flush_files=0 parquet_parts_written=220 err=0 | elapsed=662.05h left=57.95h mid=647.8450
+[OB Collector] progress 92.0% | rows=2375322 buffer=6706 flush_files=0 parquet_parts_written=220 err=0 | elapsed=662.05h left=57.95h mid=647.8450
+2026-05-10 03:40:34 - INFO - [OB Collector] Saved part 221 (10770 rows) → part_00220.parquet
+2026-05-10 04:32:32 - INFO - [OB Collector] progress 92.2% | rows=2382497 buffer=3111 flush_files=0 parquet_parts_written=221 err=0 | elapsed=664.05h left=55.95h mid=648.9350
+[OB Collector] progress 92.2% | rows=2382497 buffer=3111 flush_files=0 parquet_parts_written=221 err=0 | elapsed=664.05h left=55.95h mid=648.9350
+2026-05-10 06:32:32 - INFO - [OB Collector] progress 92.5% | rows=2389681 buffer=10295 flush_files=0 parquet_parts_written=221 err=0 | elapsed=666.05h left=53.95h mid=648.0150
+[OB Collector] progress 92.5% | rows=2389681 buffer=10295 flush_files=0 parquet_parts_written=221 err=0 | elapsed=666.05h left=53.95h mid=648.0150
+2026-05-10 06:40:37 - INFO - [OB Collector] Saved part 222 (10777 rows) → part_00221.parquet
+2026-05-10 08:32:33 - INFO - [OB Collector] progress 92.8% | rows=2396866 buffer=6703 flush_files=0 parquet_parts_written=222 err=0 | elapsed=668.05h left=51.95h mid=650.7450
+[OB Collector] progress 92.8% | rows=2396866 buffer=6703 flush_files=0 parquet_parts_written=222 err=0 | elapsed=668.05h left=51.95h mid=650.7450
+2026-05-10 09:40:41 - INFO - [OB Collector] Saved part 223 (10780 rows) → part_00222.parquet
+2026-05-10 10:32:34 - INFO - [OB Collector] progress 93.1% | rows=2404048 buffer=3105 flush_files=0 parquet_parts_written=223 err=0 | elapsed=670.05h left=49.95h mid=650.8650
+[OB Collector] progress 93.1% | rows=2404048 buffer=3105 flush_files=0 parquet_parts_written=223 err=0 | elapsed=670.05h left=49.95h mid=650.8650
+2026-05-10 12:32:35 - INFO - [OB Collector] progress 93.3% | rows=2411231 buffer=10288 flush_files=0 parquet_parts_written=223 err=0 | elapsed=672.05h left=47.95h mid=649.5750
+[OB Collector] progress 93.3% | rows=2411231 buffer=10288 flush_files=0 parquet_parts_written=223 err=0 | elapsed=672.05h left=47.95h mid=649.5750
+2026-05-10 12:40:44 - INFO - [OB Collector] Saved part 224 (10772 rows) → part_00223.parquet
+2026-05-10 14:32:36 - INFO - [OB Collector] progress 93.6% | rows=2418413 buffer=6698 flush_files=0 parquet_parts_written=224 err=0 | elapsed=674.05h left=45.95h mid=651.8150
+[OB Collector] progress 93.6% | rows=2418413 buffer=6698 flush_files=0 parquet_parts_written=224 err=0 | elapsed=674.05h left=45.95h mid=651.8150
+2026-05-10 15:40:46 - INFO - [OB Collector] Saved part 225 (10765 rows) → part_00224.parquet
+2026-05-10 16:32:36 - INFO - [OB Collector] progress 93.9% | rows=2425583 buffer=3103 flush_files=0 parquet_parts_written=225 err=0 | elapsed=676.05h left=43.95h mid=656.2750
+[OB Collector] progress 93.9% | rows=2425583 buffer=3103 flush_files=0 parquet_parts_written=225 err=0 | elapsed=676.05h left=43.95h mid=656.2750
+2026-05-10 18:32:36 - INFO - [OB Collector] progress 94.2% | rows=2432765 buffer=10285 flush_files=0 parquet_parts_written=225 err=0 | elapsed=678.05h left=41.95h mid=662.0450
+[OB Collector] progress 94.2% | rows=2432765 buffer=10285 flush_files=0 parquet_parts_written=225 err=0 | elapsed=678.05h left=41.95h mid=662.0450
+2026-05-10 18:40:50 - INFO - [OB Collector] Saved part 226 (10775 rows) → part_00225.parquet
+2026-05-10 20:32:36 - INFO - [OB Collector] progress 94.5% | rows=2439947 buffer=6692 flush_files=0 parquet_parts_written=226 err=0 | elapsed=680.05h left=39.95h mid=657.1050
+[OB Collector] progress 94.5% | rows=2439947 buffer=6692 flush_files=0 parquet_parts_written=226 err=0 | elapsed=680.05h left=39.95h mid=657.1050
+2026-05-10 21:40:53 - INFO - [OB Collector] Saved part 227 (10779 rows) → part_00226.parquet
+2026-05-10 22:32:37 - INFO - [OB Collector] progress 94.7% | rows=2447131 buffer=3097 flush_files=0 parquet_parts_written=227 err=0 | elapsed=682.05h left=37.95h mid=665.0350
+[OB Collector] progress 94.7% | rows=2447131 buffer=3097 flush_files=0 parquet_parts_written=227 err=0 | elapsed=682.05h left=37.95h mid=665.0350
+2026-05-11 00:32:38 - INFO - [OB Collector] progress 95.0% | rows=2454314 buffer=10280 flush_files=0 parquet_parts_written=227 err=0 | elapsed=684.05h left=35.95h mid=662.6650
+[OB Collector] progress 95.0% | rows=2454314 buffer=10280 flush_files=0 parquet_parts_written=227 err=0 | elapsed=684.05h left=35.95h mid=662.6650
+2026-05-11 00:40:56 - INFO - [OB Collector] Saved part 228 (10775 rows) → part_00227.parquet
+2026-05-11 00:47:16 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-11 02:32:38 - INFO - [OB Collector] progress 95.3% | rows=2461482 buffer=6673 flush_files=0 parquet_parts_written=228 err=0 | elapsed=686.05h left=33.95h mid=654.3950
+[OB Collector] progress 95.3% | rows=2461482 buffer=6673 flush_files=0 parquet_parts_written=228 err=0 | elapsed=686.05h left=33.95h mid=654.3950
+2026-05-11 03:40:58 - INFO - [OB Collector] Saved part 229 (10763 rows) → part_00228.parquet
+2026-05-11 04:32:38 - INFO - [OB Collector] progress 95.6% | rows=2468667 buffer=3095 flush_files=0 parquet_parts_written=229 err=0 | elapsed=688.05h left=31.95h mid=653.0350
+[OB Collector] progress 95.6% | rows=2468667 buffer=3095 flush_files=0 parquet_parts_written=229 err=0 | elapsed=688.05h left=31.95h mid=653.0350
+2026-05-11 06:32:39 - INFO - [OB Collector] progress 95.8% | rows=2475852 buffer=10280 flush_files=0 parquet_parts_written=229 err=0 | elapsed=690.05h left=29.95h mid=653.8650
+[OB Collector] progress 95.8% | rows=2475852 buffer=10280 flush_files=0 parquet_parts_written=229 err=0 | elapsed=690.05h left=29.95h mid=653.8650
+2026-05-11 06:41:01 - INFO - [OB Collector] Saved part 230 (10779 rows) → part_00229.parquet
+2026-05-11 08:32:39 - INFO - [OB Collector] progress 96.1% | rows=2483037 buffer=6686 flush_files=0 parquet_parts_written=230 err=0 | elapsed=692.05h left=27.95h mid=650.7550
+[OB Collector] progress 96.1% | rows=2483037 buffer=6686 flush_files=0 parquet_parts_written=230 err=0 | elapsed=692.05h left=27.95h mid=650.7550
+2026-05-11 09:41:03 - INFO - [OB Collector] Saved part 231 (10776 rows) → part_00230.parquet
+2026-05-11 10:32:40 - INFO - [OB Collector] progress 96.4% | rows=2490217 buffer=3090 flush_files=0 parquet_parts_written=231 err=0 | elapsed=694.05h left=25.95h mid=654.7450
+[OB Collector] progress 96.4% | rows=2490217 buffer=3090 flush_files=0 parquet_parts_written=231 err=0 | elapsed=694.05h left=25.95h mid=654.7450
+2026-05-11 12:32:41 - INFO - [OB Collector] progress 96.7% | rows=2497392 buffer=10265 flush_files=0 parquet_parts_written=231 err=0 | elapsed=696.05h left=23.95h mid=656.6550
+[OB Collector] progress 96.7% | rows=2497392 buffer=10265 flush_files=0 parquet_parts_written=231 err=0 | elapsed=696.05h left=23.95h mid=656.6550
+2026-05-11 12:41:06 - INFO - [OB Collector] Saved part 232 (10765 rows) → part_00231.parquet
+2026-05-11 14:32:41 - INFO - [OB Collector] progress 97.0% | rows=2504567 buffer=6675 flush_files=0 parquet_parts_written=232 err=0 | elapsed=698.05h left=21.95h mid=653.1050
+[OB Collector] progress 97.0% | rows=2504567 buffer=6675 flush_files=0 parquet_parts_written=232 err=0 | elapsed=698.05h left=21.95h mid=653.1050
+2026-05-11 15:41:08 - INFO - [OB Collector] Saved part 233 (10769 rows) → part_00232.parquet
+2026-05-11 16:32:42 - INFO - [OB Collector] progress 97.2% | rows=2511749 buffer=3088 flush_files=0 parquet_parts_written=233 err=0 | elapsed=700.05h left=19.95h mid=662.1250
+[OB Collector] progress 97.2% | rows=2511749 buffer=3088 flush_files=0 parquet_parts_written=233 err=0 | elapsed=700.05h left=19.95h mid=662.1250
+2026-05-11 18:32:42 - INFO - [OB Collector] progress 97.5% | rows=2518936 buffer=10275 flush_files=0 parquet_parts_written=233 err=0 | elapsed=702.05h left=17.95h mid=663.6450
+[OB Collector] progress 97.5% | rows=2518936 buffer=10275 flush_files=0 parquet_parts_written=233 err=0 | elapsed=702.05h left=17.95h mid=663.6450
+2026-05-11 18:41:12 - INFO - [OB Collector] Saved part 234 (10781 rows) → part_00233.parquet
+2026-05-11 20:32:43 - INFO - [OB Collector] progress 97.8% | rows=2526114 buffer=6672 flush_files=0 parquet_parts_written=234 err=0 | elapsed=704.05h left=15.95h mid=662.0150
+[OB Collector] progress 97.8% | rows=2526114 buffer=6672 flush_files=0 parquet_parts_written=234 err=0 | elapsed=704.05h left=15.95h mid=662.0150
+2026-05-11 21:41:15 - INFO - [OB Collector] Saved part 235 (10774 rows) → part_00234.parquet
+2026-05-11 22:32:43 - INFO - [OB Collector] progress 98.1% | rows=2533299 buffer=3083 flush_files=0 parquet_parts_written=235 err=0 | elapsed=706.05h left=13.95h mid=664.7450
+[OB Collector] progress 98.1% | rows=2533299 buffer=3083 flush_files=0 parquet_parts_written=235 err=0 | elapsed=706.05h left=13.95h mid=664.7450
+2026-05-11 23:44:22 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-11 23:44:33 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-11 23:44:47 - WARNING - [OB Collector] Trades fetch failed: 
+2026-05-12 00:32:43 - INFO - [OB Collector] progress 98.3% | rows=2540382 buffer=10166 flush_files=0 parquet_parts_written=235 err=0 | elapsed=708.05h left=11.95h mid=669.2450
+[OB Collector] progress 98.3% | rows=2540382 buffer=10166 flush_files=0 parquet_parts_written=235 err=0 | elapsed=708.05h left=11.95h mid=669.2450
+2026-05-12 00:41:18 - INFO - [OB Collector] Saved part 236 (10678 rows) → part_00235.parquet
+2026-05-12 02:32:43 - INFO - [OB Collector] progress 98.6% | rows=2547562 buffer=6668 flush_files=0 parquet_parts_written=236 err=0 | elapsed=710.05h left=9.95h mid=663.0950
+[OB Collector] progress 98.6% | rows=2547562 buffer=6668 flush_files=0 parquet_parts_written=236 err=0 | elapsed=710.05h left=9.95h mid=663.0950
+2026-05-12 03:41:21 - INFO - [OB Collector] Saved part 237 (10775 rows) → part_00236.parquet
+2026-05-12 04:32:43 - INFO - [OB Collector] progress 98.9% | rows=2554746 buffer=3077 flush_files=0 parquet_parts_written=237 err=0 | elapsed=712.05h left=7.95h mid=663.4450
+[OB Collector] progress 98.9% | rows=2554746 buffer=3077 flush_files=0 parquet_parts_written=237 err=0 | elapsed=712.05h left=7.95h mid=663.4450
+2026-05-12 06:32:43 - INFO - [OB Collector] progress 99.2% | rows=2561922 buffer=10253 flush_files=0 parquet_parts_written=237 err=0 | elapsed=714.05h left=5.95h mid=661.9750
+[OB Collector] progress 99.2% | rows=2561922 buffer=10253 flush_files=0 parquet_parts_written=237 err=0 | elapsed=714.05h left=5.95h mid=661.9750
+2026-05-12 06:41:24 - INFO - [OB Collector] Saved part 238 (10770 rows) → part_00237.parquet
+2026-05-12 08:32:44 - INFO - [OB Collector] progress 99.5% | rows=2569102 buffer=6663 flush_files=0 parquet_parts_written=238 err=0 | elapsed=716.05h left=3.95h mid=659.7450
+[OB Collector] progress 99.5% | rows=2569102 buffer=6663 flush_files=0 parquet_parts_written=238 err=0 | elapsed=716.05h left=3.95h mid=659.7450
+2026-05-12 09:41:26 - INFO - [OB Collector] Saved part 239 (10763 rows) → part_00238.parquet
+2026-05-12 10:32:44 - INFO - [OB Collector] progress 99.7% | rows=2576272 buffer=3070 flush_files=0 parquet_parts_written=239 err=0 | elapsed=718.05h left=1.95h mid=661.6250
+[OB Collector] progress 99.7% | rows=2576272 buffer=3070 flush_files=0 parquet_parts_written=239 err=0 | elapsed=718.05h left=1.95h mid=661.6250
+2026-05-12 12:29:42 - INFO - [OB Collector] Saved part 240 (10061 rows) → part_00239.parquet
+2026-05-12 12:29:42 - INFO - [OB Collector] Merging 240 parts → ob_BNBUSDT_20260412_122939_100lvl.parquet
