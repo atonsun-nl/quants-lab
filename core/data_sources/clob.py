@@ -1,10 +1,13 @@
 import asyncio
 import logging
 import os
+import sys
 import time
 from typing import Dict, List, Optional, Tuple, Any
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
 
+import aiohttp
 import pandas as pd
 from hummingbot.client.config.config_helpers import get_connector_class
 from hummingbot.client.settings import AllConnectorSettings, ConnectorType
@@ -320,7 +323,646 @@ class CLOBDataSource:
         connector = connector_class(**init_params)
         return connector
 
-    # TODO: ADD ORDER BOOK SNAPSHOT METHOD
+    # ------------------------------------------------------------------
+    # Real-time order book + trades collector (wide-format, ML-ready)
+    # ------------------------------------------------------------------
+
+    async def collect_orderbook_snapshots(
+        self,
+        connector_name: str,
+        trading_pair: str,
+        duration_seconds: int,
+        interval_seconds: float = 1.0,
+        depth: int = 20,
+        save_dir: Optional[str] = None,
+        output_format: str = "parquet",
+        flush_interval_seconds: int = 300,
+        single_file: bool = False,
+        progress_log_interval_seconds: float = 60.0,
+    ) -> Dict[str, Any]:
+        """
+        Collect order book snapshots + trade aggregates in real time (wide-format).
+
+        Each snapshot becomes ONE ROW containing:
+          - order book levels as columns: bid_price_0..N, bid_amount_0..N,
+                                          ask_price_0..N, ask_amount_0..N
+          - trade aggregates for the interval since the previous snapshot:
+            trades_buy_volume, trades_sell_volume,
+            trades_buy_count,  trades_sell_count,
+            trades_vwap_buy,   trades_vwap_sell,
+            trades_total_volume, trades_imbalance
+          - derived features: spread, mid_price, bid_ask_imbalance
+
+        Rows are accumulated in memory and flushed to one file every
+        `flush_interval_seconds` (default 5 min). Remaining rows are flushed
+        at the end of the collection window.
+
+        File naming:
+            ob_<SYMBOL>_<YYYYMMDD_HHMMSS>_<depth>lvl.<ext>
+            (timestamp = UTC of the FIRST snapshot in the batch)
+
+        Args:
+            connector_name:         Connector name (e.g. "binance", "binance_perpetual").
+            trading_pair:           Trading pair (e.g. "BTC-USDT").
+            duration_seconds:       Total collection window in seconds.
+            interval_seconds:       Seconds between snapshots (default: 1.0).
+            depth:                  Order book depth levels per side (default: 20).
+                                    Binance weight: ≤100 → 1, ≤500 → 5, ≤1000 → 10.
+            save_dir:               Directory to save files.
+                                    Default: data_paths.orderbooks_dir / connector_name / symbol
+            output_format:          "parquet" (default, snappy-compressed) or "csv".
+            flush_interval_seconds: How often to flush buffer to disk in seconds (default: 300).
+            progress_log_interval_seconds: Log progress (rows, buffer, ETA) every N seconds
+                of wall time; 0 disables (default: 60).
+
+        Returns:
+            Dict with collection statistics and list of saved file paths.
+
+        Example row (depth=3):
+            timestamp          | 1744106401.123
+            last_update_id     | 48291837651
+            trading_pair       | BTC-USDT
+            bid_price_0        | 83241.50   ← best bid
+            bid_amount_0       | 1.842
+            bid_price_1        | 83240.10
+            bid_amount_1       | 0.531
+            bid_price_2        | 83238.70
+            bid_amount_2       | 3.200
+            ask_price_0        | 83242.00   ← best ask
+            ask_amount_0       | 2.107
+            ask_price_1        | 83243.50
+            ask_amount_1       | 0.890
+            ask_price_2        | 83245.00
+            ask_amount_2       | 1.340
+            spread             | 0.50       ← ask_price_0 - bid_price_0
+            mid_price          | 83241.75   ← (best_bid + best_ask) / 2
+            bid_ask_imbalance  | 0.147      ← (bid_vol - ask_vol) / (bid_vol + ask_vol)
+            trades_buy_volume  | 0.312      ← taker buy volume since last snapshot
+            trades_sell_volume | 0.180      ← taker sell volume since last snapshot
+            trades_buy_count   | 4
+            trades_sell_count  | 2
+            trades_vwap_buy    | 83242.10
+            trades_vwap_sell   | 83241.30
+            trades_total_volume| 0.492
+            trades_imbalance   | 0.268      ← (buy_vol - sell_vol) / total_vol
+        """
+        if duration_seconds <= 0:
+            raise ValueError("duration_seconds must be positive")
+        if interval_seconds <= 0:
+            raise ValueError("interval_seconds must be positive")
+
+        weight_per_request = self._get_depth_weight(depth)
+        max_safe_rpm = int(1200 / weight_per_request * 0.8)
+        min_safe_interval = 60.0 / max_safe_rpm
+
+        actual_interval = float(interval_seconds)
+        if actual_interval < min_safe_interval:
+            logger.warning(
+                f"interval_seconds={interval_seconds}s is too aggressive for depth={depth} "
+                f"(weight={weight_per_request}). Adjusting to {min_safe_interval:.2f}s."
+            )
+            actual_interval = min_safe_interval
+
+        symbol = trading_pair.replace("-", "")
+        if save_dir is None:
+            target_dir = data_paths.orderbooks_dir / connector_name / symbol
+        else:
+            target_dir = Path(save_dir)
+        target_dir.mkdir(parents=True, exist_ok=True)
+
+        base_url = self._get_base_url(connector_name)
+        expected_snapshots = int(duration_seconds / actual_interval)
+        if single_file:
+            mode_label = f"single-file, append every {flush_interval_seconds}s"
+        else:
+            expected_files = max(1, int(duration_seconds / flush_interval_seconds))
+            mode_label = f"~{expected_files} files, new file every {flush_interval_seconds}s"
+
+        logger.info(
+            f"[OB Collector] Starting wide-format collection | "
+            f"pair={trading_pair} depth={depth} interval={actual_interval:.2f}s "
+            f"duration={duration_seconds}s (~{expected_snapshots} rows, {mode_label}) "
+            f"fmt={output_format} dir={target_dir}"
+        )
+
+        # For single_file+parquet: fixed filename for part files, merged at end
+        session_ts = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+        final_filename = target_dir / f"ob_{symbol}_{session_ts}_{depth}lvl.{output_format}"
+        parts_dir = target_dir / f"_parts_{session_ts}"
+
+        # Clean up abandoned part directories from previously interrupted runs
+        for abandoned in target_dir.glob("_parts_*"):
+            if abandoned.is_dir():
+                logger.warning(f"[OB Collector] Cleaning abandoned parts dir: {abandoned.name}")
+                for p in abandoned.glob("part_*.parquet"):
+                    p.unlink(missing_ok=True)
+                try:
+                    abandoned.rmdir()
+                except OSError:
+                    pass
+
+        saved_files: List[str] = []
+        errors: List[str] = []
+        collection_start = time.monotonic()
+        snapshot_index = 0
+        part_index = 0
+
+        pending_trades: List[Dict] = []
+        last_trade_id: Optional[int] = None
+
+        batch_rows: List[Dict] = []
+        batch_start_dt: Optional[datetime] = None
+        last_flush_mono = time.monotonic()
+        last_progress_mono = time.monotonic()
+        last_mid: Optional[float] = None
+
+        def _flush_batch() -> None:
+            nonlocal batch_rows, batch_start_dt, last_flush_mono, part_index
+            if not batch_rows:
+                return
+            df = pd.DataFrame(batch_rows)
+
+            if single_file:
+                if output_format == "csv":
+                    # CSV: дозапись — header только при первой записи
+                    write_header = not final_filename.exists()
+                    df.to_csv(final_filename, mode="a", index=False, header=write_header)
+                    logger.info(
+                        f"[OB Collector] Appended {len(df)} rows → {final_filename.name}"
+                    )
+                    if str(final_filename) not in saved_files:
+                        saved_files.append(str(final_filename))
+                else:
+                    # Parquet: пишем пронумерованный part-файл, сольём в конце
+                    parts_dir.mkdir(parents=True, exist_ok=True)
+                    part_file = parts_dir / f"part_{part_index:05d}.parquet"
+                    df.to_parquet(part_file, engine="pyarrow", compression="snappy")
+                    part_index += 1
+                    logger.info(
+                        f"[OB Collector] Saved part {part_index} ({len(df)} rows) → {part_file.name}"
+                    )
+            else:
+                # Обычный режим: новый файл на каждый flush
+                ts_str = batch_start_dt.strftime("%Y%m%d_%H%M%S") if batch_start_dt else "unknown"
+                if output_format == "csv":
+                    filename = target_dir / f"ob_{symbol}_{ts_str}_{depth}lvl.csv"
+                    df.to_csv(filename, index=False)
+                else:
+                    filename = target_dir / f"ob_{symbol}_{ts_str}_{depth}lvl.parquet"
+                    df.to_parquet(filename, engine="pyarrow", compression="snappy")
+                saved_files.append(str(filename))
+                logger.info(
+                    f"[OB Collector] Flushed {len(df)} rows → {filename.name}"
+                )
+
+            batch_rows = []
+            batch_start_dt = None
+            last_flush_mono = time.monotonic()
+
+        async with aiohttp.ClientSession() as session:
+            while (time.monotonic() - collection_start) < duration_seconds:
+                loop_start = time.monotonic()
+                wall_ts = time.time()
+                fetch_dt = datetime.utcfromtimestamp(wall_ts)
+
+                try:
+                    # Fetch OB and recent trades concurrently
+                    ob_task = self._fetch_orderbook_via_http(session, base_url, symbol, depth)
+                    tr_task = self._fetch_trades_via_http(session, base_url, symbol, 1000, last_trade_id)
+                    snapshot, raw_trades = await asyncio.gather(ob_task, tr_task, return_exceptions=True)
+
+                    # --- Process new trades ---
+                    if isinstance(raw_trades, list):
+                        new_trades = [
+                            t for t in raw_trades
+                            if last_trade_id is None or t["id"] > last_trade_id
+                        ]
+                        if new_trades:
+                            last_trade_id = max(t["id"] for t in new_trades)
+                            pending_trades.extend(new_trades)
+                    elif isinstance(raw_trades, Exception):
+                        logger.warning(f"[OB Collector] Trades fetch failed: {raw_trades}")
+
+                    # --- Aggregate pending trades ---
+                    trade_agg = self._aggregate_trades(pending_trades)
+                    pending_trades.clear()
+
+                    # --- Build wide-format row ---
+                    if isinstance(snapshot, dict) and snapshot:
+                        row = self._orderbook_snapshot_to_wide_row(
+                            snapshot, wall_ts, trading_pair, depth, trade_agg
+                        )
+                        if batch_start_dt is None:
+                            batch_start_dt = fetch_dt
+                        batch_rows.append(row)
+                        snapshot_index += 1
+                        last_mid = row.get("mid_price")
+
+                except Exception as exc:
+                    msg = f"Snapshot #{snapshot_index + 1} failed at {fetch_dt.isoformat()}: {exc}"
+                    logger.error(f"[OB Collector] {msg}")
+                    errors.append(msg)
+
+                if (time.monotonic() - last_flush_mono) >= flush_interval_seconds:
+                    _flush_batch()
+
+                # Wall-clock progress (для длинных прогонов: видно, что процесс жив)
+                if progress_log_interval_seconds > 0:
+                    now_m = time.monotonic()
+                    if (now_m - last_progress_mono) >= progress_log_interval_seconds:
+                        last_progress_mono = now_m
+                        elapsed = now_m - collection_start
+                        remaining = max(0.0, duration_seconds - elapsed)
+                        pct = min(100.0, 100.0 * elapsed / duration_seconds)
+                        buf = len(batch_rows)
+                        parts_saved = part_index if single_file and output_format == "parquet" else 0
+                        mid_s = f" mid={last_mid:.4f}" if last_mid is not None else ""
+                        msg = (
+                            f"[OB Collector] progress {pct:.1f}% | rows={snapshot_index} "
+                            f"buffer={buf} flush_files={len(saved_files)} "
+                            f"parquet_parts_written={parts_saved} err={len(errors)} | "
+                            f"elapsed={elapsed/3600:.2f}h left={remaining/3600:.2f}h"
+                            f"{mid_s}"
+                        )
+                        logger.info(msg)
+                        print(msg, flush=True)
+
+                elapsed_in_loop = time.monotonic() - loop_start
+                await asyncio.sleep(max(0.0, actual_interval - elapsed_in_loop))
+
+        # Final flush for remaining rows
+        _flush_batch()
+
+        # single_file + parquet: merge all parts into one final file, delete parts
+        if single_file and output_format == "parquet" and parts_dir.exists():
+            part_files = sorted(parts_dir.glob("part_*.parquet"))
+            if part_files:
+                logger.info(
+                    f"[OB Collector] Merging {len(part_files)} parts → {final_filename.name}"
+                )
+                merged = pd.concat(
+                    [pd.read_parquet(p) for p in part_files], ignore_index=True
+                )
+                merged.to_parquet(final_filename, engine="pyarrow", compression="snappy")
+                # Clean up parts
+                for p in part_files:
+                    p.unlink()
+                parts_dir.rmdir()
+                saved_files.append(str(final_filename))
+                logger.info(
+                    f"[OB Collector] Merged {len(merged)} rows → {final_filename.name}"
+                )
+
+        logger.info(
+            f"[OB Collector] Done. rows={snapshot_index} "
+            f"files={len(saved_files)} errors={len(errors)}"
+        )
+        return {
+            "connector_name":         connector_name,
+            "trading_pair":           trading_pair,
+            "depth":                  depth,
+            "interval_seconds":       actual_interval,
+            "flush_interval_seconds": flush_interval_seconds,
+            "single_file":            single_file,
+            "duration_seconds":       duration_seconds,
+            "snapshots_collected":    snapshot_index,
+            "files_saved":            len(saved_files),
+            "errors_count":           len(errors),
+            "errors":                 errors,
+            "saved_files":            saved_files,
+            "save_directory":         str(target_dir),
+            "progress_log_interval_seconds": progress_log_interval_seconds,
+        }
+
+    # ------------------------------------------------------------------
+    # Load saved snapshots
+    # ------------------------------------------------------------------
+
+    def load_orderbook_snapshots(
+        self,
+        connector_name: str,
+        trading_pair: str,
+        start_time: Optional[float] = None,
+        end_time: Optional[float] = None,
+        depth: Optional[int] = None,
+    ) -> pd.DataFrame:
+        """
+        Load wide-format order book snapshots (one row per timestamp).
+
+        Each row contains bid_price_0..N, bid_amount_0..N, ask_price_0..N,
+        ask_amount_0..N, spread, mid_price, bid_ask_imbalance, trades_* columns.
+
+        Args:
+            connector_name: Connector name used during collection.
+            trading_pair:   Trading pair (e.g. "BTC-USDT").
+            start_time:     Optional Unix timestamp filter (inclusive).
+            end_time:       Optional Unix timestamp filter (inclusive).
+            depth:          Optional filter by depth level count (via filename).
+
+        Returns:
+            Combined DataFrame sorted by timestamp ascending.
+            Empty DataFrame if no files match.
+        """
+        symbol = trading_pair.replace("-", "")
+        load_dir = data_paths.orderbooks_dir / connector_name / symbol
+
+        if not load_dir.exists():
+            logger.warning(f"Directory not found: {load_dir}")
+            return pd.DataFrame()
+
+        all_files = sorted(
+            list(load_dir.glob(f"ob_{symbol}_*lvl.parquet")) +
+            list(load_dir.glob(f"ob_{symbol}_*lvl.csv"))
+        )
+
+        if not all_files:
+            logger.warning(f"No snapshot files found in {load_dir}")
+            return pd.DataFrame()
+
+        frames: List[pd.DataFrame] = []
+        for fpath in all_files:
+            if depth is not None and f"_{depth}lvl." not in fpath.name:
+                continue
+            try:
+                df = pd.read_parquet(fpath) if fpath.suffix == ".parquet" else pd.read_csv(fpath)
+                frames.append(df)
+            except Exception as exc:
+                logger.error(f"Failed to read {fpath}: {exc}")
+
+        if not frames:
+            return pd.DataFrame()
+
+        combined = pd.concat(frames, ignore_index=True)
+
+        # Wide-format uses "timestamp" column (collect_orderbook_snapshots)
+        ts_col = "timestamp" if "timestamp" in combined.columns else "fetch_timestamp"
+
+        if start_time is not None:
+            combined = combined[combined[ts_col] >= start_time]
+        if end_time is not None:
+            combined = combined[combined[ts_col] <= end_time]
+
+        combined.sort_values(ts_col, inplace=True)
+        combined.reset_index(drop=True, inplace=True)
+        return combined
+
+    def get_orderbook_collection_summary(
+        self,
+        connector_name: str,
+        trading_pair: str,
+    ) -> Dict[str, Any]:
+        """Return summary statistics about stored order book snapshots."""
+        symbol = trading_pair.replace("-", "")
+        load_dir = data_paths.orderbooks_dir / connector_name / symbol
+
+        if not load_dir.exists():
+            return {"exists": False, "file_count": 0, "directory": str(load_dir)}
+
+        files = sorted(
+            list(load_dir.glob(f"ob_{symbol}_*lvl.parquet")) +
+            list(load_dir.glob(f"ob_{symbol}_*lvl.csv"))
+        )
+        if not files:
+            return {"exists": True, "file_count": 0, "directory": str(load_dir)}
+
+        timestamps: List[float] = []
+        depths: set = set()
+
+        for fpath in files:
+            try:
+                stem = fpath.stem
+                depth_token = stem.split("_")[-1]
+                depths.add(int(depth_token.replace("lvl", "")))
+            except Exception:
+                pass
+            try:
+                parts = fpath.stem.split("_")
+                dt = datetime.strptime(f"{parts[-3]}_{parts[-2]}", "%Y%m%d_%H%M%S")
+                timestamps.append(dt.timestamp())
+            except Exception:
+                pass
+
+        result: Dict[str, Any] = {
+            "exists":     True,
+            "file_count": len(files),
+            "directory":  str(load_dir),
+            "depths":     sorted(depths),
+        }
+        if timestamps:
+            result["start_utc"] = datetime.utcfromtimestamp(min(timestamps)).isoformat() + "Z"
+            result["end_utc"]   = datetime.utcfromtimestamp(max(timestamps)).isoformat() + "Z"
+            result["span_hours"] = round((max(timestamps) - min(timestamps)) / 3600, 2)
+        return result
+
+    # ------------------------------------------------------------------
+    # HTTP helpers
+    # ------------------------------------------------------------------
+
+    @staticmethod
+    def _get_depth_weight(depth: int) -> int:
+        """Return Binance request weight for /api/v3/depth."""
+        if depth <= 100:
+            return 1
+        elif depth <= 500:
+            return 5
+        elif depth <= 1000:
+            return 10
+        return 50
+
+    @staticmethod
+    def _get_base_url(connector_name: str) -> str:
+        """Return base REST URL for the given connector."""
+        if "perpetual" in connector_name or "futures" in connector_name:
+            return "https://fapi.binance.com"
+        return "https://api.binance.com"
+
+    @staticmethod
+    def _binance_rest_is_usdm_futures(base_url: str) -> bool:
+        """True if base_url is Binance USDⓈ-M futures REST host."""
+        return "fapi.binance.com" in base_url
+
+    @staticmethod
+    async def _fetch_orderbook_via_http(
+        session: aiohttp.ClientSession,
+        base_url: str,
+        symbol: str,
+        depth: int,
+    ) -> Optional[Dict]:
+        """Fetch order book: spot /api/v3/depth, USDM futures /fapi/v1/depth."""
+        if CLOBDataSource._binance_rest_is_usdm_futures(base_url):
+            url = f"{base_url}/fapi/v1/depth"
+        else:
+            url = f"{base_url}/api/v3/depth"
+        params = {"symbol": symbol, "limit": depth}
+        async with session.get(url, params=params, timeout=aiohttp.ClientTimeout(total=10)) as resp:
+            resp.raise_for_status()
+            data = await resp.json()
+        if "bids" not in data or "asks" not in data:
+            logger.warning(f"Unexpected response structure for {symbol}: {list(data.keys())}")
+            return None
+        return {
+            "lastUpdateId": data.get("lastUpdateId"),
+            "bids": [[float(p), float(q)] for p, q in data["bids"]],
+            "asks": [[float(p), float(q)] for p, q in data["asks"]],
+        }
+
+    @staticmethod
+    async def _fetch_trades_via_http(
+        session: aiohttp.ClientSession,
+        base_url: str,
+        symbol: str,
+        limit: int = 1000,
+        from_id: Optional[int] = None,
+    ) -> List[Dict]:
+        """
+        Recent trades: spot /api/v3/trades, USDM futures /fapi/v1/trades.
+        Optional fromId for incremental fetch (no historicalTrades / API key).
+        """
+        if CLOBDataSource._binance_rest_is_usdm_futures(base_url):
+            url = f"{base_url}/fapi/v1/trades"
+        else:
+            url = f"{base_url}/api/v3/trades"
+        params: Dict[str, Any] = {"symbol": symbol, "limit": limit}
+        if from_id is not None:
+            params["fromId"] = from_id + 1
+        async with session.get(url, params=params, timeout=aiohttp.ClientTimeout(total=10)) as resp:
+            resp.raise_for_status()
+            return await resp.json()
+
+    @staticmethod
+    def _orderbook_snapshot_to_df(
+        snapshot: Dict,
+        fetch_timestamp: float,
+        trading_pair: str,
+        depth_requested: int,
+    ) -> pd.DataFrame:
+        """
+        Convert a raw order book snapshot to a tidy long-format DataFrame.
+
+        Columns: fetch_timestamp, last_update_id, trading_pair,
+                 depth_requested, side, level, price, amount.
+        """
+        rows: List[Dict] = []
+        last_update_id = snapshot.get("lastUpdateId")
+        for side, entries in (("bid", snapshot.get("bids", [])),
+                               ("ask", snapshot.get("asks", []))):
+            for level, (price, amount) in enumerate(entries):
+                rows.append({
+                    "fetch_timestamp": fetch_timestamp,
+                    "last_update_id":  last_update_id,
+                    "trading_pair":    trading_pair,
+                    "depth_requested": depth_requested,
+                    "side":            side,
+                    "level":           level,
+                    "price":           price,
+                    "amount":          amount,
+                })
+        return pd.DataFrame(rows)
+
+    @staticmethod
+    def _aggregate_trades(trades: List[Dict]) -> Dict:
+        """
+        Aggregate a list of raw Binance trade dicts into scalar features.
+
+        Input fields per trade: id, price, qty, isBuyerMaker, time.
+
+        Returns dict with:
+            trades_buy_volume, trades_sell_volume,
+            trades_buy_count,  trades_sell_count,
+            trades_vwap_buy,   trades_vwap_sell,
+            trades_total_volume, trades_imbalance
+        """
+        buy_vol = sell_vol = 0.0
+        buy_pv = sell_pv = 0.0   # price × volume accumulators for VWAP
+        buy_n = sell_n = 0
+
+        for t in trades:
+            price = float(t["price"])
+            qty   = float(t["qty"])
+            if t["isBuyerMaker"]:
+                # seller is aggressor (taker sell)
+                sell_vol += qty
+                sell_pv  += price * qty
+                sell_n   += 1
+            else:
+                # buyer is aggressor (taker buy)
+                buy_vol += qty
+                buy_pv  += price * qty
+                buy_n   += 1
+
+        total_vol = buy_vol + sell_vol
+        return {
+            "trades_buy_volume":   round(buy_vol, 8),
+            "trades_sell_volume":  round(sell_vol, 8),
+            "trades_buy_count":    buy_n,
+            "trades_sell_count":   sell_n,
+            "trades_vwap_buy":     round(buy_pv / buy_vol, 8) if buy_vol > 0 else None,
+            "trades_vwap_sell":    round(sell_pv / sell_vol, 8) if sell_vol > 0 else None,
+            "trades_total_volume": round(total_vol, 8),
+            "trades_imbalance":    round((buy_vol - sell_vol) / total_vol, 6) if total_vol > 0 else 0.0,
+        }
+
+    @staticmethod
+    def _orderbook_snapshot_to_wide_row(
+        snapshot: Dict,
+        fetch_timestamp: float,
+        trading_pair: str,
+        depth: int,
+        trade_agg: Dict,
+    ) -> Dict:
+        """
+        Convert a raw order book snapshot + trade aggregates into one wide-format row.
+
+        Columns layout:
+            timestamp, last_update_id, trading_pair
+            bid_price_0..N-1, bid_amount_0..N-1
+            ask_price_0..N-1, ask_amount_0..N-1
+            spread, mid_price, bid_ask_imbalance
+            trades_buy_volume, trades_sell_volume, trades_buy_count,
+            trades_sell_count, trades_vwap_buy, trades_vwap_sell,
+            trades_total_volume, trades_imbalance
+        """
+        row: Dict = {
+            "timestamp":      fetch_timestamp,
+            "last_update_id": snapshot.get("lastUpdateId"),
+            "trading_pair":   trading_pair,
+        }
+
+        bids = snapshot.get("bids", [])
+        asks = snapshot.get("asks", [])
+
+        bid_vol_total = 0.0
+        for i in range(depth):
+            if i < len(bids):
+                row[f"bid_price_{i}"]  = bids[i][0]
+                row[f"bid_amount_{i}"] = bids[i][1]
+                bid_vol_total += bids[i][1]
+            else:
+                row[f"bid_price_{i}"]  = None
+                row[f"bid_amount_{i}"] = None
+
+        ask_vol_total = 0.0
+        for i in range(depth):
+            if i < len(asks):
+                row[f"ask_price_{i}"]  = asks[i][0]
+                row[f"ask_amount_{i}"] = asks[i][1]
+                ask_vol_total += asks[i][1]
+            else:
+                row[f"ask_price_{i}"]  = None
+                row[f"ask_amount_{i}"] = None
+
+        best_bid = bids[0][0] if bids else None
+        best_ask = asks[0][0] if asks else None
+        row["spread"]   = round(best_ask - best_bid, 8) if best_bid and best_ask else None
+        row["mid_price"] = round((best_bid + best_ask) / 2, 8) if best_bid and best_ask else None
+
+        ob_total = bid_vol_total + ask_vol_total
+        row["bid_ask_imbalance"] = (
+            round((bid_vol_total - ask_vol_total) / ob_total, 6) if ob_total > 0 else 0.0
+        )
+
+        row.update(trade_agg)
+        return row
 
     async def get_trading_rules(self, connector_name: str):
         connector = self.connectors.get(connector_name)
